@@ -1,20 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd64134e-7d23-4291-a889-a4d6ab46e6bb" name="Changes" comment="" />
+    <list default="true" id="bd64134e-7d23-4291-a889-a4d6ab46e6bb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/books/Adventure.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/Book.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/BookType.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/Classic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/EpicPoetry.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/Fantasy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/Fiction.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/GothicFiction.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/GothicRomance.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/HistoricalFiction.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/Modernism.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/Philosophy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/PsychologicalDrama.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/Realism.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/Romance.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/Satire.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/ScienceFiction.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/Tragedy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <list id="50532b9d-f055-446e-84ba-3f98fd9d8b38" name="Changes by shirb" comment="">
+      <change beforePath="$PROJECT_DIR$/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/__init__.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Raz99"
+  }
 }]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Raz99/A3_Library.git",
+    "accountId": "c16a7655-c352-4a75-915a-ad7786db8404"
+  }
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2rGXPys1ukAFbHJHlUfoxCIOe6H" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -22,9 +69,15 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\razco\Documents\GitHub\A3_Library\Books" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
