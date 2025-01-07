@@ -1,4 +1,4 @@
-from Management import Management
+from system.Management import Management
 
 def main():
     Management()

@@ -5,14 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd64134e-7d23-4291-a889-a4d6ab46e6bb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Librarian.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Management.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/system/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/BookFactory.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/BookFactory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Librarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/Librarian.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Management.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/Management.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/Adventure.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Adventure.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Book.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/Classic.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Classic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/Dystopian.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Dystopian.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/EpicPoetry.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/EpicPoetry.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/Fantasy.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Fantasy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/Fiction.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Fiction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/GothicFiction.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/GothicFiction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/GothicRomance.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/GothicRomance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/HistoricalFiction.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/HistoricalFiction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/Modernism.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Modernism.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/Philosophy.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Philosophy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/PsychologicalDrama.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/PsychologicalDrama.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/Romance.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Romance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
-    <list id="50532b9d-f055-446e-84ba-3f98fd9d8b38" name="Changes by shirb" comment="" />
+    <list id="50532b9d-f055-446e-84ba-3f98fd9d8b38" name="Changes by shirb" comment="">
+      <change beforePath="$PROJECT_DIR$/Librarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/Librarian.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/PsychologicalDrama.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/PsychologicalDrama.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/Realism.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Realism.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/Romance.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Romance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/Satire.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Satire.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/ScienceFiction.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/ScienceFiction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/Tragedy.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Tragedy.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,6 +62,27 @@
     &quot;accountId&quot;: &quot;c16a7655-c352-4a75-915a-ad7786db8404&quot;
   }
 }</component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/system/Librarian.py">
+      <ranges>
+        <range start1="1" end1="1" start2="1" end2="2" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="11" end1="12" start2="12" end2="13" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="14" end1="14" start2="15" end2="16" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/books/Romance.py">
+      <ranges>
+        <range start1="0" end1="1" start2="0" end2="1" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="4" end1="5" start2="4" end2="5" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/books/PsychologicalDrama.py">
+      <ranges>
+        <range start1="0" end1="1" start2="0" end2="1" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="4" end1="5" start2="4" end2="5" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -53,6 +96,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.Management (1).executor": "Run",
     "Python.Management.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -62,11 +106,34 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\razco\Documents\GitHub\A3_Library\system" />
       <recent name="C:\Users\razco\Documents\GitHub\A3_Library\data" />
       <recent name="C:\Users\razco\Documents\GitHub\A3_Library\Books" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
+    <configuration name="Management (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="A3_Library" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/system" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/system/Management.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Management" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="A3_Library" />
       <option name="ENV_FILES" value="" />
@@ -80,7 +147,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Management.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\razco\Documents\GitHub\A3_Library\system\Management.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -114,6 +181,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.Management (1)" />
         <item itemvalue="Python.Management" />
       </list>
     </recent_temporary>

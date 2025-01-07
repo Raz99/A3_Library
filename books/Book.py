@@ -5,6 +5,7 @@ class Book(ABC):
     def __init__(self, title, author, is_loaned, copies, year):
         self.title = title
         self.author = author
+        self.is_loaned = is_loaned
         self.is_loaned_dict = {i: is_loaned for i in range(copies)}
         self.copies = copies
         self.year = year
@@ -30,3 +31,14 @@ class Book(ABC):
             if self.is_loaned_dict[i] == "No":
                 return True
         return False
+
+    def to_dict(self):
+        return {
+            "title": self.title,
+            "author": self.author,
+            "is_loaned": self.is_loaned,
+            "copies": self.copies,
+            "genre": self.__class__.__name__,
+            "year": self.year,
+            "copies_dict": self.is_loaned_dict
+        }
