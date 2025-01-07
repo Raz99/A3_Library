@@ -2,7 +2,7 @@ from books import *
 
 class BookFactory:
     @staticmethod
-    def create_book(book_type, title, author, is_loaned, copies, year):
+    def create_book(title, author, is_loaned, copies, book_type, year):
         if book_type == BookType.ADVENTURE:
             return Adventure(title, author, is_loaned, copies, year)
         elif book_type == BookType.CLASSIC:
