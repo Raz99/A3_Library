@@ -42,3 +42,15 @@ class Book(ABC):
             "year": self.year,
             "copies_dict": self.is_loaned_dict
         }
+
+    def get_genre(self):
+        return self.__class__.__name__
+
+    def add_copy(self):
+        self.is_loaned_dict += {self.copies: "No"}
+        self.copies += 1
+
+    def __eq__(self, other):
+        if isinstance(other,Book):
+            return self.title == other.title and self.author == other.author and self.year == other.year and self.get_genre() == other.get_genre()
+        return False
