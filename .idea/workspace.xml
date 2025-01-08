@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd64134e-7d23-4291-a889-a4d6ab46e6bb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/system/shared.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Book.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/GothicFiction.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/GothicFiction.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/Librarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/Librarian.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/Management.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/Management.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" afterDir="false" />
     </list>
     <list id="50532b9d-f055-446e-84ba-3f98fd9d8b38" name="Changes by shirb" comment="">
       <change beforePath="$PROJECT_DIR$/system/Librarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/Librarian.py" afterDir="false" />
@@ -43,18 +41,6 @@
     &quot;accountId&quot;: &quot;c16a7655-c352-4a75-915a-ad7786db8404&quot;
   }
 }</component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/system/Librarian.py">
-      <ranges>
-        <range start1="2" end1="3" start2="2" end2="3" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="13" end1="15" start2="13" end2="15" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="16" end1="17" start2="16" end2="16" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="18" end1="22" start2="17" end2="19" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="23" end1="26" start2="20" end2="23" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="27" end1="29" start2="24" end2="35" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>

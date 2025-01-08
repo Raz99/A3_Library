@@ -38,17 +38,25 @@ class Book(ABC):
             "author": self.author,
             "is_loaned": self.is_loaned,
             "copies": self.copies,
-            "genre": self.__class__.__name__,
+            "genre": self.get_genre(),
             "year": self.year,
             "copies_dict": self.is_loaned_dict
         }
 
     def get_genre(self):
-        return self.__class__.__name__
+        class_name = self.__class__.__name__
+        result = class_name
 
-    def add_copy(self):
-        self.is_loaned_dict += {self.copies: "No"}
-        self.copies += 1
+        for i in range(1,len(class_name)):
+            if class_name[i].isupper():
+                result = class_name[:i] + " " + class_name[i:]
+
+        return result
+
+    def add_copies(self, amount):
+        for _ in range(amount):
+            self.is_loaned_dict.update({self.copies: "No"})
+            self.copies += 1
 
     def __eq__(self, other):
         if isinstance(other,Book):

@@ -14,7 +14,7 @@ class Librarian:
         for book in shared.books:
             # If book already exists
             if new_book.__eq__(book):
-                book.add_copy()
+                book.add_copies(int(copies))
                 BooksFileManagement.update()
                 return
 
