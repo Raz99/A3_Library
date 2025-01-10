@@ -8,8 +8,17 @@ class Librarian:
         self.username = username
         self.password = password
 
-    def add_book(self, title, author, is_loaned, copies, genre, year):
-        new_book = BookFactory.create_book(title, author, is_loaned, int(copies), BookType(genre), int(year))
+    def to_dict(self):
+        return {
+            "username": self.username,
+            "password": self.password
+        }
+
+    def get_username(self):
+        return self.username
+
+    def add_book(self, title, author, copies, genre, year):
+        new_book = BookFactory.create_book(title, author, "No", int(copies), BookType(genre), int(year))
 
         for book in shared.books:
             # If book already exists
@@ -22,14 +31,18 @@ class Librarian:
         shared.books.append(new_book)
         BooksFileManagement.add_book(new_book)
 
-    def remove_book(self, title, author, is_loaned, copies, genre, year):
-        book_to_remove = BookFactory.create_book(title, author, is_loaned, int(copies), BookType(genre), int(year))
+    def remove_book(self, title, author, genre, year):
+        book_to_remove = BookFactory.create_book(title, author, "No", 1, BookType(genre), int(year))
         for book in shared.books:
             if book_to_remove.__eq__(book):
                 shared.books.remove(book_to_remove)
                 BooksFileManagement.update()
                 return
         print("the book is not found")
+
+
+
+
 
 
 

@@ -60,5 +60,5 @@ class Book(ABC):
 
     def __eq__(self, other):
         if isinstance(other,Book):
-            return self.title == other.title and self.author == other.author and self.year == other.year and self.get_genre() == other.get_genre()
+            return self.title == other.title and self.author == other.author and self.get_genre() == other.get_genre() and self.year == other.year
         return False

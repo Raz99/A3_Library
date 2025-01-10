@@ -5,11 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd64134e-7d23-4291-a889-a4d6ab46e6bb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/system/gui/GUI.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/system/gui/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/system/files_management/UsersFileManagement.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Book.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/Librarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/Librarian.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/gui/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/gui/GUI.py" afterDir="false" />
     </list>
-    <list id="50532b9d-f055-446e-84ba-3f98fd9d8b38" name="Changes by shirb" comment="" />
+    <list id="50532b9d-f055-446e-84ba-3f98fd9d8b38" name="Changes by shirb" comment="">
+      <change beforePath="$PROJECT_DIR$/system/Librarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/Librarian.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/Management.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/Management.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/shared.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/shared.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +45,16 @@
     &quot;accountId&quot;: &quot;c16a7655-c352-4a75-915a-ad7786db8404&quot;
   }
 }</component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/system/Librarian.py">
+      <ranges>
+        <range start1="9" end1="9" start2="9" end2="18" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
+        <range start1="10" end1="12" start2="19" end2="21" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="24" end1="26" start2="33" end2="35" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="32" end1="32" start2="41" end2="45" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -50,9 +68,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.BooksFileManagement.executor": "Run",
     "Python.GUI.executor": "Run",
+    "Python.LibraryGUI.executor": "Run",
     "Python.Management (1).executor": "Run",
     "Python.Management.executor": "Run",
+    "Python.UsersFileManagement.executor": "Run",
+    "Python.__init__.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -78,11 +100,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/system" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/system/files_management" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\razco\Documents\GitHub\A3_Library\system\BooksFileManagement.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -135,7 +157,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Management (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Management" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="A3_Library" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -149,6 +171,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/system/Management.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UsersFileManagement" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="A3_Library" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/system/files_management" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/system/files_management/UsersFileManagement.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -182,8 +226,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.GUI" />
+        <item itemvalue="Python.Management" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.BooksFileManagement" />
+        <item itemvalue="Python.UsersFileManagement" />
         <item itemvalue="Python.BooksFileManagement" />
       </list>
     </recent_temporary>
@@ -205,5 +250,16 @@
       <updated>1736186364528</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/system/Management.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

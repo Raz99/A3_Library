@@ -4,7 +4,7 @@ from books import *
 from books.BookFactory import BookFactory
 from system import shared
 
-BOOKS_FILE_PATH = "data/books.csv"
+BOOKS_FILE_PATH = r"data\books.csv"
 FIELD_NAMES = ['title', 'author', 'is_loaned', 'copies', 'genre', 'year',  # Must columns
                'copies_dict']
 
