@@ -126,8 +126,8 @@ class GUI:
                 year = year_entry.get()
                 genre = genre_combo.get()
 
-                # Ensures that all inputs are used
-                if not all([title, author, year, genre]):
+                # Ensures that all inputs are in use
+                if not (title and author and year and genre):
                     messagebox.showerror("Error", "All fields are required!")
                     return
 

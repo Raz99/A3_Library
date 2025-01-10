@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd64134e-7d23-4291-a889-a4d6ab46e6bb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/system/files_management/UsersFileManagement.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Book.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/Librarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/Librarian.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system/gui/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/gui/GUI.py" afterDir="false" />
     </list>
-    <list id="50532b9d-f055-446e-84ba-3f98fd9d8b38" name="Changes by shirb" comment="">
-      <change beforePath="$PROJECT_DIR$/system/Librarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/Librarian.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/Management.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/Management.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/shared.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/shared.py" afterDir="false" />
-    </list>
+    <list id="50532b9d-f055-446e-84ba-3f98fd9d8b38" name="Changes by shirb" comment="Friday's commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,16 +36,6 @@
     &quot;accountId&quot;: &quot;c16a7655-c352-4a75-915a-ad7786db8404&quot;
   }
 }</component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/system/Librarian.py">
-      <ranges>
-        <range start1="9" end1="9" start2="9" end2="18" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="10" end1="12" start2="19" end2="21" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="24" end1="26" start2="33" end2="35" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="32" end1="32" start2="41" end2="45" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -249,7 +230,20 @@
       <option name="presentableId" value="Default" />
       <updated>1736186364528</updated>
     </task>
+    <task id="LOCAL‎-00001" summary="Friday's commit">
+      <option name="closed" value="true" />
+      <created>1736501084124</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL‎-00001" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1736501084124</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Friday's commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Friday's commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
