@@ -1,4 +1,4 @@
-from system.files_management import BooksFileManagement, UsersFileManagement
+from system.files_management import BooksFileManagement, UsersFileManagement,AvailableBooksFileManagment
 from system import shared
 from system.Librarian import Librarian
 
@@ -6,6 +6,7 @@ class Management:
     def __init__(self):
         BooksFileManagement.setup()
         UsersFileManagement.create_file_users()
+        AvailableBooksFileManagment.update()
 
     def add_user(self, username, password):
         for user in shared.users:

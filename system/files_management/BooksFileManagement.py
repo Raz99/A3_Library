@@ -5,8 +5,6 @@ from books.BookFactory import BookFactory
 from system import shared
 
 BOOKS_FILE_PATH = r"data\books.csv"
-FIELD_NAMES = ['title', 'author', 'is_loaned', 'copies', 'genre', 'year',  # Must columns
-               'copies_dict']
 
 def setup():
     # Creates a list of books based on the given file
@@ -25,7 +23,7 @@ def setup():
 
 def update():
     with open(BOOKS_FILE_PATH, "w", newline="") as file:
-        writer = csv.DictWriter(file, fieldnames=FIELD_NAMES)
+        writer = csv.DictWriter(file, fieldnames=shared.FIELD_NAMES)
         writer.writeheader()
         for book in shared.books:
             writer.writerow(book.to_dict())
@@ -33,5 +31,5 @@ def update():
 
 def add_book(new_book):
     with open(BOOKS_FILE_PATH, 'a') as file:
-        writer = csv.DictWriter(file, fieldnames=FIELD_NAMES)
+        writer = csv.DictWriter(file, fieldnames=shared.FIELD_NAMES)
         writer.writerow(new_book.to_dict())

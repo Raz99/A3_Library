@@ -1,7 +1,7 @@
 from books import *
 from books.BookFactory import BookFactory
 from system import shared
-from system.files_management import BooksFileManagement
+from system.files_management import BooksFileManagement, AvailableBooksFileManagment
 
 class Librarian:
     def __init__(self, username, password):
@@ -21,13 +21,13 @@ class Librarian:
         new_book = BookFactory.create_book(title, author, "No", int(copies), BookType(genre), int(year))
 
         for book in shared.books:
-            # If book already exists
+            # If the book already exists, then update its number of copies
             if new_book.__eq__(book):
                 book.add_copies(int(copies))
                 BooksFileManagement.update()
                 return
 
-        # If the book does not exist
+        # If the book does not exist, then add it as a new book
         shared.books.append(new_book)
         BooksFileManagement.add_book(new_book)
 
@@ -40,13 +40,5 @@ class Librarian:
                 return
         print("the book is not found")
 
-
-
-
-
-
-
-
-
-
-
+    # def loaned_books(self, title, author, genre, year):
+    #     book_to_loaned =

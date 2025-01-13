@@ -40,7 +40,7 @@ class Book(ABC):
             "copies": self.copies,
             "genre": self.get_genre(),
             "year": self.year,
-            "copies_dict": self.is_loaned_dict
+            "copies_dict (is_loaned)": self.is_loaned_dict
         }
 
     def get_genre(self):
@@ -52,6 +52,7 @@ class Book(ABC):
                 result = class_name[:i] + " " + class_name[i:]
 
         return result
+
 
     def add_copies(self, amount):
         for _ in range(amount):

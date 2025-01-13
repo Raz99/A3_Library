@@ -3,6 +3,7 @@ from tkinter import ttk
 from tkinter import messagebox
 from books import BookType
 from system.Librarian import Librarian
+from system.files_management import Logger
 
 TITLE = "Library Management System"
 ICON_PATH = "icon.png"
@@ -10,6 +11,7 @@ ICON_PATH = "icon.png"
 class GUI:
     def __init__(self, librarian):
         self.librarian = librarian
+        Logger.create_logger()
         self.window = tk.Tk()
         self.window.title(TITLE)
         icon = tk.PhotoImage(file=ICON_PATH)
@@ -72,17 +74,18 @@ class GUI:
                 year = year_entry.get()
 
                 # Ensures that all inputs are used
-                if not all([title, author, copies, year, genre]):
+                if not (title and author and year and genre):
                     messagebox.showerror("Error", "All fields are required!")
                     return
 
                 # Adds a book
                 self.librarian.add_book(title, author, copies, genre, year)
-
+                Logger.log_success('Book added successfully')
                 messagebox.showinfo("Success", "Book added successfully!")
                 add_book_window.destroy()
 
             except Exception as e:
+                Logger.log_fail('Failed to add book')
                 messagebox.showerror("Error", f"An error occurred: {str(e)}")
 
     def show_remove_book_window(self):
@@ -133,11 +136,12 @@ class GUI:
 
                 # Adds a book
                 self.librarian.remove_book(title, author, genre, year)
-
+                Logger.log_success('Book removed successfully')
                 messagebox.showinfo("Success", "Book added successfully!")
                 remove_book_window.destroy()
 
             except Exception as e:
+                Logger.log_fail('Failed to remove book')
                 messagebox.showerror("Error", f"An error occurred: {str(e)}")
 
 def main():

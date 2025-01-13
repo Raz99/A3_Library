@@ -10,7 +10,5 @@ def main():
     m.add_user("raz","5555")
     m.remove_user("shir")
 
-
-
 if __name__ == '__main__':
     main()

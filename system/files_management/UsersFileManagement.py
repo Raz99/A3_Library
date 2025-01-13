@@ -20,8 +20,3 @@ def update():
         writer.writeheader()
         for user in users:
             writer.writerow(user.to_dict())
-
-
-
-
-
