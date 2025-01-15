@@ -18,6 +18,9 @@ class Book(ABC):
         print("There are no available copies of this book.")
         return False
 
+    def set_is_loanded_dict(self,new_dict):
+        self.is_loaned_dict=new_dict
+
     def return_book(self):
         for i in range(self.copies):
             if self.is_loaned_dict[i] == "Yes":
@@ -32,6 +35,12 @@ class Book(ABC):
                 return True
         return False
 
+    def is_loand(self):
+        for i in range(self.copies):
+            if self.is_loaned_dict[i] == "Yes":
+                return True
+        return False
+
     def to_dict(self):
         return {
             "title": self.title,
@@ -40,8 +49,11 @@ class Book(ABC):
             "copies": self.copies,
             "genre": self.get_genre(),
             "year": self.year,
-            "copies_dict (is_loaned)": self.is_loaned_dict
+            "is_loaned_dict": self.is_loaned_dict
         }
+
+    def get_loaned_dict(self):
+        return self.is_loaned_dict
 
     def get_genre(self):
         class_name = self.__class__.__name__
@@ -63,3 +75,18 @@ class Book(ABC):
         if isinstance(other,Book):
             return self.title == other.title and self.author == other.author and self.get_genre() == other.get_genre() and self.year == other.year
         return False
+
+    def get_title(self):
+        return self.title
+
+    def get_author(self):
+        return self.author
+
+    def get_year(self):
+        return self.year
+
+    def get_copies(self):
+        return self.copies
+
+    def get_is_lound(self):
+        return self.is_loaned
