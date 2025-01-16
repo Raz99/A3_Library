@@ -1,6 +1,5 @@
 import tkinter as tk
-from tkinter import ttk
-from tkinter import messagebox
+from tkinter import messagebox, ttk
 from books import BookType
 from system.Management import Management
 
@@ -8,80 +7,77 @@ TITLE = "Library Management System"
 ICON_PATH = "icon.png"
 
 class AbstractForm:
-    def __init__(self):
+    def __init__(self, root):
         """Abstract form with common layout logic."""
-        self.root = tk.Tk()
+        self.root = root
+        self.icon = tk.PhotoImage(file=ICON_PATH)  # Keep a reference to the icon
         self.create_common_widgets()
         self.create_specific_widgets()
-        self.root.mainloop()
 
     def create_common_widgets(self):
         """Widgets common to all forms."""
         self.root.title(TITLE)
-        icon = tk.PhotoImage(file=ICON_PATH)
-        self.root.iconphoto(True, icon)
+        self.root.iconphoto(True, self.icon)
 
     def create_specific_widgets(self):
         """Abstract method for child classes to implement form-specific widgets."""
         raise NotImplementedError("Subclasses must implement this method")
 
-class LoginForm(AbstractForm):
-    def __init__(self):
-        super().__init__()
-        self.username_label = None
-        self.username_entry = None
-        self.password_label = None
-        self.password_entry = None
-        self.submit_button = None
+class OpeningForm(AbstractForm):
+    def create_specific_widgets(self):
+        login_button = tk.Button(self.root, text="Log in", command=lambda: LoginForm(self.root))
+        login_button.pack()
+        register_button = tk.Button(self.root, text="Register", command=lambda: SignupForm(self.root))
+        register_button.pack()
 
+
+class LoginForm(AbstractForm):
     def create_specific_widgets(self):
         """Implement specific widgets for the login form."""
-        self.username_label = tk.Label(self.root, text="Username:")
+        self.login_window = tk.Tk()
+        self.login_window.title("Log in")
+
+        self.username_label = tk.Label(self.login_window, text="Username:")
         self.username_label.pack()
-        self.username_entry = tk.Entry(self.root)
+        self.username_entry = tk.Entry(self.login_window)
         self.username_entry.pack()
 
-        self.password_label = tk.Label(self.root, text="Password:")
+        self.password_label = tk.Label(self.login_window, text="Password:")
         self.password_label.pack()
-        self.password_entry = tk.Entry(self.root, show="*")
+        self.password_entry = tk.Entry(self.login_window, show="*")
         self.password_entry.pack()
 
-        self.submit_button = tk.Button(self.root, text="Login", command=self.handle_submit)
+        self.submit_button = tk.Button(self.login_window, text="Login", command=self.handle_submit)
         self.submit_button.pack()
 
     def handle_submit(self):
         """Handle login form submission."""
         username = self.username_entry.get()
         password = self.password_entry.get()
-        if Management.connect_user(username, password):
+        if Management.login(username, password):
             print(f"Login submitted: {username}, {password}")
-            MenuForm(Management.add_user(username,password))
+            MenuForm(Management.add_user(username, password))
         else:
             print("Login failed")
 
 
 class SignupForm(AbstractForm):
-    def __init__(self):
-        super().__init__()
-        self.name_label = None
-        self.name_entry = None
-        self.password_label = None
-        self.password_entry = None
-        self.submit_button = None
-
     def create_specific_widgets(self):
         """Implement specific widgets for the signup form."""
-        self.name_label = tk.Label(self.root, text="Name:")
+        self.signup_window = tk.Tk()
+        self.signup_window.title("Sign up")
+
+        self.name_label = tk.Label(self.signup_window, text="Name:")
         self.name_label.pack()
-        self.name_entry = tk.Entry(self.root)
+        self.name_entry = tk.Entry(self.signup_window)
         self.name_entry.pack()
 
-        self.password_label = tk.Label(self.root, text="Password:")
+        self.password_label = tk.Label(self.signup_window, text="Password:")
         self.password_label.pack()
-        self.password_entry = tk.Entry(self.root)
+        self.password_entry = tk.Entry(self.signup_window, show="*")
         self.password_entry.pack()
 
-        self.submit_button = tk.Button(self.root, text="Sign Up", command=self.handle_submit)
+        self.submit_button = tk.Button(self.signup_window, text="Sign Up", command=self.handle_submit)
         self.submit_button.pack()
 
     def handle_submit(self):
@@ -94,7 +90,7 @@ class SignupForm(AbstractForm):
 
 class MenuForm(AbstractForm):
     def __init__(self, user):
-        super().__init__()
+        super().__init__(self.root)
         self.user = user
 
     def create_specific_widgets(self):
@@ -102,6 +98,7 @@ class MenuForm(AbstractForm):
         add_book_button.pack()
         remove_book_button = tk.Button(self.root, text="Remove Book", command=lambda: RemoveBookForm(self.user))
         remove_book_button.pack()
+
 
 class AddBookForm(MenuForm):
     def __init__(self, user):
@@ -151,31 +148,31 @@ class AddBookForm(MenuForm):
         self.year_entry.pack()
 
         # Adds submit button
-        submit_button = tk.Button(self.add_book_window, text="Submit",
-                                  command=lambda: self.handle_submit)
+        submit_button = tk.Button(self.add_book_window, text="Submit", command=self.handle_submit)
         submit_button.pack(pady=20)
 
     def handle_submit(self):
-            try:
-                # Gets values from entries
-                title = self.title_entry.get()
-                author = self.author_entry.get()
-                copies = self.copies_entry.get()
-                genre = self.genre_combo.get()
-                year = self.year_entry.get()
+        try:
+            # Gets values from entries
+            title = self.title_entry.get()
+            author = self.author_entry.get()
+            copies = self.copies_entry.get()
+            genre = self.genre_combo.get()
+            year = self.year_entry.get()
 
-                # Ensures that all inputs are used
-                if not (title and author and year and genre):
-                    messagebox.showerror("Error", "All fields are required!")
-                    return
+            # Ensures that all inputs are used
+            if not (title and author and year and genre):
+                messagebox.showerror("Error", "All fields are required!")
+                return
 
-                # Adds a book
-                self.user.add_book(title, author, copies, genre, year)
-                messagebox.showinfo("Success", "Book added successfully!")
-                self.add_book_window.destroy()
+            # Adds a book
+            self.user.add_book(title, author, copies, genre, year)
+            messagebox.showinfo("Success", "Book added successfully!")
+            self.add_book_window.destroy()
 
-            except Exception as e:
-                messagebox.showerror("Error", f"An error occurred: {str(e)}")
+        except Exception as e:
+            messagebox.showerror("Error", f"An error occurred: {str(e)}")
+
 
 class RemoveBookForm(MenuForm):
     def __init__(self, user):
@@ -220,27 +217,31 @@ class RemoveBookForm(MenuForm):
         self.year_entry.pack()
 
         # Adds submit button
-        submit_button = tk.Button(self.remove_book_window, text="Submit",
-                                  command=lambda: self.handle_submit)
+        submit_button = tk.Button(self.remove_book_window, text="Submit", command=self.handle_submit)
         submit_button.pack(pady=20)
 
     def handle_submit(self):
-            try:
-                # Gets values from entries
-                title = self.title_entry.get()
-                author = self.author_entry.get()
-                year = self.year_entry.get()
-                genre = self.genre_combo.get()
+        try:
+            # Gets values from entries
+            title = self.title_entry.get()
+            author = self.author_entry.get()
+            year = self.year_entry.get()
+            genre = self.genre_combo.get()
 
-                # Ensures that all inputs are in use
-                if not (title and author and year and genre):
-                    messagebox.showerror("Error", "All fields are required!")
-                    return
+            # Ensures that all inputs are in use
+            if not (title and author and year and genre):
+                messagebox.showerror("Error", "All fields are required!")
+                return
 
-                # Adds a book
-                self.user.remove_book(title, author, genre, year)
-                messagebox.showinfo("Success", "Book added successfully!")
-                self.remove_book_window.destroy()
+            # Adds a book
+            self.user.remove_book(title, author, genre, year)
+            messagebox.showinfo("Success", "Book added successfully!")
+            self.remove_book_window.destroy()
 
-            except Exception as e:
-                messagebox.showerror("Error", f"An error occurred: {str(e)}")
+        except Exception as e:
+            messagebox.showerror("Error", f"An error occurred: {str(e)}")
+
+if __name__ == '__main__':
+    window = tk.Tk()
+    app = OpeningForm(window)
+    window.mainloop()

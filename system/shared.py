@@ -2,5 +2,3 @@ FIELD_NAMES = ['title', 'author', 'is_loaned', 'copies', 'genre', 'year',  # Mus
                'is_loaned_dict']
 books = []
 users = []
-available_books = []
-lound_books =[]

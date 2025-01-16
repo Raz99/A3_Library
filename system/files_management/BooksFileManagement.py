@@ -2,6 +2,7 @@ import pandas as pd
 from books import *
 from books.BookFactory import BookFactory
 from system import shared
+from system.files_management import AvailableBooksFileManagment, LoanedBooksFileManagement
 
 BOOKS_FILE_PATH = r"data\books.csv"
 
@@ -33,9 +34,16 @@ def update():
     df = pd.DataFrame(books_data, columns=shared.FIELD_NAMES)
     # Write to CSV file
     df.to_csv(BOOKS_FILE_PATH, index=False)
+    update_files()
 
 
 def add_book(new_book):
     # Convert a single book to DataFrame and append to existing CSV
     book_data = pd.DataFrame([new_book.to_dict()], columns=shared.FIELD_NAMES)
     book_data.to_csv(BOOKS_FILE_PATH, mode='a', header=False, index=False)
+    update_files()
+
+
+def update_files():
+    AvailableBooksFileManagment.update()
+    LoanedBooksFileManagement.update()

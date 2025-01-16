@@ -5,26 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd64134e-7d23-4291-a889-a4d6ab46e6bb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/system/gui/AbstractForm.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/system/files_management/LoanedBooksFileManagement.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Book.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/available_books.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/data/books.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/data/users.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/Librarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/User.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system/Management.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/Management.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/User.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system/files_management/AvailableBooksFileManagment.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/AvailableBooksFileManagment.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/files_management/Logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/Logger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/files_management/UsersFileManagement.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/UsersFileManagement.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/gui/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/gui/GUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/shared.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/shared.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/gui/AbstractForm.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/gui/GUI.py" afterDir="false" />
     </list>
     <list id="50532b9d-f055-446e-84ba-3f98fd9d8b38" name="Changes by shirb" comment="Friday's commit">
       <change beforePath="$PROJECT_DIR$/books/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Book.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/Librarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/User.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/Management.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/Management.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/User.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/files_management/AvailableBooksFileManagment.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/AvailableBooksFileManagment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system/shared.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/shared.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,43 +53,39 @@
   }
 }</component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/system/shared.py">
+    <file path="$PROJECT_DIR$/system/files_management/AvailableBooksFileManagment.py">
       <ranges>
-        <range start1="1" end1="2" start2="1" end2="2" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="5" end1="5" start2="5" end2="6" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/system/Management.py">
-      <ranges>
-        <range start1="2" end1="3" start2="2" end2="3" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="13" end1="18" start2="13" end2="18" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="19" end1="19" start2="19" end2="20" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="22" end1="23" start2="23" end2="24" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="25" end1="26" start2="26" end2="27" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="27" end1="29" start2="28" end2="29" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="30" end1="35" start2="30" end2="35" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="36" end1="39" start2="36" end2="36" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/books/Book.py">
-      <ranges>
-        <range start1="19" end1="19" start2="19" end2="22" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="33" end1="33" start2="36" end2="42" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="42" end1="43" start2="51" end2="52" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="44" end1="44" start2="53" end2="56" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="65" end1="65" start2="77" end2="92" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
+        <range start1="1" end1="2" start2="1" end2="2" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
+        <range start1="5" end1="6" start2="5" end2="5" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="7" end1="19" start2="6" end2="13" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
       </ranges>
     </file>
     <file path="$PROJECT_DIR$/system/User.py">
       <ranges>
-        <range start1="5" end1="6" start2="5" end2="6" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="18" end1="18" start2="18" end2="21" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="21" end1="22" start2="24" end2="24" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="26" end1="26" start2="28" end2="29" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="31" end1="31" start2="34" end2="36" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="37" end1="37" start2="42" end2="45" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="38" end1="38" start2="46" end2="47" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="42" end1="44" start2="51" end2="70" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="28" end1="29" start2="28" end2="28" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
+        <range start1="34" end1="36" start2="33" end2="33" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
+        <range start1="42" end1="43" start2="39" end2="40" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
+        <range start1="45" end1="48" start2="42" end2="45" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
+        <range start1="51" end1="52" start2="48" end2="49" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="53" end1="54" start2="50" end2="51" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
+        <range start1="56" end1="59" start2="53" end2="56" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
+        <range start1="60" end1="61" start2="57" end2="58" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
+        <range start1="63" end1="66" start2="60" end2="61" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/main.py">
+      <ranges>
+        <range start1="0" end1="0" start2="0" end2="1" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="1" end1="1" start2="2" end2="3" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="3" end1="5" start2="5" end2="8" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="8" end1="11" start2="11" end2="16" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/system/files_management/BooksFileManagement.py">
+      <ranges>
+        <range start1="4" end1="4" start2="4" end2="5" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
+        <range start1="35" end1="35" start2="36" end2="37" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
+        <range start1="41" end1="41" start2="43" end2="49" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
       </ranges>
     </file>
   </component>
@@ -108,13 +102,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.AbstractForm.executor": "Run",
     "Python.BooksFileManagement.executor": "Run",
+    "Python.GUI (1).executor": "Run",
     "Python.GUI.executor": "Run",
     "Python.LibraryGUI.executor": "Run",
     "Python.Management (1).executor": "Run",
     "Python.Management.executor": "Run",
     "Python.UsersFileManagement.executor": "Run",
     "Python.__init__.executor": "Run",
+    "Python.ex1.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -130,29 +127,7 @@
       <recent name="C:\Users\razco\Documents\GitHub\A3_Library\Books" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.GUI">
-    <configuration name="BooksFileManagement" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="A3_Library" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/system/files_management" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.main">
     <configuration name="BooksFileManagement" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="A3_Library" />
       <option name="ENV_FILES" value="" />
@@ -167,6 +142,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="C:\Users\razco\Documents\GitHub\A3_Library\system\files_management\BooksFileManagement.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="GUI (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="A3_Library" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/system/gui" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/system/gui/GUI.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -197,6 +194,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="GUI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="A3_Library" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/system/gui" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\razco\Documents\GitHub\A3_Library\system\gui\GUI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Management" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="A3_Library" />
       <option name="ENV_FILES" value="" />
@@ -219,7 +238,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="UsersFileManagement" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="ex1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="A3_Library" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -228,11 +247,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/system/files_management" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/OneDrive - Ariel University/תשפה/סמסטר א/תכנות מונחה עצמים/הרצאות/הרצאה 11" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/system/files_management/UsersFileManagement.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/OneDrive - Ariel University/תשפה/סמסטר א/תכנות מונחה עצמים/הרצאות/הרצאה 11/ex1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -265,11 +284,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.GUI" />
+        <item itemvalue="Python.GUI (1)" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.Management" />
-        <item itemvalue="Python.UsersFileManagement" />
-        <item itemvalue="Python.BooksFileManagement" />
+        <item itemvalue="Python.GUI" />
+        <item itemvalue="Python.ex1" />
+        <item itemvalue="Python.GUI" />
       </list>
     </recent_temporary>
   </component>

@@ -18,8 +18,11 @@ class Book(ABC):
         print("There are no available copies of this book.")
         return False
 
-    def set_is_loanded_dict(self,new_dict):
-        self.is_loaned_dict=new_dict
+    def set_is_loanded_dict(self, new_dict):
+        self.is_loaned_dict.update(new_dict)
+
+    def set_is_loaned(self, value):
+        self.is_loaned = value
 
     def return_book(self):
         for i in range(self.copies):
@@ -30,14 +33,14 @@ class Book(ABC):
         return False
 
     def is_available(self):
-        for i in range(self.copies):
-            if self.is_loaned_dict[i] == "No":
+        for value in self.is_loaned_dict.values():
+            if value == "No":
                 return True
         return False
 
-    def is_loand(self):
-        for i in range(self.copies):
-            if self.is_loaned_dict[i] == "Yes":
+    def is_book_loand(self):
+        for key, value in self.is_loaned_dict.items():
+            if value == "Yes":
                 return True
         return False
 
