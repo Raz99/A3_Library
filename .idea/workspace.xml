@@ -4,25 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd64134e-7d23-4291-a889-a4d6ab46e6bb" name="Changes" comment="">
+    <list default="true" id="bd64134e-7d23-4291-a889-a4d6ab46e6bb" name="Changes" comment="Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/books/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Book.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/available_books.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/books.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/loaned_books.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/users.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/available_books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/available_books.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/loaned_books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/loaned_books.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/Management.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/Management.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/User.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/files_management/UsersFileManagement.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/UsersFileManagement.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/gui/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/gui/GUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" afterDir="false" />
     </list>
-    <list id="50532b9d-f055-446e-84ba-3f98fd9d8b38" name="Changes by shirb" comment="Friday's commit">
+    <list id="50532b9d-f055-446e-84ba-3f98fd9d8b38" name="Changes by shirb" comment="commit">
       <change beforePath="$PROJECT_DIR$/books/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Book.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/Management.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/Management.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/User.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/files_management/UsersFileManagement.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/UsersFileManagement.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,52 +46,18 @@
   }
 }</component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/books/Book.py">
-      <ranges>
-        <range start1="40" end1="41" start2="40" end2="41" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="78" end1="79" start2="78" end2="80" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="93" end1="94" start2="94" end2="95" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-      </ranges>
-    </file>
     <file path="$PROJECT_DIR$/main.py">
       <ranges>
-        <range start1="0" end1="1" start2="0" end2="0" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="2" end1="2" start2="1" end2="4" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="3" end1="3" start2="5" end2="11" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="6" end1="7" start2="14" end2="18" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="8" end1="16" start2="19" end2="32" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="19" end1="19" start2="35" end2="36" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="14" end1="15" start2="14" end2="15" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="19" end1="20" start2="19" end2="20" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
+        <range start1="25" end1="28" start2="25" end2="28" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
       </ranges>
     </file>
-    <file path="$PROJECT_DIR$/system/Management.py">
+    <file path="$PROJECT_DIR$/books/Book.py">
       <ranges>
-        <range start1="9" end1="10" start2="9" end2="9" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="12" end1="12" start2="11" end2="12" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="54" end1="56" start2="54" end2="56" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="64" end1="65" start2="64" end2="65" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/system/User.py">
-      <ranges>
-        <range start1="35" end1="37" start2="35" end2="37" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="38" end1="40" start2="38" end2="40" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="43" end1="44" start2="43" end2="44" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="48" end1="50" start2="48" end2="50" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="51" end1="54" start2="51" end2="54" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="55" end1="57" start2="55" end2="57" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="60" end1="61" start2="60" end2="61" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="65" end1="66" start2="65" end2="82" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/system/files_management/UsersFileManagement.py">
-      <ranges>
-        <range start1="1" end1="2" start2="1" end2="3" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="3" end1="4" start2="4" end2="5" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="6" end1="6" start2="7" end2="16" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="11" end1="12" start2="21" end2="22" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="17" end1="18" start2="27" end2="28" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="22" end1="23" start2="32" end2="33" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="26" end1="27" start2="36" end2="37" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="11" end1="19" start2="11" end2="11" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="20" end1="22" start2="12" end2="14" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
+        <range start1="25" end1="33" start2="17" end2="17" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
       </ranges>
     </file>
   </component>
@@ -112,24 +72,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.AbstractForm.executor": "Run",
-    "Python.BooksFileManagement.executor": "Run",
-    "Python.GUI (1).executor": "Run",
-    "Python.GUI.executor": "Run",
-    "Python.LibraryGUI.executor": "Run",
-    "Python.Management (1).executor": "Run",
-    "Python.Management.executor": "Run",
-    "Python.UsersFileManagement.executor": "Run",
-    "Python.__init__.executor": "Run",
-    "Python.ex1.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.AbstractForm.executor&quot;: &quot;Run&quot;,
+    &quot;Python.BooksFileManagement.executor&quot;: &quot;Run&quot;,
+    &quot;Python.GUI (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.GUI.executor&quot;: &quot;Run&quot;,
+    &quot;Python.LibraryGUI.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Management (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Management.executor&quot;: &quot;Run&quot;,
+    &quot;Python.UsersFileManagement.executor&quot;: &quot;Run&quot;,
+    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ex1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\razco\Documents\GitHub\A3_Library\system\gui" />
@@ -328,11 +288,29 @@
       <option name="project" value="LOCAL‎" />
       <updated>1736501084124</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL‎-00002" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1737231453257</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL‎-00002" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1737231453257</updated>
+    </task>
+    <task id="LOCAL‎-00003" summary="commit">
+      <option name="closed" value="true" />
+      <created>1737231570300</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL‎-00003" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1737231570300</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Commit" />
     <MESSAGE value="Friday's commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Friday's commit" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
 </project>

@@ -1,3 +1,5 @@
+import ast
+
 import pandas as pd
 from books import *
 from books.BookFactory import BookFactory
@@ -22,11 +24,18 @@ def setup():
         )
         shared.books.append(current)
 
-    # Adds a new column and writes to file
-    new_values = [book.get_loaned_dict() for book in shared.books]
-    df['is_loaned_dict'] = new_values
-    df.to_csv(BOOKS_FILE_PATH, index=False)
+    # If the column is_loaned_dict is not in the CSV file, then add it
+    if not 'is_loaned_dict' in df.columns:
+        # Adds a new column and writes to file
+        new_values = [book.get_loaned_dict() for book in shared.books]
+        df['is_loaned_dict'] = new_values
+        df.to_csv(BOOKS_FILE_PATH, index=False)
 
+    # If the column is_loaned_dict is in the CSV file, then update the books
+    else:
+        for i, row in df.iterrows():
+            dict_data = ast.literal_eval(row["is_loaned_dict"])
+            shared.books[i].set_is_loaned_dict(dict_data)
 
 def update():
     # Convert list of books to a pandas DataFrame

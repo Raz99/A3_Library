@@ -12,23 +12,23 @@ def gui_test():
 
 def main():
     Management.setup()
-    # Management.add_user("shir", "1234")
+    Management.add_user("shir", "1234")
     # window = tk.Tk()
     # app = GUI.OpeningForm(window)
     # window.mainloop()
     user = shared.users[0]
-    # user.add_book("raz1","shir","5", "Fiction","1995")
+    #user.add_book("raz1","shir","5", "Fiction","1995")
     # user.add_book("raz1","shir","2", "Fiction","1995")
     # user.add_book("raz2", "shir", "2", "Fiction", "1995")
     # user.remove_book("raz2")
     # Management.add_user("raz", "123")
     # Management.remove_user("raz")
-    # user.lend_book("raz1")
-    # user.lend_book("raz1")
-    # user.remove_book("raz1") # Try to remove a book that is on loan
-    # user.return_book("raz1")
-    # user.return_book("raz1")
-    # user.return_book("raz1")
+    user.lend_book("raz1")
+    user.lend_book("raz1")
+    user.remove_book("raz1") # Try to remove a book that is on loan
+    user.return_book("raz1")
+    user.return_book("raz1")
+    user.return_book("raz1")
 
 
 if __name__ == '__main__':

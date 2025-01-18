@@ -10,27 +10,11 @@ class Book(ABC):
         self.copies = copies
         self.year = year
 
-    def loan_book(self):
-        for i in range(self.copies):
-            if self.is_loaned_dict[i] == "No":
-                self.is_loaned_dict[i] = "Yes"
-                return True
-        print("There are no available copies of this book.")
-        return False
-
-    def set_is_loanded_dict(self, new_dict):
-        self.is_loaned_dict.update(new_dict)
+    def set_is_loaned_dict(self, new_dict):
+        self.is_loaned_dict = new_dict
 
     def set_is_loaned(self, value):
         self.is_loaned = value
-
-    def return_book(self):
-        for i in range(self.copies):
-            if self.is_loaned_dict[i] == "Yes":
-                self.is_loaned_dict[i] = "No"
-                return True
-        print("There are no loaned copies of this book.")
-        return False
 
     def is_available(self):
         for value in self.is_loaned_dict.values():
