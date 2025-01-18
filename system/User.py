@@ -50,36 +50,44 @@ class User:
         #book_to_loan = BookFactory.create_book(title, author, "No", 1, BookType(genre), int(year))
         for book in shared.books:
             if book.title == title:
-                book_dict = book.get_loaned_dict()
-                for key, value in book_dict.items():
-                    if value == 'No':
-                        book_dict[int(key)] = 'Yes'
-                        book.set_is_loaned_dict(book_dict)
-                        if book.get_is_loaned() != "Yes":
-                            book.set_is_loaned("Yes")
-                        BooksFileManagement.update()
-                        print("The loan was successful")
-                        return True
-                break
+
+                if not book.is_available():
+                    print("the book is not available to lend")
+                    return False
+
+                else:
+                    book_dict = book.get_loaned_dict()
+                    for key, value in book_dict.items():
+                        if value == 'No':
+                            book_dict[int(key)] = 'Yes'
+                            book.set_is_loaned_dict(book_dict)
+
+                            if book.get_is_loaned() != "Yes":
+                                book.set_is_loaned("Yes")
+
+                            BooksFileManagement.update()
+                            print("The loan was successful")
+                            return True
+                    break
 
         return False
-
 
     def return_book(self, title):
         for book in shared.books:
             if book.title == title:
-                 if book.get_is_loaned()== "Yes":
-                     book_dict = book.get_loaned_dict()
-                     for key, value in book_dict.items():
-                         if value == 'Yes':
-                             book_dict[key] = 'No'
-                             book.set_is_loaned_dict(book_dict)
-                             pass
-                     if not book.is_loaned_by_dict():
-                         book.set_is_loaned("No")
-                     BooksFileManagement.update()
-                     print("the remove is successful")
-                     return True
-                 else:
-                     print("the book is not loaned")
-                     return False
+                if book.get_is_loaned() == "Yes":
+                    book_dict = book.get_loaned_dict()
+                    print(book_dict)
+                    for key, value in book_dict.items():
+                        if value == 'Yes':
+                            book_dict[key] = 'No'
+                            book.set_is_loaned_dict(book_dict)
+                            if not book.is_loaned_by_dict():
+                                book.set_is_loaned("No")
+                            BooksFileManagement.update()
+                            print("the return is successful")
+                            return True
+                else:
+                    print("the book is not loaned")
+                    return False
+        return False
