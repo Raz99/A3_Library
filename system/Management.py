@@ -7,9 +7,9 @@ class Management:
     def setup():
         """Initialize the library system."""
         BooksFileManagement.setup()
-        UsersFileManagement.create_file_users()
         AvailableBooksFileManagment.update()
         LoanedBooksFileManagement.update()
+        UsersFileManagement.setup()
 
     @staticmethod
     def add_user(username, password):
@@ -52,8 +52,8 @@ class Management:
     def login(username, password):
         """Authenticate a user."""
         for user in shared.users:
-            if user.get_username() == username:
-                return user.get_password() == password
+            if user.get_username() == username and user.get_password() == password:
+                return True
         return False
 
     @staticmethod
@@ -62,4 +62,4 @@ class Management:
         for user in shared.users:
             if user.get_username() == username:
                 return user
-        return None
+        print("User not found")

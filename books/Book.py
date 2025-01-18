@@ -38,7 +38,7 @@ class Book(ABC):
                 return True
         return False
 
-    def is_book_loand(self):
+    def is_loaned_by_dict(self):
         for key, value in self.is_loaned_dict.items():
             if value == "Yes":
                 return True
@@ -76,7 +76,8 @@ class Book(ABC):
 
     def __eq__(self, other):
         if isinstance(other,Book):
-            return self.title == other.title and self.author == other.author and self.get_genre() == other.get_genre() and self.year == other.year
+            return self.title == other.title
+            #return self.title == other.title and self.author == other.author and self.get_genre() == other.get_genre() and self.year == other.year
         return False
 
     def get_title(self):
@@ -91,5 +92,5 @@ class Book(ABC):
     def get_copies(self):
         return self.copies
 
-    def get_is_lound(self):
+    def get_is_loaned(self):
         return self.is_loaned
