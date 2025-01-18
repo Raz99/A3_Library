@@ -23,10 +23,10 @@ def main():
     # user.remove_book("raz2")
     # Management.add_user("raz", "123")
     # Management.remove_user("raz")
-    user.lend_book("raz1")
-    user.lend_book("raz1")
-    user.remove_book("raz1") # Try to remove a book that is on loan
-    user.return_book("raz1")
+    # user.lend_book("raz1")
+    # user.lend_book("raz1")
+    # user.remove_book("raz1") # Try to remove a book that is on loan
+    # user.return_book("raz1")
     # user.return_book("raz1")
     # user.return_book("raz1")
 
