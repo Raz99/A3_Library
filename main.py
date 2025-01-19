@@ -19,7 +19,7 @@ def main():
     user = shared.users[0]
     # Management.add_user("shir2", "1234")
     # Management.login("shir2", "1234")
-    # user.add_book("raz1","shir","5", "Fiction","1995")
+    user.add_book("raz1","shir","5", "Fiction","1995")
     # user.add_book("raz1","shir","2", "Fiction","1995")
     # user.add_book("raz2", "shir", "2", "Fiction", "1995")
     # user.remove_book("raz2")
@@ -28,7 +28,7 @@ def main():
     # user.lend_book("raz1")
     # user.lend_book("raz1")
     # user.remove_book("raz1") # Try to remove a book that is on loan
-    user.return_book("raz1")
+    # user.return_book("raz1")
     # user.return_book("raz1")
     #user.return_book("raz1")
 

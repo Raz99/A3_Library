@@ -1,14 +1,15 @@
 import tkinter as tk
 from tkinter import messagebox, ttk
+from abc import ABC, abstractmethod
 from books import BookType
 from system import shared
 from system.Management import Management
-from abc import ABC, abstractmethod
 import pandas as pd
 from system.files_management.BooksFileManagement import BOOKS_FILE_PATH
 from system.files_management.AvailableBooksFileManagment import AVAILABLE_BOOKS_FILE_PATH
 from system.files_management.LoanedBooksFileManagement import LOANED_BOOKS_FILE_PATH
 from system.files_management.PopularityFileManagment import POPULAR_BOOKS_FILE_PATH
+from system.files_management import Logger
 
 TITLE = "Library Management System"
 ICON_PATH = r"system\gui\icon.png"
@@ -71,11 +72,13 @@ class LoginForm(AbstractForm):
         self.login_window.destroy()
         self.root.withdraw()  # Hide the main window
         if Management.login(username, password):
-            print(f"Login submitted: {username}, {password}")
+            print(f"Login submitted: {username}")
+            Logger.log_success("logged in successfully")
             MenuForm(self.root, Management.get_user(username))
         else:
             print("Login failed")
-            self.root.deiconify()  # Show the opening window again if login fails
+            Logger.log_fail("logged in fail")
+            self.root.deiconify()  # Show the opening window again if the login fails
 
 
 class SignupForm(AbstractForm):
@@ -101,11 +104,13 @@ class SignupForm(AbstractForm):
         """Handle signup form submission."""
         username = self.username_entry.get()
         password = self.password_entry.get()
-        Management.add_user(username, password)
-        print(f"Signup submitted: {username}, {password}")
-        self.signup_window.destroy()
-        self.root.withdraw()
-        MenuForm(self.root, Management.get_user(username))
+        if Management.add_user(username, password):
+            Logger.log_success("registered successfully")
+            self.signup_window.destroy()
+            self.root.withdraw()
+            MenuForm(self.root, Management.get_user(username))
+        else:
+            Logger.log_fail("registered fail")
 
 class MenuForm(AbstractForm):
     def __init__(self, root, user):
@@ -128,43 +133,40 @@ class MenuForm(AbstractForm):
         return_book_button.pack()
         logout_button = tk.Button(self.menu_window, text="Logout", command=self.open_logout)
         logout_button.pack()
-        popular_books_button = tk.Button(self.menu_window, text="Popular Books", command=self.open_popular_books)
-        popular_books_button.pack()
 
     def open_add_book(self):
-        self.menu_window.destroy()
-        add_book_form = AddBookForm(self.root, self.user)
+        self.menu_window.withdraw()  # Hide the menu window
+        add_book_form = AddBookForm(self.root, self.menu_window, self.user)
 
     def open_remove_book(self):
-        self.menu_window.destroy()
-        remove_book_form = RemoveBookForm(self.root, self.user)
+        self.menu_window.withdraw()  # Hide the menu window
+        remove_book_form = RemoveBookForm(self.root, self.menu_window, self.user)
 
     def open_search_book(self):
-        self.menu_window.destroy()
-        search_book_form = SearchBookForm(self.root, self.user)
+        self.menu_window.withdraw()  # Hide the menu window
+        search_book_form = SearchBookForm(self.root, self.menu_window, self.user)
 
     def open_view_books(self):
-        self.menu_window.destroy()
-        view_book_form = ViewBookForm(self.root, self.user)
+        self.menu_window.withdraw()  # Hide the menu window
+        view_book_form = ViewBookForm(self.root, self.menu_window, self.user)
 
     def open_lend_book(self):
-        self.menu_window.destroy()
-        lend_book_form = LendBookForm(self.root, self.user)
+        self.menu_window.withdraw()  # Hide the menu window
+        lend_book_form = LendBookForm(self.root, self.menu_window, self.user)
 
     def open_return_book(self):
-        self.menu_window.destroy()
-        return_book_form = ReturnBookForm(self.root, self.user)
+        self.menu_window.withdraw()  # Hide the menu window
+        return_book_form = ReturnBookForm(self.root, self.menu_window, self.user)
 
     def open_logout(self):
-        self.menu_window.destroy()
-        self.root.deiconify()
-
-    def open_popular_books(self):
-        pass
+        Logger.log_success("log out successful")
+        self.menu_window.destroy() # Close the menu window
+        self.root.deiconify() # Show the opening window again
 
 class AddBookForm(AbstractForm):
-    def __init__(self, root, user):
+    def __init__(self, root, menu, user):
         super().__init__(root)
+        self.menu_wind = menu
         self.user = user
 
     def create_specific_widgets(self):
@@ -220,15 +222,21 @@ class AddBookForm(AbstractForm):
             # Adds a book
             self.user.add_book(title, author, copies, genre, year)
             messagebox.showinfo("Success", "Book added successfully!")
+            Logger.log_success("book added successfully")
             self.add_book_window.destroy()
 
         except Exception as e:
             messagebox.showerror("Error", f"An error occurred: {str(e)}")
+            Logger.log_fail("book added fail")
+
+        finally:
+            self.menu_wind.deconify()  # Show the menu window again
 
 
 class RemoveBookForm(AbstractForm):
-    def __init__(self, root, user):
+    def __init__(self, root, menu, user):
         super().__init__(root)
+        self.menu_wind = menu
         self.user = user
 
     def create_specific_widgets(self):
@@ -257,18 +265,25 @@ class RemoveBookForm(AbstractForm):
                 messagebox.showerror("Error", "All fields are required!")
                 return
 
-            # Adds a book
-            self.user.remove_book(title)
-            messagebox.showinfo("Success", "Book removed successfully!")
-            self.remove_book_window.destroy()
-
+            # Removes a book
+            if self.user.remove_book(title):
+                messagebox.showinfo("Success", "Book removed successfully!")
+                Logger.log_success("book removed successfully")
+                self.remove_book_window.destroy()
+            else:
+                Logger.log_fail("book removed fail")
         except Exception as e:
             messagebox.showerror("Error", f"An error occurred: {str(e)}")
+            Logger.log_fail("book removed fail")
+
+        finally:
+            self.menu_wind.deconify()  # Show the menu window again
 
 
 class LendBookForm(AbstractForm):
-    def __init__(self, root, user):
+    def __init__(self, root, menu, user):
         super().__init__(root)
+        self.menu_wind = menu
         self.user = user
 
     def create_specific_widgets(self):
@@ -298,16 +313,23 @@ class LendBookForm(AbstractForm):
                 return
 
             # Adds a book
-            self.user.lend_book(title)
-            messagebox.showinfo("Success", "Book lent successfully!")
-            self.lend_book_window.destroy()
-
+            if self.user.lend_book(title):
+                messagebox.showinfo("Success", "Book lent successfully!")
+                Logger.log_success("book borrowed successfully")
+                self.lend_book_window.destroy()
+            else:
+                Logger.log_fail("book borrowed fail")
         except Exception as e:
             messagebox.showerror("Error", f"An error occurred: {str(e)}")
+            Logger.log_fail("book borrowed fail")
+
+        finally:
+            self.menu_wind.deconify()  # Show the menu window again
             
 class ReturnBookForm(AbstractForm):
-    def __init__(self, root, user):
+    def __init__(self, root, menu, user):
         super().__init__(root)
+        self.menu_wind = menu
         self.user = user
 
     def create_specific_widgets(self):
@@ -337,12 +359,18 @@ class ReturnBookForm(AbstractForm):
                 return
 
             # Adds a book
-            self.user.return_book(title)
-            messagebox.showinfo("Success", "Book returned successfully!")
-            self.return_book_form.destroy()
-
+            if self.user.return_book(title):
+                messagebox.showinfo("Success", "Book returned successfully!")
+                Logger.log_success("book returned successfully")
+                self.return_book_form.destroy()
+            else:
+                Logger.log_fail("book returned fail")
         except Exception as e:
             messagebox.showerror("Error", f"An error occurred: {str(e)}")
+            Logger.log_fail("book returned fail")
+
+        finally:
+            self.menu_wind.deconify()  # Show the menu window again
 
 class SearchStrategy(ABC):
     @abstractmethod
@@ -352,6 +380,7 @@ class SearchStrategy(ABC):
 class SearchByTitle(SearchStrategy):
     def search(self, books, query):
         return books[books['title'].str.contains(query, case=False, na=False)]
+
 
 class SearchByAuthor(SearchStrategy):
     def search(self, books, query):
@@ -376,8 +405,9 @@ class BookSearcher:
         return self.strategy.search(books, query)
 
 class SearchBookForm(AbstractForm):
-    def __init__(self, root, user):
+    def __init__(self, root, menu, user):
         super().__init__(root)
+        self.menu_wind = menu
         self.user = user
         self.books = pd.read_csv(BOOKS_FILE_PATH)
 
@@ -387,18 +417,18 @@ class SearchBookForm(AbstractForm):
 
         # Search type selection
         self.search_type = tk.StringVar()
-        self.search_type.set("Title")
+        self.search_type.set("Title") # Default search type
         self.search_options = ["Title", "Author", "Category", "Year"]
 
         self.option_menu = ttk.OptionMenu(self.search_book_form, self.search_type, self.search_type.get(), *self.search_options)
         self.option_menu.pack()
 
         # Search query entry
-        self.query_entry = ttk.Entry(self.search_book_form, width=50)
+        self.query_entry = tk.Entry(self.search_book_form, width=50)
         self.query_entry.pack()
 
         # Search button
-        self.search_button = ttk.Button(self.search_book_form, text="Search", command=self.perform_search)
+        self.search_button = tk.Button(self.search_book_form, text="Search", command=self.perform_search)
         self.search_button.pack()
 
         # Result display
@@ -409,6 +439,9 @@ class SearchBookForm(AbstractForm):
 
         # BookSearcher default instance
         self.book_searcher = BookSearcher(SearchByTitle())
+
+        # Bind the close event to the on_closing function
+        self.search_book_form.protocol("WM_DELETE_WINDOW", self.on_closing)
 
     def perform_search(self):
         search_type = self.search_type.get()
@@ -443,6 +476,10 @@ class SearchBookForm(AbstractForm):
         for _, book in results.iterrows():
             self.result_display.insert("", "end", values=book.to_list())
 
+    def on_closing(self):
+        self.menu_wind.deiconify()
+        self.search_book_form.destroy()
+
 class ViewStrategy(ABC):
     @abstractmethod
     def view(self):
@@ -468,6 +505,14 @@ class ViewPopularBooks(ViewStrategy):
         read_books = pd.read_csv(POPULAR_BOOKS_FILE_PATH)
         return read_books
 
+class ViewByCategory(ViewStrategy):
+    def __init__(self, category):
+        self.category = category
+
+    def view(self):
+        read_books = pd.read_csv(BOOKS_FILE_PATH)
+        return read_books[read_books['genre'] == self.category]
+
 class BookViewer:
     def __init__(self, strategy):
         self.strategy = strategy
@@ -479,8 +524,9 @@ class BookViewer:
         return self.strategy.view()
 
 class ViewBookForm(AbstractForm):
-    def __init__(self, root, user):
+    def __init__(self, root, menu, user):
         super().__init__(root)
+        self.menu_wind = menu
         self.user = user
         self.books = pd.read_csv(BOOKS_FILE_PATH)
 
@@ -490,15 +536,34 @@ class ViewBookForm(AbstractForm):
 
         # Search type selection
         self.view_type = tk.StringVar()
-        self.view_type.set("All Books")
-        self.view_options = ["All Books", "Available Books", "Loaned Books", "Popular Books"]
+        # self.view_type.set("All Books")
 
-        self.option_menu = ttk.OptionMenu(self.view_book_form, self.view_type, self.view_type.get(), *self.view_options)
-        self.option_menu.pack()
+        # self.view_options = ["All Books", "Available Books", "Loaned Books", "Popular Books"]
+        # self.option_menu = ttk.OptionMenu(self.view_book_form, self.view_type, self.view_type.get(), *self.view_options)
+        # self.option_menu.pack()
 
-        # Search button
-        self.view_button = ttk.Button(self.view_book_form, text="View", command=self.perform_view)
-        self.view_button.pack()
+        self.main_menu = tk.Menu(self.view_book_form)
+        self.view_book_form.config(menu=self.main_menu)
+
+        self.option_menu2 = tk.Menu(self.view_book_form, tearoff=0)
+        self.option_menu2.add_command(label="All Books", command=lambda: self.view_type.set("All Books"))
+        self.option_menu2.add_command(label="Available Books", command=lambda: self.view_type.set("Available Books"))
+        self.option_menu2.add_command(label="Loaned Books", command=lambda: self.view_type.set("Loaned Books"))
+        self.option_menu2.add_command(label="Popular Books", command=lambda: self.view_type.set("Popular Books"))
+
+        category_menu = tk.Menu(self.view_book_form, tearoff=0)
+
+        for genre in BookType:
+            category_menu.add_command(label=genre.value, command=lambda: self.view_type.set(genre.value))
+
+        self.main_menu.add_cascade(label="View", menu = self.option_menu2)
+        self.option_menu2.add_cascade(label="By Category", menu = category_menu)
+
+        self.perform_view()
+
+        # # Search button
+        # self.view_button = ttk.Button(self.view_book_form, text="View", command=self.perform_view)
+        # self.view_button.pack()
 
         # Result display
         self.result_display = ttk.Treeview(self.view_book_form, columns=shared.FIELD_NAMES, show='headings',)
@@ -506,21 +571,27 @@ class ViewBookForm(AbstractForm):
             self.result_display.heading(header, text=header)
         self.result_display.pack()
 
-        # BookSearcher default instance
-        self.book_viewer = BookViewer(SearchByTitle())
+        # # BookSearcher default instance
+        # self.book_viewer = BookViewer(SearchByTitle())
+
+        # Bind the close event to the on_closing function
+        self.view_book_form.protocol("WM_DELETE_WINDOW", self.on_closing)
 
     def perform_view(self):
-        search_type = self.view_type.get()
+        view_type = self.view_type.get()
+        self.book_viewer = BookViewer(ViewAllBooks()) # Default view
 
         try:
-            if search_type == "All Books":
+            if view_type == "All Books":
                 self.book_viewer.set_strategy(ViewAllBooks())
-            elif search_type == "Available Books":
+            elif view_type == "Available Books":
                 self.book_viewer.set_strategy(ViewAvailableBooks())
-            elif search_type == "Loaned Books":
+            elif view_type == "Loaned Books":
                 self.book_viewer.set_strategy(ViewLoanedBooks())
-            elif search_type == "Popular Books":
+            elif view_type == "Popular Books":
                 self.book_viewer.set_strategy(ViewPopularBooks())
+            elif view_type in [genre.value for genre in BookType]:
+                self.book_viewer.set_strategy(ViewByCategory(view_type))
 
             results = self.book_viewer.view()
             self.display_results(results)
@@ -536,3 +607,7 @@ class ViewBookForm(AbstractForm):
         # Insert new results
         for _, book in results.iterrows():
             self.result_display.insert("", "end", values=book.to_list())
+
+    def on_closing(self):
+        self.menu_wind.deiconify()
+        self.view_book_form.destroy()

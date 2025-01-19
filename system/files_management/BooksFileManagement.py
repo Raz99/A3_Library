@@ -24,7 +24,7 @@ def setup():
         shared.books.append(current)
 
     # If the column is_loaned_dict is not in the CSV file, then add it
-    if not 'is_loaned_dict' in df.columns:
+    if not 'is_loaned_dict' or not 'popularity' in df.columns:
         # Adds a new column and writes to file
         new_values = [book.get_loaned_dict() for book in shared.books]
         df['is_loaned_dict'] = new_values

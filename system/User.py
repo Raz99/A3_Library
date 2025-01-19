@@ -1,7 +1,8 @@
 from books import *
 from books.BookFactory import BookFactory
 from system import shared
-from system.files_management import BooksFileManagement
+from system.files_management import BooksFileManagement , Logger
+
 
 class User:
     def __init__(self, username, password):
@@ -33,18 +34,20 @@ class User:
         shared.books.append(new_book)
         BooksFileManagement.add_book(new_book)
 
+
     def remove_book(self, title):
         #book_to_remove = BookFactory.create_book(title, author, "No", 1, BookType(genre), int(year))
         for book in shared.books:
             if book.get_title() == title:
                 if book.get_is_loaned()== "Yes":
                     print("You can't remove the book. It's on loan")
-                    return
+                    return False
                 else:
                     shared.books.remove(book)
                     BooksFileManagement.update()
-                return
+                return True
         print("the book is not found")
+        return False
 
     def lend_book(self, title):
         #book_to_loan = BookFactory.create_book(title, author, "No", 1, BookType(genre), int(year))
@@ -85,7 +88,6 @@ class User:
                             book.set_is_loaned_dict(book_dict)
                             if not book.is_loaned_by_dict():
                                 book.set_is_loaned("No")
-                            book.set_popularity(book.get_popularity()-1)
                             BooksFileManagement.update()
                             print("the return is successful")
                             return True

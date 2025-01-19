@@ -1,4 +1,5 @@
-from system.files_management import BooksFileManagement, UsersFileManagement, AvailableBooksFileManagment, LoanedBooksFileManagement
+from system.files_management import (BooksFileManagement, UsersFileManagement, AvailableBooksFileManagment,
+                                     LoanedBooksFileManagement, PopularityFileManagment)
 from system import shared
 from system.User import User
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -11,6 +12,7 @@ class Management:
         AvailableBooksFileManagment.update()
         LoanedBooksFileManagement.update()
         UsersFileManagement.setup()
+        PopularityFileManagment.update()
 
     @staticmethod
     def add_user(username, password):
