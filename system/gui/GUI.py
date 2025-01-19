@@ -507,6 +507,7 @@ class ViewPopularBooks(ViewStrategy):
 
 class ViewByCategory(ViewStrategy):
     def __init__(self, category):
+        super().__init__()
         self.category = category
 
     def view(self):
@@ -536,50 +537,42 @@ class ViewBookForm(AbstractForm):
 
         # Search type selection
         self.view_type = tk.StringVar()
-        # self.view_type.set("All Books")
-
-        # self.view_options = ["All Books", "Available Books", "Loaned Books", "Popular Books"]
-        # self.option_menu = ttk.OptionMenu(self.view_book_form, self.view_type, self.view_type.get(), *self.view_options)
-        # self.option_menu.pack()
+        self.view_type.set("All Books")
 
         self.main_menu = tk.Menu(self.view_book_form)
         self.view_book_form.config(menu=self.main_menu)
 
-        self.option_menu2 = tk.Menu(self.view_book_form, tearoff=0)
-        self.option_menu2.add_command(label="All Books", command=lambda: self.view_type.set("All Books"))
-        self.option_menu2.add_command(label="Available Books", command=lambda: self.view_type.set("Available Books"))
-        self.option_menu2.add_command(label="Loaned Books", command=lambda: self.view_type.set("Loaned Books"))
-        self.option_menu2.add_command(label="Popular Books", command=lambda: self.view_type.set("Popular Books"))
+        self.option_menu = tk.Menu(self.view_book_form, tearoff=0)
+        self.option_menu.add_command(label="All Books", command=lambda: self.set_view_type("All Books"))
+        self.option_menu.add_command(label="Available Books", command=lambda: self.set_view_type("Available Books"))
+        self.option_menu.add_command(label="Loaned Books", command=lambda: self.set_view_type("Loaned Books"))
+        self.option_menu.add_command(label="Popular Books", command=lambda: self.set_view_type("Popular Books"))
 
         category_menu = tk.Menu(self.view_book_form, tearoff=0)
-
         for genre in BookType:
-            category_menu.add_command(label=genre.value, command=lambda: self.view_type.set(genre.value))
+            category_menu.add_command(label=genre.value, command=lambda category=genre: self.set_view_type(category.value))
 
-        self.main_menu.add_cascade(label="View", menu = self.option_menu2)
-        self.option_menu2.add_cascade(label="By Category", menu = category_menu)
+        self.main_menu.add_cascade(label="View Options", menu=self.option_menu)
+        self.option_menu.add_cascade(label="By Category", menu=category_menu)
 
-        self.perform_view()
-
-        # # Search button
-        # self.view_button = ttk.Button(self.view_book_form, text="View", command=self.perform_view)
-        # self.view_button.pack()
-
-        # Result display
-        self.result_display = ttk.Treeview(self.view_book_form, columns=shared.FIELD_NAMES, show='headings',)
+        self.result_display = ttk.Treeview(self.view_book_form, columns=shared.FIELD_NAMES, show='headings')
         for header in shared.FIELD_NAMES:
             self.result_display.heading(header, text=header)
         self.result_display.pack()
 
-        # # BookSearcher default instance
-        # self.book_viewer = BookViewer(SearchByTitle())
+        self.book_viewer = BookViewer(ViewAllBooks()) # Default view
 
-        # Bind the close event to the on_closing function
+        self.perform_view()
+
         self.view_book_form.protocol("WM_DELETE_WINDOW", self.on_closing)
+
+    def set_view_type(self, view_type):
+        self.view_type.set(view_type)
+        self.perform_view()
 
     def perform_view(self):
         view_type = self.view_type.get()
-        self.book_viewer = BookViewer(ViewAllBooks()) # Default view
+        self.book_viewer = BookViewer(ViewAllBooks())  # Default view
 
         try:
             if view_type == "All Books":
@@ -597,7 +590,7 @@ class ViewBookForm(AbstractForm):
             self.display_results(results)
 
         except Exception as e:
-            messagebox.showerror("View Error", f"An error occurred during the search: {str(e)}")
+            messagebox.showerror("View Error", f"An error occurred during the view: {str(e)}")
 
     def display_results(self, results):
         # Clear the result display

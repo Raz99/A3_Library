@@ -6,17 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bd64134e-7d23-4291-a889-a4d6ab46e6bb" name="Changes" comment="Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/available_books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/available_books.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/popularity_books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/popularity_books.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/Management.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/Management.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/gui/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/gui/GUI.py" afterDir="false" />
-    </list>
-    <list id="50532b9d-f055-446e-84ba-3f98fd9d8b38" name="Changes by shirb" comment="commit">
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/User.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/files_management/Logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/Logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/logger.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logger.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system/gui/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/gui/GUI.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,64 +36,6 @@
     &quot;accountId&quot;: &quot;c16a7655-c352-4a75-915a-ad7786db8404&quot;
   }
 }</component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/system/gui/GUI.py">
-      <ranges>
-        <range start1="2" end1="2" start2="2" end2="3" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="5" end1="6" start2="6" end2="6" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="11" end1="11" start2="11" end2="12" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="73" end1="74" start2="74" end2="76" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="77" end1="78" start2="79" end2="81" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="103" end1="108" start2="106" end2="113" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="130" end1="132" start2="135" end2="135" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="134" end1="136" start2="137" end2="139" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="138" end1="140" start2="141" end2="143" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="142" end1="144" start2="145" end2="147" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="146" end1="148" start2="149" end2="151" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="150" end1="152" start2="153" end2="155" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="154" end1="156" start2="157" end2="159" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="158" end1="163" start2="161" end2="164" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="165" end1="166" start2="166" end2="167" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="167" end1="167" start2="168" end2="169" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="222" end1="222" start2="224" end2="225" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="226" end1="226" start2="229" end2="233" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="229" end1="230" start2="236" end2="237" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="231" end1="231" start2="238" end2="239" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="259" end1="264" start2="267" end2="274" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="266" end1="266" start2="276" end2="280" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="269" end1="270" start2="283" end2="284" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="271" end1="271" start2="285" end2="286" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="300" end1="304" start2="315" end2="321" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="306" end1="306" start2="323" end2="327" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="308" end1="309" start2="329" end2="330" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="310" end1="310" start2="331" end2="332" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="339" end1="343" start2="361" end2="367" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="345" end1="345" start2="369" end2="373" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="354" end1="354" start2="382" end2="383" changelist="50532b9d-f055-446e-84ba-3f98fd9d8b38" />
-        <range start1="378" end1="379" start2="407" end2="408" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="380" end1="380" start2="409" end2="410" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="389" end1="390" start2="419" end2="420" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="396" end1="397" start2="426" end2="427" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="400" end1="401" start2="430" end2="431" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="411" end1="411" start2="441" end2="444" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="444" end1="444" start2="477" end2="481" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="469" end1="469" start2="506" end2="514" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="481" end1="482" start2="526" end2="527" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="483" end1="483" start2="528" end2="529" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="493" end1="493" start2="539" end2="540" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="494" end1="495" start2="541" end2="541" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="498" end1="501" start2="544" end2="566" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="510" end1="510" start2="575" end2="578" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="512" end1="513" start2="580" end2="581" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="515" end1="516" start2="583" end2="584" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="517" end1="518" start2="585" end2="586" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="519" end1="520" start2="587" end2="588" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="521" end1="522" start2="589" end2="590" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="523" end1="523" start2="591" end2="593" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="538" end1="538" start2="608" end2="612" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -380,7 +312,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1737280964291</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL‎-00008" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1737320611361</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL‎-00008" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1737320611361</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
