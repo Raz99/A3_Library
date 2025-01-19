@@ -230,7 +230,7 @@ class AddBookForm(AbstractForm):
             Logger.log_fail("book added fail")
 
         finally:
-            self.menu_wind.deconify()  # Show the menu window again
+            self.menu_wind.deiconify()  # Show the menu window again
 
 
 class RemoveBookForm(AbstractForm):
@@ -277,7 +277,7 @@ class RemoveBookForm(AbstractForm):
             Logger.log_fail("book removed fail")
 
         finally:
-            self.menu_wind.deconify()  # Show the menu window again
+            self.menu_wind.deiconify()  # Show the menu window again
 
 
 class LendBookForm(AbstractForm):
@@ -324,7 +324,7 @@ class LendBookForm(AbstractForm):
             Logger.log_fail("book borrowed fail")
 
         finally:
-            self.menu_wind.deconify()  # Show the menu window again
+            self.menu_wind.deiconify()  # Show the menu window again
             
 class ReturnBookForm(AbstractForm):
     def __init__(self, root, menu, user):
@@ -370,7 +370,7 @@ class ReturnBookForm(AbstractForm):
             Logger.log_fail("book returned fail")
 
         finally:
-            self.menu_wind.deconify()  # Show the menu window again
+            self.menu_wind.decionify()  # Show the menu window again
 
 class SearchStrategy(ABC):
     @abstractmethod
@@ -379,12 +379,23 @@ class SearchStrategy(ABC):
 
 class SearchByTitle(SearchStrategy):
     def search(self, books, query):
-        return books[books['title'].str.contains(query, case=False, na=False)]
-
+        result = books[books['title'].str.contains(query, case=False, na=False)]
+        if result.empty:
+            Logger.log_fail(f'Search book "{query}" by name completed fail')
+            messagebox.showerror("Attention", "No books found")
+        else:
+            Logger.log_success(f'Search book "{query}" by by name completed successful.')
+        return result
 
 class SearchByAuthor(SearchStrategy):
     def search(self, books, query):
-        return books[books['author'].str.contains(query, case=False, na=False)]
+        result = books[books['author'].str.contains(query, case=False, na=False)]
+        if result.empty:
+            Logger.log_fail(f'Search book "{query}" by author name fail')
+            messagebox.showerror("Attention", "No books found")
+        else:
+            Logger.log_success(f'Search book "{query}" by author name successful')
+        return result
 
 class SearchByCategory(SearchStrategy):
     def search(self, books, query):
@@ -488,21 +499,41 @@ class ViewStrategy(ABC):
 class ViewAllBooks(ViewStrategy):
     def view(self):
         read_books = pd.read_csv(BOOKS_FILE_PATH)
+        if read_books.empty:
+            Logger.log_fail("Displayed all books fail")
+            messagebox.showerror("Attention", "No books to display")
+        else:
+            Logger.log_success("Displayed all books successful")
         return read_books
 
 class ViewAvailableBooks(ViewStrategy):
     def view(self):
         read_books = pd.read_csv(AVAILABLE_BOOKS_FILE_PATH)
+        if read_books.empty:
+            Logger.log_fail("Displayed available books fail")
+            messagebox.showerror("Attention", "No books available to display")
+        else:
+            Logger.log_success("Displayed available books successful")
         return read_books
 
 class ViewLoanedBooks(ViewStrategy):
     def view(self):
         read_books = pd.read_csv(LOANED_BOOKS_FILE_PATH)
+        if read_books.empty:
+            Logger.log_fail("Displayed borrowed books fail")
+            messagebox.showerror("Attention", "No books loaned to display")
+        else:
+            Logger.log_success("Displayed borrowed books successful")
         return read_books
 
 class ViewPopularBooks(ViewStrategy):
     def view(self):
         read_books = pd.read_csv(POPULAR_BOOKS_FILE_PATH)
+        if read_books.empty:
+            Logger.log_fail("displayed fail")
+            messagebox.showerror("Attention", "No books Popular to display")
+        else:
+            Logger.log_success("displayed successful")
         return read_books
 
 class ViewByCategory(ViewStrategy):
@@ -512,6 +543,11 @@ class ViewByCategory(ViewStrategy):
 
     def view(self):
         read_books = pd.read_csv(BOOKS_FILE_PATH)
+        if read_books.empty:
+            Logger.log_fail("displayed fail")
+            messagebox.showerror("Attention", "No books in this category to display")
+        else:
+            Logger.log_success("displayed successful")
         return read_books[read_books['genre'] == self.category]
 
 class BookViewer:

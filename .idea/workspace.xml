@@ -5,8 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd64134e-7d23-4291-a889-a4d6ab46e6bb" name="Changes" comment="Commit">
+      <change beforePath="$PROJECT_DIR$/.idea/A3_Library.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/A3_Library.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/available_books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/available_books.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/loaned_books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/loaned_books.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/logger.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logger.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/popularity_books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/popularity_books.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/gui/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/gui/GUI.py" afterDir="false" />
+    </list>
+    <list id="aa8b4c4f-f5ea-4c78-94a5-87c8c1dcd6ec" name="Changes by razco" comment="">
+      <change beforePath="$PROJECT_DIR$/system/files_management/Logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/Logger.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system/gui/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/gui/GUI.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,12 +40,28 @@
     &quot;assignee&quot;: &quot;Raz99&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Raz99/A3_Library.git&quot;,
-    &quot;accountId&quot;: &quot;c16a7655-c352-4a75-915a-ad7786db8404&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Raz99/A3_Library.git",
+    "accountId": "49740b91-98e8-478c-89b3-57e5690743c0"
   }
-}</component>
+}]]></component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/system/gui/GUI.py">
+      <ranges>
+        <range start1="232" end1="233" start2="232" end2="233" changelist="aa8b4c4f-f5ea-4c78-94a5-87c8c1dcd6ec" />
+        <range start1="279" end1="280" start2="279" end2="280" changelist="aa8b4c4f-f5ea-4c78-94a5-87c8c1dcd6ec" />
+        <range start1="326" end1="327" start2="326" end2="327" changelist="aa8b4c4f-f5ea-4c78-94a5-87c8c1dcd6ec" />
+        <range start1="372" end1="373" start2="372" end2="373" changelist="aa8b4c4f-f5ea-4c78-94a5-87c8c1dcd6ec" />
+        <range start1="381" end1="383" start2="381" end2="388" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="386" end1="387" start2="391" end2="398" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="490" end1="490" start2="501" end2="506" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="495" end1="495" start2="511" end2="516" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="500" end1="500" start2="521" end2="526" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="505" end1="505" start2="531" end2="536" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -47,25 +73,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.AbstractForm.executor&quot;: &quot;Run&quot;,
-    &quot;Python.BooksFileManagement.executor&quot;: &quot;Run&quot;,
-    &quot;Python.GUI (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.GUI.executor&quot;: &quot;Run&quot;,
-    &quot;Python.LibraryGUI.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Management (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.Management.executor&quot;: &quot;Run&quot;,
-    &quot;Python.UsersFileManagement.executor&quot;: &quot;Run&quot;,
-    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ex1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.AbstractForm.executor": "Run",
+    "Python.BooksFileManagement.executor": "Run",
+    "Python.GUI (1).executor": "Run",
+    "Python.GUI.executor": "Run",
+    "Python.LibraryGUI.executor": "Run",
+    "Python.Management (1).executor": "Run",
+    "Python.Management.executor": "Run",
+    "Python.UsersFileManagement.executor": "Run",
+    "Python.__init__.executor": "Run",
+    "Python.ex1.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.tabs",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\razco\Documents\GitHub\A3_Library\system\gui" />
@@ -89,6 +121,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="C:\Users\razco\Documents\GitHub\A3_Library\system\files_management\BooksFileManagement.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -111,6 +144,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/system/gui/GUI.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -133,6 +167,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/system/gui/GUI.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -177,6 +212,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/system/Management.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -195,11 +231,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/OneDrive - Ariel University/תשפה/סמסטר א/תכנות מונחה עצמים/הרצאות/הרצאה 11" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../.. - Ariel University/תשפה/סמסטר א/תכנות מונחה עצמים/הרצאות/הרצאה 11" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$USER_HOME$/OneDrive - Ariel University/תשפה/סמסטר א/תכנות מונחה עצמים/הרצאות/הרצאה 11/ex1.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../.. - Ariel University/תשפה/סמסטר א/תכנות מונחה עצמים/הרצאות/הרצאה 11/ex1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -221,6 +258,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -243,7 +281,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-fb887030ada0-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.21565.199" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PY-243.22562.180" />
+        <option value="bundled-python-sdk-85c76a3b01b3-9a18a617cbe4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.22562.180" />
       </set>
     </attachedChunks>
   </component>
@@ -255,6 +294,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736186364528</updated>
+      <workItem from="1737322646316" duration="3552000" />
     </task>
     <task id="LOCAL‎-00001" summary="Friday's commit">
       <option name="closed" value="true" />
@@ -323,10 +363,16 @@
     <option name="localTasksCounter" value="9" />
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Friday's commit" />
     <MESSAGE value="commit" />
     <MESSAGE value="Commit" />
     <option name="LAST_COMMIT_MESSAGE" value="Commit" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/A3_Library$main.coverage" NAME="main Coverage Results" MODIFIED="1737324947350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
