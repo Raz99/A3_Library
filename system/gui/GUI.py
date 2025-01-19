@@ -1,8 +1,14 @@
 import tkinter as tk
 from tkinter import messagebox, ttk
 from books import BookType
+from system import shared
 from system.Management import Management
-from system import User
+from abc import ABC, abstractmethod
+import pandas as pd
+from system.files_management.BooksFileManagement import BOOKS_FILE_PATH
+from system.files_management.AvailableBooksFileManagment import AVAILABLE_BOOKS_FILE_PATH
+from system.files_management.LoanedBooksFileManagement import LOANED_BOOKS_FILE_PATH
+from system.files_management.PopularityFileManagment import POPULAR_BOOKS_FILE_PATH
 
 TITLE = "Library Management System"
 ICON_PATH = r"system\gui\icon.png"
@@ -112,7 +118,7 @@ class MenuForm(AbstractForm):
         add_book_button.pack()
         remove_book_button = tk.Button(self.menu_window, text="Remove Book", command=self.open_remove_book)
         remove_book_button.pack()
-        search_book_button = tk.Button(self.menu_window, text="Remove Book", command=self.open_search_book)
+        search_book_button = tk.Button(self.menu_window, text="Search Book", command=self.open_search_book)
         search_book_button.pack()
         view_book_button = tk.Button(self.menu_window, text="View Books", command=self.open_view_books)
         view_book_button.pack()
@@ -134,10 +140,12 @@ class MenuForm(AbstractForm):
         remove_book_form = RemoveBookForm(self.root, self.user)
 
     def open_search_book(self):
-        pass
+        self.menu_window.destroy()
+        search_book_form = SearchBookForm(self.root, self.user)
 
     def open_view_books(self):
-        pass
+        self.menu_window.destroy()
+        view_book_form = ViewBookForm(self.root, self.user)
 
     def open_lend_book(self):
         self.menu_window.destroy()
@@ -335,3 +343,196 @@ class ReturnBookForm(AbstractForm):
 
         except Exception as e:
             messagebox.showerror("Error", f"An error occurred: {str(e)}")
+
+class SearchStrategy(ABC):
+    @abstractmethod
+    def search(self, books, query):
+        pass
+
+class SearchByTitle(SearchStrategy):
+    def search(self, books, query):
+        return books[books['title'].str.contains(query, case=False, na=False)]
+
+class SearchByAuthor(SearchStrategy):
+    def search(self, books, query):
+        return books[books['author'].str.contains(query, case=False, na=False)]
+
+class SearchByCategory(SearchStrategy):
+    def search(self, books, query):
+        return books[books['genre'].str.contains(query, case=False, na=False)]
+
+class SearchByYear(SearchStrategy):
+    def search(self, books, query):
+        return books[books['year'].str.contains(query, case=False, na=False)]
+
+class BookSearcher:
+    def __init__(self, strategy):
+        self.strategy = strategy
+
+    def set_strategy(self, strategy):
+        self.strategy = strategy
+
+    def search(self, books, query):
+        return self.strategy.search(books, query)
+
+class SearchBookForm(AbstractForm):
+    def __init__(self, root, user):
+        super().__init__(root)
+        self.user = user
+        self.books = pd.read_csv(BOOKS_FILE_PATH)
+
+    def create_specific_widgets(self):
+        self.search_book_form = tk.Toplevel(self.root)
+        self.search_book_form.title("Search Book")
+
+        # Search type selection
+        self.search_type = tk.StringVar()
+        self.search_type.set("Title")
+        self.search_options = ["Title", "Author", "Category", "Year"]
+
+        self.option_menu = ttk.OptionMenu(self.search_book_form, self.search_type, self.search_type.get(), *self.search_options)
+        self.option_menu.pack()
+
+        # Search query entry
+        self.query_entry = ttk.Entry(self.search_book_form, width=50)
+        self.query_entry.pack()
+
+        # Search button
+        self.search_button = ttk.Button(self.search_book_form, text="Search", command=self.perform_search)
+        self.search_button.pack()
+
+        # Result display
+        self.result_display = ttk.Treeview(self.search_book_form, columns=shared.FIELD_NAMES, show='headings')
+        for header in shared.FIELD_NAMES:
+            self.result_display.heading(header, text=header)
+        self.result_display.pack()
+
+        # BookSearcher default instance
+        self.book_searcher = BookSearcher(SearchByTitle())
+
+    def perform_search(self):
+        search_type = self.search_type.get()
+        query = self.query_entry.get()
+
+        if not query:
+            messagebox.showerror("Invalid Input", "Search query cannot be empty.")
+            return
+
+        try:
+            if search_type == "Title":
+                self.book_searcher.set_strategy(SearchByTitle())
+            elif search_type == "Author":
+                self.book_searcher.set_strategy(SearchByAuthor())
+            elif search_type == "Category":
+                self.book_searcher.set_strategy(SearchByCategory())
+            elif search_type == "Year":
+                self.book_searcher.set_strategy(SearchByYear())
+
+            results = self.book_searcher.search(self.books, query)
+            self.display_results(results)
+
+        except Exception as e:
+            messagebox.showerror("Search Error", f"An error occurred during the search: {str(e)}")
+
+    def display_results(self, results):
+        # Clear the result display
+        for row in self.result_display.get_children():
+            self.result_display.delete(row)
+
+        # Insert new results
+        for _, book in results.iterrows():
+            self.result_display.insert("", "end", values=book.to_list())
+
+class ViewStrategy(ABC):
+    @abstractmethod
+    def view(self):
+        pass
+
+class ViewAllBooks(ViewStrategy):
+    def view(self):
+        read_books = pd.read_csv(BOOKS_FILE_PATH)
+        return read_books
+
+class ViewAvailableBooks(ViewStrategy):
+    def view(self):
+        read_books = pd.read_csv(AVAILABLE_BOOKS_FILE_PATH)
+        return read_books
+
+class ViewLoanedBooks(ViewStrategy):
+    def view(self):
+        read_books = pd.read_csv(LOANED_BOOKS_FILE_PATH)
+        return read_books
+
+class ViewPopularBooks(ViewStrategy):
+    def view(self):
+        read_books = pd.read_csv(POPULAR_BOOKS_FILE_PATH)
+        return read_books
+
+class BookViewer:
+    def __init__(self, strategy):
+        self.strategy = strategy
+
+    def set_strategy(self, strategy):
+        self.strategy = strategy
+
+    def view(self):
+        return self.strategy.view()
+
+class ViewBookForm(AbstractForm):
+    def __init__(self, root, user):
+        super().__init__(root)
+        self.user = user
+        self.books = pd.read_csv(BOOKS_FILE_PATH)
+
+    def create_specific_widgets(self):
+        self.view_book_form = tk.Toplevel(self.root)
+        self.view_book_form.title("View Books")
+
+        # Search type selection
+        self.view_type = tk.StringVar()
+        self.view_type.set("All Books")
+        self.view_options = ["All Books", "Available Books", "Loaned Books", "Popular Books"]
+
+        self.option_menu = ttk.OptionMenu(self.view_book_form, self.view_type, self.view_type.get(), *self.view_options)
+        self.option_menu.pack()
+
+        # Search button
+        self.view_button = ttk.Button(self.view_book_form, text="View", command=self.perform_view)
+        self.view_button.pack()
+
+        # Result display
+        self.result_display = ttk.Treeview(self.view_book_form, columns=shared.FIELD_NAMES, show='headings',)
+        for header in shared.FIELD_NAMES:
+            self.result_display.heading(header, text=header)
+        self.result_display.pack()
+
+        # BookSearcher default instance
+        self.book_viewer = BookViewer(SearchByTitle())
+
+    def perform_view(self):
+        search_type = self.view_type.get()
+
+        try:
+            if search_type == "All Books":
+                self.book_viewer.set_strategy(ViewAllBooks())
+            elif search_type == "Available Books":
+                self.book_viewer.set_strategy(ViewAvailableBooks())
+            elif search_type == "Loaned Books":
+                self.book_viewer.set_strategy(ViewLoanedBooks())
+            elif search_type == "Popular Books":
+                self.book_viewer.set_strategy(ViewPopularBooks())
+
+            results = self.book_viewer.view()
+            self.display_results(results)
+
+        except Exception as e:
+            messagebox.showerror("View Error", f"An error occurred during the search: {str(e)}")
+
+    def display_results(self, results):
+        # Clear the result display
+        for row in self.result_display.get_children():
+            self.result_display.delete(row)
+
+        # Insert new results
+        for _, book in results.iterrows():
+            self.result_display.insert("", "end", values=book.to_list())

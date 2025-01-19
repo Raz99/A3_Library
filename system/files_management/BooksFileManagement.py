@@ -1,10 +1,9 @@
 import ast
-
 import pandas as pd
 from books import *
 from books.BookFactory import BookFactory
 from system import shared
-from system.files_management import AvailableBooksFileManagment, LoanedBooksFileManagement
+from system.files_management import AvailableBooksFileManagment, LoanedBooksFileManagement , PopularityFileManagment
 
 BOOKS_FILE_PATH = r"data\books.csv"
 
@@ -29,13 +28,18 @@ def setup():
         # Adds a new column and writes to file
         new_values = [book.get_loaned_dict() for book in shared.books]
         df['is_loaned_dict'] = new_values
+        popularity = [book.get_popularity() for book in shared.books]
+        df['popularity'] = popularity
         df.to_csv(BOOKS_FILE_PATH, index=False)
 
     # If the column is_loaned_dict is in the CSV file, then update the books
     else:
         for i, row in df.iterrows():
-            dict_data = ast.literal_eval(row["is_loaned_dict"])
+            dict_data = ast.literal_eval(row["is_loaned_dict"]) # Convert string to dictionary
             shared.books[i].set_is_loaned_dict(dict_data)
+            popularity_data= row["popularity"]
+            shared.books[i].set_popularity(popularity_data)
+
 
 def update():
     # Convert list of books to a pandas DataFrame
@@ -56,3 +60,4 @@ def add_book(new_book):
 def update_files():
     AvailableBooksFileManagment.update()
     LoanedBooksFileManagement.update()
+    PopularityFileManagment.update()

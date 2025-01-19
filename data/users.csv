@@ -1,2 +1,2 @@
 username,password
-shir,1234
+shir,scrypt:32768:8:1$AoXa3NCqWVhkXJf6$9f1441c68015bc04d586ad51d0d2031df4f9d35a287a59a85908743c9d1a1c71b264e1b9e78ae3e12f41cfa0addf39691d29e7ed0d6c0d0ef43a7c9c1d5604fb

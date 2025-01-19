@@ -1,6 +1,7 @@
 from system.files_management import BooksFileManagement, UsersFileManagement, AvailableBooksFileManagment, LoanedBooksFileManagement
 from system import shared
 from system.User import User
+from werkzeug.security import generate_password_hash, check_password_hash
 
 class Management:
     @staticmethod
@@ -26,7 +27,8 @@ class Management:
 
         # Create new user
         try:
-            new_user = User(username, password)
+            hashed_password = generate_password_hash(password)
+            new_user = User(username, hashed_password)
             shared.users.append(new_user)
             UsersFileManagement.add_user(new_user)
             print("User successfully registered")
@@ -52,7 +54,7 @@ class Management:
     def login(username, password):
         """Authenticate a user."""
         for user in shared.users:
-            if user.get_username() == username and user.get_password() == password:
+            if user.get_username() == username and check_password_hash(user.get_password(), password):
                 return True
         return False
 

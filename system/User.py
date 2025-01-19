@@ -1,7 +1,7 @@
 from books import *
 from books.BookFactory import BookFactory
 from system import shared
-from system.files_management import BooksFileManagement, AvailableBooksFileManagment
+from system.files_management import BooksFileManagement
 
 class User:
     def __init__(self, username, password):
@@ -65,8 +65,10 @@ class User:
                             if book.get_is_loaned() != "Yes":
                                 book.set_is_loaned("Yes")
 
+                            book.set_popularity(book.get_popularity()+1)
                             BooksFileManagement.update()
                             print("The loan was successful")
+
                             return True
                     break
 
@@ -77,13 +79,13 @@ class User:
             if book.title == title:
                 if book.get_is_loaned() == "Yes":
                     book_dict = book.get_loaned_dict()
-                    print(book_dict)
                     for key, value in book_dict.items():
                         if value == 'Yes':
                             book_dict[key] = 'No'
                             book.set_is_loaned_dict(book_dict)
                             if not book.is_loaned_by_dict():
                                 book.set_is_loaned("No")
+                            book.set_popularity(book.get_popularity()-1)
                             BooksFileManagement.update()
                             print("the return is successful")
                             return True

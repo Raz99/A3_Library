@@ -9,12 +9,19 @@ class Book(ABC):
         self.is_loaned_dict = {i: is_loaned for i in range(copies)}
         self.copies = copies
         self.year = year
+        if self.is_loaned == "Yes":
+            self.popularity = copies
+        else:
+            self.popularity = 0
 
     def set_is_loaned_dict(self, new_dict):
         self.is_loaned_dict = new_dict
 
     def set_is_loaned(self, value):
         self.is_loaned = value
+
+    def set_popularity(self,pop):
+        self.popularity = pop
 
     def is_available(self):
         for value in self.is_loaned_dict.values():
@@ -36,7 +43,8 @@ class Book(ABC):
             "copies": self.copies,
             "genre": self.get_genre(),
             "year": self.year,
-            "is_loaned_dict": self.is_loaned_dict
+            "is_loaned_dict": self.is_loaned_dict,
+            "popularity": self.popularity
         }
 
     def get_loaned_dict(self):
@@ -78,3 +86,6 @@ class Book(ABC):
 
     def get_is_loaned(self):
         return self.is_loaned
+
+    def get_popularity(self):
+        return self.popularity
