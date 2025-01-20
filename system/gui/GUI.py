@@ -173,7 +173,7 @@ class MenuForm(AbstractForm):
         logout_button.pack()
 
         # Bind the close event to the on_closing function
-        self.menu_window.protocol("WM_DELETE_WINDOW", self.open_logout())
+        self.menu_window.protocol("WM_DELETE_WINDOW", self.open_logout)
 
     def open_add_book(self):
         self.menu_window.withdraw()  # Hide the menu window
@@ -409,6 +409,8 @@ class LendBookForm(AbstractForm):
                 book = shared.book_by_title(title)
                 self.lend_book_window.destroy()
                 wind = WaitListForm(self.root, self.menu_wind, self.user, book)
+                messagebox.showinfo("Attention", "There is no available copy of that book, please add the requester to the waiting list.")
+                self.menu_wind.withdraw()
 
             if result==1:
                 messagebox.showinfo("Success", "Book lent successfully!")
@@ -444,7 +446,7 @@ class WaitListForm(AbstractForm):
     def create_specific_widgets(self):
         # Creates a new window for add to waitlist
         self.waitlist_form = tk.Toplevel(self.root)
-        self.waitlist_form.title("person Details")
+        self.waitlist_form.title("Person's Details")
         self.waitlist_form.geometry("400x300")
 
         # Creates input fields

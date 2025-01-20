@@ -45,7 +45,8 @@ class Book(ABC):
             "genre": self.get_genre(),
             "year": self.year,
             "is_loaned_dict": self.is_loaned_dict,
-            "popularity": self.popularity
+            "popularity": self.popularity,
+            "wait_list": self.waitlist
         }
 
     def get_loaned_dict(self):
@@ -95,8 +96,10 @@ class Book(ABC):
         try:
             waiting = {"name" : name , "phone": int(number_phone)}
             self.waitlist.append(waiting)
+            self.popularity += 1
             return True
-        except Exception as e:
+
+        except ValueError:
             return False
 
     def remove_from_waitlist(self):
@@ -106,19 +109,5 @@ class Book(ABC):
     def get_waitlist(self):
         return self.waitlist
 
-# class WaitlistIterator:
-#     def __init__(self, waitlist):
-#         self._waitlist = waitlist
-#         self._index = 0
-#
-#     def __iter__(self):
-#         return self
-#
-#     def __next__(self):
-#         if self._index < len(self._waitlist):
-#             entry = self._waitlist[self._index]
-#             self._index += 1
-#             #self._waitlist.pop(0)
-#             return entry
-#         else:
-#             raise StopIteration  # סוף הרשימה
+    def set_wait_list(self, waitlist):
+        self.waitlist = waitlist

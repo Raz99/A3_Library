@@ -6,18 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="bd64134e-7d23-4291-a889-a4d6ab46e6bb" name="Changes" comment="Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Book.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/available_books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/available_books.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/loaned_books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/loaned_books.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/logger.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logger.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/popularity_books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/popularity_books.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system/Management.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/Management.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/User.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/gui/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/gui/GUI.py" afterDir="false" />
-    </list>
-    <list id="aa8b4c4f-f5ea-4c78-94a5-87c8c1dcd6ec" name="Changes by razco" comment="" />
-    <list id="7b80dd7d-7c1c-439a-811c-1baf53ff744a" name="Changes by shirb" comment="">
-      <change beforePath="$PROJECT_DIR$/books/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Book.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/User.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system/gui/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/gui/GUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system/shared.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/shared.py" afterDir="false" />
+    </list>
+    <list id="aa8b4c4f-f5ea-4c78-94a5-87c8c1dcd6ec" name="Changes by razco" comment="" />
+    <list id="7b80dd7d-7c1c-439a-811c-1baf53ff744a" name="Changes by shirb" comment="Changes by shirb">
+      <change beforePath="$PROJECT_DIR$/books/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Book.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,48 +51,20 @@
   }
 }</component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/system/User.py">
+    <file path="$PROJECT_DIR$/system/files_management/BooksFileManagement.py">
       <ranges>
-        <range start1="0" end1="0" start2="0" end2="1" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="3" end1="4" start2="4" end2="7" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="5" end1="5" start2="8" end2="13" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="6" end1="7" start2="14" end2="16" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="55" end1="57" start2="64" end2="65" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
-        <range start1="72" end1="73" start2="80" end2="81" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
-        <range start1="74" end1="76" start2="82" end2="83" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
-        <range start1="95" end1="95" start2="102" end2="105" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="26" end1="27" start2="26" end2="27" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
+        <range start1="33" end1="33" start2="33" end2="36" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
+        <range start1="39" end1="40" start2="42" end2="43" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="41" end1="41" start2="44" end2="46" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
       </ranges>
     </file>
-    <file path="$PROJECT_DIR$/system/gui/GUI.py">
+    <file path="$PROJECT_DIR$/books/Book.py">
       <ranges>
-        <range start1="3" end1="3" start2="3" end2="5" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
-        <range start1="21" end1="21" start2="23" end2="24" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="39" end1="39" start2="42" end2="45" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="47" end1="47" start2="53" end2="56" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="66" end1="66" start2="75" end2="82" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="73" end1="74" start2="89" end2="90" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="77" end1="78" start2="93" end2="94" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="82" end1="83" start2="98" end2="99" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="84" end1="84" start2="100" end2="104" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="104" end1="104" start2="124" end2="131" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="109" end1="110" start2="136" end2="137" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="115" end1="116" start2="142" end2="143" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="120" end1="120" start2="147" end2="151" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="142" end1="142" start2="173" end2="176" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="221" end1="221" start2="255" end2="258" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="237" end1="237" start2="274" end2="275" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="256" end1="256" start2="294" end2="298" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="279" end1="279" start2="321" end2="324" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="291" end1="291" start2="336" end2="337" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="314" end1="314" start2="360" end2="364" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="337" end1="337" start2="387" end2="390" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="349" end1="349" start2="402" end2="403" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="352" end1="353" start2="406" end2="413" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
-        <range start1="358" end1="359" start2="418" end2="419" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
-        <range start1="371" end1="372" start2="431" end2="483" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
-        <range start1="405" end1="405" start2="516" end2="517" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="426" end1="427" start2="538" end2="539" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="524" end1="524" start2="636" end2="637" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="47" end1="48" start2="47" end2="49" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
+        <range start1="97" end1="97" start2="98" end2="99" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
+        <range start1="98" end1="99" start2="100" end2="102" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="108" end1="124" start2="111" end2="113" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
       </ranges>
     </file>
   </component>
@@ -103,31 +79,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.AbstractForm.executor&quot;: &quot;Run&quot;,
-    &quot;Python.BooksFileManagement.executor&quot;: &quot;Run&quot;,
-    &quot;Python.GUI (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.GUI.executor&quot;: &quot;Run&quot;,
-    &quot;Python.LibraryGUI.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Management (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.Management.executor&quot;: &quot;Run&quot;,
-    &quot;Python.UsersFileManagement.executor&quot;: &quot;Run&quot;,
-    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ex1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.AbstractForm.executor": "Run",
+    "Python.Book.executor": "Run",
+    "Python.BooksFileManagement.executor": "Run",
+    "Python.GUI (1).executor": "Run",
+    "Python.GUI.executor": "Run",
+    "Python.LibraryGUI.executor": "Run",
+    "Python.Management (1).executor": "Run",
+    "Python.Management.executor": "Run",
+    "Python.UsersFileManagement.executor": "Run",
+    "Python.__init__.executor": "Run",
+    "Python.ex1.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.tabs",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\razco\Documents\GitHub\A3_Library\system\gui" />
@@ -138,7 +115,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="BooksFileManagement" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Book" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="A3_Library" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -147,12 +124,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/books" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\razco\Documents\GitHub\A3_Library\system\files_management\BooksFileManagement.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/books/Book.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -229,29 +205,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Management" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="A3_Library" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/system" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/system/Management.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="ex1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="A3_Library" />
       <option name="ENV_FILES" value="" />
@@ -301,10 +254,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.Book" />
         <item itemvalue="Python.GUI" />
         <item itemvalue="Python.GUI (1)" />
         <item itemvalue="Python.ex1" />
-        <item itemvalue="Python.GUI" />
       </list>
     </recent_temporary>
   </component>
@@ -389,7 +342,23 @@
       <option name="project" value="LOCAL‎" />
       <updated>1737320611361</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL‎-00009" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1737379074260</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL‎-00009" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1737379074260</updated>
+    </task>
+    <task id="LOCAL‎-00010" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1737379140445</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL‎-00010" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1737379140445</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,7 +368,8 @@
     <MESSAGE value="Friday's commit" />
     <MESSAGE value="commit" />
     <MESSAGE value="Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
+    <MESSAGE value="Changes by shirb" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by shirb" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/A3_Library$main.coverage" NAME="main Coverage Results" MODIFIED="1737324947350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

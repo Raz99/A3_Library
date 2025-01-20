@@ -24,12 +24,15 @@ def setup():
         shared.books.append(current)
 
     # If the column is_loaned_dict is not in the CSV file, then add it
-    if not 'is_loaned_dict' or not 'popularity' in df.columns:
+    if not 'is_loaned_dict' or not 'popularity' or not 'wait_list' in df.columns:
         # Adds a new column and writes to file
         new_values = [book.get_loaned_dict() for book in shared.books]
         df['is_loaned_dict'] = new_values
         popularity = [book.get_popularity() for book in shared.books]
         df['popularity'] = popularity
+        df.to_csv(BOOKS_FILE_PATH, index=False)
+        waitlist = [book.get_waitlist() for book in shared.books]
+        df['wait_list'] = waitlist
         df.to_csv(BOOKS_FILE_PATH, index=False)
 
     # If the column is_loaned_dict is in the CSV file, then update the books
@@ -37,8 +40,10 @@ def setup():
         for i, row in df.iterrows():
             dict_data = ast.literal_eval(row["is_loaned_dict"]) # Convert string to dictionary
             shared.books[i].set_is_loaned_dict(dict_data)
-            popularity_data= row["popularity"]
+            popularity_data = row["popularity"]
             shared.books[i].set_popularity(popularity_data)
+            waitlist_data = ast.literal_eval(row["wait_list"])
+            shared.books[i].set_wait_list(waitlist_data)
 
 
 def update():

@@ -79,7 +79,7 @@ class Management(Subject):
             if user.get_username() == username:
                 return user
         print("User not found")
-        return None
+        return False
 
     def register_observer(self, observer):
         """Add an observer to the list."""

@@ -1,24 +1,22 @@
-title,author,is_loaned,copies,genre,year,is_loaned_dict,popularity
-The Catcher in the Rye,J.D. Salinger,No,3,Fiction,1951,"{0: 'No', 1: 'No', 2: 'No'}",0
-The Great Gatsby,F. Scott Fitzgerald,No,4,Classic,1925,"{0: 'No', 1: 'No', 2: 'No', 3: 'No'}",0
-Moby Dick,Herman Melville,No,1,Adventure,1851,{0: 'No'},0
-War and Peace,Leo Tolstoy,No,2,Historical Fiction,1869,"{0: 'No', 1: 'No'}",0
-Great Expectations,Charles Dickens,No,3,Classic,1861,"{0: 'No', 1: 'No', 2: 'No'}",0
-The Brothers Karamazov,Fyodor Dostoevsky,No,3,Philosophy,1880,"{0: 'No', 1: 'No', 2: 'No'}",0
-Jane Eyre,Charlotte Brontë,No,2,Gothic Fiction,1847,"{0: 'No', 1: 'No'}",0
-Wuthering Heights,Emily Brontë,No,4,Gothic Romance,1847,"{0: 'No', 1: 'No', 2: 'No', 3: 'No'}",0
-Madame Bovary,Gustave Flaubert,No,3,Realism,1857,"{0: 'No', 1: 'No', 2: 'No'}",0
-The Sound and the Fury,William Faulkner,No,2,Modernism,1929,"{0: 'No', 1: 'No'}",0
-Catch-22,Joseph Heller,No,4,Satire,1961,"{0: 'No', 1: 'No', 2: 'No', 3: 'No'}",0
-Brave New World,Aldous Huxley,No,5,Dystopian,1932,"{0: 'No', 1: 'No', 2: 'No', 3: 'No', 4: 'No'}",0
-The Grapes of Wrath,John Steinbeck,No,2,Fiction,1939,"{0: 'No', 1: 'No'}",0
-The Old Man and the Sea,Ernest Hemingway,No,3,Fiction,1952,"{0: 'No', 1: 'No', 2: 'No'}",0
-Harry Potter and the Philosopher's Stone,J.K. Rowling,No,7,Fantasy,1997,"{0: 'No', 1: 'No', 2: 'No', 3: 'No', 4: 'No', 5: 'No', 6: 'No'}",0
-The Name of the Wind,Patrick Rothfuss,No,3,Fantasy,2007,"{0: 'No', 1: 'No', 2: 'No'}",0
-Lion King,Dael,Yes,5,Adventure,1999,"{0: 'Yes', 1: 'No', 2: 'No', 3: 'No', 4: 'No'}",0
-raz1,shir,Yes,35,Fiction,1995,"{0: 'Yes', 1: 'No', 2: 'No', 3: 'No', 4: 'No', 5: 'No', 6: 'No', 7: 'No', 8: 'No', 9: 'No', 10: 'No', 11: 'No', 12: 'No', 13: 'No', 14: 'No', 15: 'No', 16: 'No', 17: 'No', 18: 'No', 19: 'No', 20: 'No', 21: 'No', 22: 'No', 23: 'No', 24: 'No', 25: 'No', 26: 'No', 27: 'No', 28: 'No', 29: 'No', 30: 'No', 31: 'No', 32: 'No', 33: 'No', 34: 'No'}",1
-raz_meleh,raz,No,24,Classic,432,"{0: 'No', 1: 'No', 2: 'No', 3: 'No', 4: 'No', 5: 'No', 6: 'No', 7: 'No', 8: 'No', 9: 'No', 10: 'No', 11: 'No', 12: 'No', 13: 'No', 14: 'No', 15: 'No', 16: 'No', 17: 'No', 18: 'No', 19: 'No', 20: 'No', 21: 'No', 22: 'No', 23: 'No'}",0
-haha,hahaha,No,123,Dystopian,1242,"{0: 'No', 1: 'No', 2: 'No', 3: 'No', 4: 'No', 5: 'No', 6: 'No', 7: 'No', 8: 'No', 9: 'No', 10: 'No', 11: 'No', 12: 'No', 13: 'No', 14: 'No', 15: 'No', 16: 'No', 17: 'No', 18: 'No', 19: 'No', 20: 'No', 21: 'No', 22: 'No', 23: 'No', 24: 'No', 25: 'No', 26: 'No', 27: 'No', 28: 'No', 29: 'No', 30: 'No', 31: 'No', 32: 'No', 33: 'No', 34: 'No', 35: 'No', 36: 'No', 37: 'No', 38: 'No', 39: 'No', 40: 'No', 41: 'No', 42: 'No', 43: 'No', 44: 'No', 45: 'No', 46: 'No', 47: 'No', 48: 'No', 49: 'No', 50: 'No', 51: 'No', 52: 'No', 53: 'No', 54: 'No', 55: 'No', 56: 'No', 57: 'No', 58: 'No', 59: 'No', 60: 'No', 61: 'No', 62: 'No', 63: 'No', 64: 'No', 65: 'No', 66: 'No', 67: 'No', 68: 'No', 69: 'No', 70: 'No', 71: 'No', 72: 'No', 73: 'No', 74: 'No', 75: 'No', 76: 'No', 77: 'No', 78: 'No', 79: 'No', 80: 'No', 81: 'No', 82: 'No', 83: 'No', 84: 'No', 85: 'No', 86: 'No', 87: 'No', 88: 'No', 89: 'No', 90: 'No', 91: 'No', 92: 'No', 93: 'No', 94: 'No', 95: 'No', 96: 'No', 97: 'No', 98: 'No', 99: 'No', 100: 'No', 101: 'No', 102: 'No', 103: 'No', 104: 'No', 105: 'No', 106: 'No', 107: 'No', 108: 'No', 109: 'No', 110: 'No', 111: 'No', 112: 'No', 113: 'No', 114: 'No', 115: 'No', 116: 'No', 117: 'No', 118: 'No', 119: 'No', 120: 'No', 121: 'No', 122: 'No'}",0
-shir bismuth,halel,No,24,Gothic Fiction,2566,"{0: 'No', 1: 'No', 2: 'No', 3: 'No', 4: 'No', 5: 'No', 6: 'No', 7: 'No', 8: 'No', 9: 'No', 10: 'No', 11: 'No', 12: 'No', 13: 'No', 14: 'No', 15: 'No', 16: 'No', 17: 'No', 18: 'No', 19: 'No', 20: 'No', 21: 'No', 22: 'No', 23: 'No'}",0
-shirrrr,dani,No,2,Epic Poetry,1233,"{0: 'No', 1: 'No'}",0
-kaki,raz,No,5,Classic,2019,"{0: 'No', 1: 'No', 2: 'No', 3: 'No', 4: 'No'}",0
+title,author,is_loaned,copies,genre,year,is_loaned_dict,popularity,wait_list
+The Catcher in the Rye,J.D. Salinger,No,3,Fiction,1951,"{0: 'No', 1: 'No', 2: 'No'}",0,[]
+The Great Gatsby,F. Scott Fitzgerald,No,4,Classic,1925,"{0: 'No', 1: 'No', 2: 'No', 3: 'No'}",0,[]
+Moby Dick,Herman Melville,No,1,Adventure,1851,{0: 'No'},0,[]
+War and Peace,Leo Tolstoy,No,2,Historical Fiction,1869,"{0: 'No', 1: 'No'}",0,[]
+Great Expectations,Charles Dickens,No,3,Classic,1861,"{0: 'No', 1: 'No', 2: 'No'}",0,[]
+The Brothers Karamazov,Fyodor Dostoevsky,No,3,Philosophy,1880,"{0: 'No', 1: 'No', 2: 'No'}",0,[]
+Jane Eyre,Charlotte Brontë,No,2,Gothic Fiction,1847,"{0: 'No', 1: 'No'}",0,[]
+Wuthering Heights,Emily Brontë,No,4,Gothic Romance,1847,"{0: 'No', 1: 'No', 2: 'No', 3: 'No'}",0,[]
+Madame Bovary,Gustave Flaubert,No,3,Realism,1857,"{0: 'No', 1: 'No', 2: 'No'}",0,[]
+The Sound and the Fury,William Faulkner,No,2,Modernism,1929,"{0: 'No', 1: 'No'}",0,[]
+Catch-22,Joseph Heller,No,4,Satire,1961,"{0: 'No', 1: 'No', 2: 'No', 3: 'No'}",0,[]
+Brave New World,Aldous Huxley,No,5,Dystopian,1932,"{0: 'No', 1: 'No', 2: 'No', 3: 'No', 4: 'No'}",0,[]
+The Grapes of Wrath,John Steinbeck,No,2,Fiction,1939,"{0: 'No', 1: 'No'}",0,[]
+The Old Man and the Sea,Ernest Hemingway,No,3,Fiction,1952,"{0: 'No', 1: 'No', 2: 'No'}",0,[]
+Harry Potter and the Philosopher's Stone,J.K. Rowling,No,7,Fantasy,1997,"{0: 'No', 1: 'No', 2: 'No', 3: 'No', 4: 'No', 5: 'No', 6: 'No'}",0,[]
+The Name of the Wind,Patrick Rothfuss,No,3,Fantasy,2007,"{0: 'No', 1: 'No', 2: 'No'}",0,[]
+raz_meleh,raz,No,24,Classic,432,"{0: 'No', 1: 'No', 2: 'No', 3: 'No', 4: 'No', 5: 'No', 6: 'No', 7: 'No', 8: 'No', 9: 'No', 10: 'No', 11: 'No', 12: 'No', 13: 'No', 14: 'No', 15: 'No', 16: 'No', 17: 'No', 18: 'No', 19: 'No', 20: 'No', 21: 'No', 22: 'No', 23: 'No'}",0,[]
+haha,hahaha,No,123,Dystopian,1242,"{0: 'No', 1: 'No', 2: 'No', 3: 'No', 4: 'No', 5: 'No', 6: 'No', 7: 'No', 8: 'No', 9: 'No', 10: 'No', 11: 'No', 12: 'No', 13: 'No', 14: 'No', 15: 'No', 16: 'No', 17: 'No', 18: 'No', 19: 'No', 20: 'No', 21: 'No', 22: 'No', 23: 'No', 24: 'No', 25: 'No', 26: 'No', 27: 'No', 28: 'No', 29: 'No', 30: 'No', 31: 'No', 32: 'No', 33: 'No', 34: 'No', 35: 'No', 36: 'No', 37: 'No', 38: 'No', 39: 'No', 40: 'No', 41: 'No', 42: 'No', 43: 'No', 44: 'No', 45: 'No', 46: 'No', 47: 'No', 48: 'No', 49: 'No', 50: 'No', 51: 'No', 52: 'No', 53: 'No', 54: 'No', 55: 'No', 56: 'No', 57: 'No', 58: 'No', 59: 'No', 60: 'No', 61: 'No', 62: 'No', 63: 'No', 64: 'No', 65: 'No', 66: 'No', 67: 'No', 68: 'No', 69: 'No', 70: 'No', 71: 'No', 72: 'No', 73: 'No', 74: 'No', 75: 'No', 76: 'No', 77: 'No', 78: 'No', 79: 'No', 80: 'No', 81: 'No', 82: 'No', 83: 'No', 84: 'No', 85: 'No', 86: 'No', 87: 'No', 88: 'No', 89: 'No', 90: 'No', 91: 'No', 92: 'No', 93: 'No', 94: 'No', 95: 'No', 96: 'No', 97: 'No', 98: 'No', 99: 'No', 100: 'No', 101: 'No', 102: 'No', 103: 'No', 104: 'No', 105: 'No', 106: 'No', 107: 'No', 108: 'No', 109: 'No', 110: 'No', 111: 'No', 112: 'No', 113: 'No', 114: 'No', 115: 'No', 116: 'No', 117: 'No', 118: 'No', 119: 'No', 120: 'No', 121: 'No', 122: 'No'}",0,[]
+shir bismuth,halel,No,24,Gothic Fiction,2566,"{0: 'No', 1: 'No', 2: 'No', 3: 'No', 4: 'No', 5: 'No', 6: 'No', 7: 'No', 8: 'No', 9: 'No', 10: 'No', 11: 'No', 12: 'No', 13: 'No', 14: 'No', 15: 'No', 16: 'No', 17: 'No', 18: 'No', 19: 'No', 20: 'No', 21: 'No', 22: 'No', 23: 'No'}",0,[]
+shirrrr,dani,No,2,Epic Poetry,1233,"{0: 'No', 1: 'No'}",0,[]
+kaki,raz,No,5,Classic,2019,"{0: 'No', 1: 'No', 2: 'No', 3: 'No', 4: 'No'}",0,[]

@@ -1,20 +1,20 @@
-title,author,is_loaned,copies,genre,year,is_loaned_dict,popularity
-To Kill a Mockingbird,Harper Lee,Yes,2,Fiction,1960,"{0: 'Yes', 1: 'Yes'}",2
-1984,George Orwell,Yes,5,Dystopian,1949,"{0: 'Yes', 1: 'Yes', 2: 'Yes', 3: 'Yes', 4: 'Yes'}",5
-Pride and Prejudice,Jane Austen,Yes,3,Romance,1813,"{0: 'Yes', 1: 'Yes', 2: 'Yes'}",3
-Crime and Punishment,Fyodor Dostoevsky,Yes,1,Psychological Drama,1866,{0: 'Yes'},1
-The Divine Comedy,Dante Alighieri,Yes,1,Epic Poetry,1320,{0: 'Yes'},1
-Anna Karenina,Leo Tolstoy,Yes,2,Fiction,1877,"{0: 'Yes', 1: 'Yes'}",2
-The Iliad,Homer,Yes,1,Epic Poetry,-750,{0: 'Yes'},1
-Invisible Man,Ralph Ellison,Yes,1,Fiction,1952,{0: 'Yes'},1
-Beloved,Toni Morrison,Yes,3,Historical Fiction,1987,"{0: 'Yes', 1: 'Yes', 2: 'Yes'}",3
-Slaughterhouse-Five,Kurt Vonnegut,Yes,2,Science Fiction,1969,"{0: 'Yes', 1: 'Yes'}",2
-Heart of Darkness,Joseph Conrad,Yes,3,Adventure,1899,"{0: 'Yes', 1: 'Yes', 2: 'Yes'}",3
-Of Mice and Men,John Steinbeck,Yes,1,Tragedy,1937,{0: 'Yes'},1
-The Hobbit,J.R.R. Tolkien,Yes,4,Fantasy,1937,"{0: 'Yes', 1: 'Yes', 2: 'Yes', 3: 'Yes'}",4
-The Lord of the Rings,J.R.R. Tolkien,Yes,2,Fantasy,1954,"{0: 'Yes', 1: 'Yes'}",2
-A Game of Thrones,George R.R. Martin,Yes,5,Fantasy,1996,"{0: 'Yes', 1: 'Yes', 2: 'Yes', 3: 'Yes', 4: 'Yes'}",5
-Mistborn: The Final Empire,Brandon Sanderson,Yes,4,Fantasy,2006,"{0: 'Yes', 1: 'Yes', 2: 'Yes', 3: 'Yes'}",4
-The Odyssey,Homer,Yes,2,Epic Poetry,-800,"{0: 'Yes', 1: 'Yes'}",2
-Lion King,Dael,Yes,5,Adventure,1999,"{0: 'Yes', 1: 'No', 2: 'No', 3: 'No', 4: 'No'}",0
-raz1,shir,Yes,35,Fiction,1995,"{0: 'Yes', 1: 'No', 2: 'No', 3: 'No', 4: 'No', 5: 'No', 6: 'No', 7: 'No', 8: 'No', 9: 'No', 10: 'No', 11: 'No', 12: 'No', 13: 'No', 14: 'No', 15: 'No', 16: 'No', 17: 'No', 18: 'No', 19: 'No', 20: 'No', 21: 'No', 22: 'No', 23: 'No', 24: 'No', 25: 'No', 26: 'No', 27: 'No', 28: 'No', 29: 'No', 30: 'No', 31: 'No', 32: 'No', 33: 'No', 34: 'No'}",1
+title,author,is_loaned,copies,genre,year,is_loaned_dict,popularity,wait_list
+To Kill a Mockingbird,Harper Lee,Yes,2,Fiction,1960,"{0: 'Yes', 1: 'Yes'}",2,[]
+1984,George Orwell,Yes,5,Dystopian,1949,"{0: 'Yes', 1: 'Yes', 2: 'Yes', 3: 'Yes', 4: 'Yes'}",5,[]
+Pride and Prejudice,Jane Austen,Yes,3,Romance,1813,"{0: 'Yes', 1: 'Yes', 2: 'Yes'}",3,[]
+Crime and Punishment,Fyodor Dostoevsky,Yes,1,Psychological Drama,1866,{0: 'Yes'},1,[]
+The Divine Comedy,Dante Alighieri,Yes,1,Epic Poetry,1320,{0: 'Yes'},1,[]
+Anna Karenina,Leo Tolstoy,Yes,2,Fiction,1877,"{0: 'Yes', 1: 'Yes'}",2,[]
+The Iliad,Homer,Yes,1,Epic Poetry,-750,{0: 'Yes'},1,[]
+Invisible Man,Ralph Ellison,Yes,1,Fiction,1952,{0: 'Yes'},1,[]
+Beloved,Toni Morrison,Yes,3,Historical Fiction,1987,"{0: 'Yes', 1: 'Yes', 2: 'Yes'}",3,[]
+Slaughterhouse-Five,Kurt Vonnegut,Yes,2,Science Fiction,1969,"{0: 'Yes', 1: 'Yes'}",2,[]
+Heart of Darkness,Joseph Conrad,Yes,3,Adventure,1899,"{0: 'Yes', 1: 'Yes', 2: 'Yes'}",3,[]
+Of Mice and Men,John Steinbeck,Yes,1,Tragedy,1937,{0: 'Yes'},1,[]
+The Hobbit,J.R.R. Tolkien,Yes,4,Fantasy,1937,"{0: 'Yes', 1: 'Yes', 2: 'Yes', 3: 'Yes'}",4,[]
+The Lord of the Rings,J.R.R. Tolkien,Yes,2,Fantasy,1954,"{0: 'Yes', 1: 'Yes'}",2,[]
+A Game of Thrones,George R.R. Martin,Yes,5,Fantasy,1996,"{0: 'Yes', 1: 'Yes', 2: 'Yes', 3: 'Yes', 4: 'Yes'}",5,[]
+Mistborn: The Final Empire,Brandon Sanderson,Yes,4,Fantasy,2006,"{0: 'Yes', 1: 'Yes', 2: 'Yes', 3: 'Yes'}",4,[]
+The Odyssey,Homer,Yes,2,Epic Poetry,-800,"{0: 'Yes', 1: 'Yes'}",2,[]
+Lion King,Dael,Yes,5,Adventure,1999,"{0: 'Yes', 1: 'Yes', 2: 'Yes', 3: 'Yes', 4: 'Yes'}",5,[]
+raz1,shir,Yes,35,Fiction,1995,"{0: 'Yes', 1: 'Yes', 2: 'Yes', 3: 'Yes', 4: 'Yes', 5: 'Yes', 6: 'Yes', 7: 'Yes', 8: 'Yes', 9: 'Yes', 10: 'Yes', 11: 'Yes', 12: 'Yes', 13: 'Yes', 14: 'Yes', 15: 'Yes', 16: 'Yes', 17: 'Yes', 18: 'Yes', 19: 'Yes', 20: 'Yes', 21: 'Yes', 22: 'Yes', 23: 'Yes', 24: 'Yes', 25: 'Yes', 26: 'Yes', 27: 'Yes', 28: 'Yes', 29: 'Yes', 30: 'Yes', 31: 'Yes', 32: 'Yes', 33: 'Yes', 34: 'Yes'}",35,[]

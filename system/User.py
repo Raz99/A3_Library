@@ -12,7 +12,6 @@ class Observer(ABC):
     def update(self, message):
         pass
 
-
 class User(Observer):
     def __init__(self, username, password):
         self.username = username
