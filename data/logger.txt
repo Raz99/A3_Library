@@ -1,11 +1,9 @@
-logged in fail
-registered successfully
-book returned successfully
+
 logged in successfully
+book removed fail
+book removed fail
+book removed successfully
+book borrowed fail
+book borrowed fail
 book borrowed successfully
-book returned successfully
-book returned successfully
-book returned successfully
-Displayed all books successful
-Displayed available books successful
-log out successful
+book returned fail

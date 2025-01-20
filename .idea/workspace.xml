@@ -5,26 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd64134e-7d23-4291-a889-a4d6ab46e6bb" name="Changes" comment="Commit">
+      <change afterPath="$PROJECT_DIR$/system/iterators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/A3_Library.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/A3_Library.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Book.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/available_books.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/books.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/loaned_books.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/logger.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/popularity_books.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/users.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/User.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/available_books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/available_books.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/loaned_books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/loaned_books.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/logger.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logger.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/popularity_books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/popularity_books.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system/gui/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/gui/GUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/shared.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/shared.py" afterDir="false" />
     </list>
-    <list id="aa8b4c4f-f5ea-4c78-94a5-87c8c1dcd6ec" name="Changes by razco" comment="" />
-    <list id="7b80dd7d-7c1c-439a-811c-1baf53ff744a" name="Changes by shirb" comment="Changes by shirb">
-      <change beforePath="$PROJECT_DIR$/books/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/Book.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/User.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" afterDir="false" />
+    <list id="aa8b4c4f-f5ea-4c78-94a5-87c8c1dcd6ec" name="Changes by razco" comment="">
+      <change beforePath="$PROJECT_DIR$/system/Management.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/Management.py" afterDir="false" />
     </list>
+    <list id="7b80dd7d-7c1c-439a-811c-1baf53ff744a" name="Changes by shirb" comment="Changes by shirb" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,40 +42,12 @@
     &quot;assignee&quot;: &quot;Raz99&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Raz99/A3_Library.git&quot;,
-    &quot;accountId&quot;: &quot;c16a7655-c352-4a75-915a-ad7786db8404&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Raz99/A3_Library.git",
+    "accountId": "49740b91-98e8-478c-89b3-57e5690743c0"
   }
-}</component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/books/Book.py">
-      <ranges>
-        <range start1="1" end1="1" start2="1" end2="2" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
-        <range start1="94" end1="97" start2="95" end2="98" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="99" end1="99" start2="100" end2="101" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
-        <range start1="101" end1="102" start2="103" end2="104" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="106" end1="107" start2="108" end2="109" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/system/files_management/BooksFileManagement.py">
-      <ranges>
-        <range start1="14" end1="14" start2="14" end2="15" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="26" end1="27" start2="27" end2="28" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
-        <range start1="32" end1="33" start2="33" end2="33" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="37" end1="38" start2="37" end2="39" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="53" end1="54" start2="54" end2="55" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/system/User.py">
-      <ranges>
-        <range start1="61" end1="62" start2="61" end2="61" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
-        <range start1="78" end1="79" start2="77" end2="77" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
-        <range start1="92" end1="93" start2="90" end2="91" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="95" end1="101" start2="93" end2="104" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
-      </ranges>
-    </file>
-  </component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -140,6 +108,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/books/Book.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -276,7 +245,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-fb887030ada0-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.21565.199" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PY-243.22562.180" />
+        <option value="bundled-python-sdk-85c76a3b01b3-9a18a617cbe4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.22562.180" />
       </set>
     </attachedChunks>
   </component>
@@ -289,6 +259,7 @@
       <option name="presentableId" value="Default" />
       <updated>1736186364528</updated>
       <workItem from="1737322646316" duration="3552000" />
+      <workItem from="1737404295665" duration="1648000" />
     </task>
     <task id="LOCAL‎-00001" summary="Friday's commit">
       <option name="closed" value="true" />
@@ -392,6 +363,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Commit" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/A3_Library$main.coverage" NAME="main Coverage Results" MODIFIED="1737324947350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/A3_Library$main.coverage" NAME="main Coverage Results" MODIFIED="1737405762140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -137,11 +137,13 @@ class SignupForm(AbstractForm):
         self.signup_window.destroy()
         self.root.withdraw()  # Hide the main window
         if self.library_management.add_user(username, password):
+            messagebox.showinfo("Info", "registered successfully")
             message = SimpleTextLogger("registered successfully")
             info_logged = InfoTextDecorator(message)
             info_logged.log()
             MenuForm(self.root, self.library_management.get_user(username))
         else:
+            messagebox.showerror( "Error", "This username already exists")
             message = SimpleTextLogger("registered fail")
             error_logged = ErrorTextDecorator(message)
             error_logged.log()
@@ -343,6 +345,7 @@ class RemoveBookForm(AbstractForm):
                 info_logged = ErrorTextDecorator(message)
                 info_logged.log()
             else:
+                messagebox.showerror("Error", "The book is not found")
                 message = SimpleTextLogger("book removed fail")
                 error_logged = ErrorTextDecorator(message)
                 error_logged.log()
