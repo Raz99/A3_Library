@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter import messagebox, ttk
 from abc import ABC, abstractmethod
+
+import books.Book
 from books import BookType
 from system import shared
 from system.Management import Management
@@ -19,6 +21,7 @@ class AbstractForm:
         """Abstract form with common layout logic."""
         self.root = root
         self.icon = tk.PhotoImage(file=ICON_PATH)  # Keep a reference to the icon
+        self.library_management = Management()
         self.create_common_widgets()
         self.create_specific_widgets()
 
@@ -38,6 +41,9 @@ class OpeningForm(AbstractForm):
         register_button = tk.Button(self.root, text="Register", command=self.open_signup)
         register_button.pack()
 
+        # Bind the close event to the on_closing function
+        self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
+
     def open_login(self):
         self.root.withdraw() # Hide the main window
         login_form = LoginForm(self.root)
@@ -45,6 +51,9 @@ class OpeningForm(AbstractForm):
     def open_signup(self):
         self.root.withdraw() # Hide the main window
         signup_form = SignupForm(self.root)
+
+    def on_closing(self):
+        self.root.destroy()
 
 class LoginForm(AbstractForm):
     def create_specific_widgets(self):
@@ -65,23 +74,34 @@ class LoginForm(AbstractForm):
         self.submit_button = tk.Button(self.login_window, text="Login", command=self.handle_submit)
         self.submit_button.pack()
 
+        self.username_entry.bind('<Return>', lambda event: self.handle_submit())
+        self.password_entry.bind('<Return>', lambda event: self.handle_submit())
+        self.login_window.bind('<Return>', lambda event: self.handle_submit())
+
+        # Bind the close event to the on_closing function
+        self.login_window.protocol("WM_DELETE_WINDOW", self.on_closing)
+
     def handle_submit(self):
         """Handle login form submission."""
         username = self.username_entry.get()
         password = self.password_entry.get()
         self.login_window.destroy()
         self.root.withdraw()  # Hide the main window
-        if Management.login(username, password):
+        if self.library_management.login(username, password):
             message = SimpleTextLogger("logged in successfully")
             info_logged = InfoTextDecorator(message)
             info_logged.log()
-            MenuForm(self.root, Management.get_user(username))
+            MenuForm(self.root, self.library_management.get_user(username))
         else:
             message = SimpleTextLogger("logged in fail")
             error_logged = ErrorTextDecorator(message)
             error_logged.log()
-            MenuForm(self.root, Management.get_user(username))
+            MenuForm(self.root, self.library_management.get_user(username))
             self.root.deiconify()  # Show the opening window again if the login fails
+
+    def on_closing(self):
+        self.root.deiconify()
+        self.login_window.destroy()
 
 
 class SignupForm(AbstractForm):
@@ -103,21 +123,32 @@ class SignupForm(AbstractForm):
         self.submit_button = tk.Button(self.signup_window, text="Sign Up", command=self.handle_submit)
         self.submit_button.pack()
 
+        self.username_entry.bind('<Return>', lambda event: self.handle_submit())
+        self.password_entry.bind('<Return>', lambda event: self.handle_submit())
+        self.signup_window.bind('<Return>', lambda event: self.handle_submit())
+
+        # Bind the close event to the on_closing function
+        self.signup_window.protocol("WM_DELETE_WINDOW", self.on_closing)
+
     def handle_submit(self):
         """Handle signup form submission."""
         username = self.username_entry.get()
         password = self.password_entry.get()
-        if Management.add_user(username, password):
+        if self.library_management.add_user(username, password):
             message = SimpleTextLogger("registered successfully")
             info_logged = InfoTextDecorator(message)
             info_logged.log()
             self.signup_window.destroy()
             self.root.withdraw()
-            MenuForm(self.root, Management.get_user(username))
+            MenuForm(self.root, self.library_management.get_user(username))
         else:
             message = SimpleTextLogger("registered fail")
             error_logged = ErrorTextDecorator(message)
             error_logged.log()
+
+    def on_closing(self):
+        self.root.deiconify()
+        self.signup_window.destroy()
 
 class MenuForm(AbstractForm):
     def __init__(self, root, user):
@@ -140,6 +171,9 @@ class MenuForm(AbstractForm):
         return_book_button.pack()
         logout_button = tk.Button(self.menu_window, text="Logout", command=self.open_logout)
         logout_button.pack()
+
+        # Bind the close event to the on_closing function
+        self.menu_window.protocol("WM_DELETE_WINDOW", self.open_logout())
 
     def open_add_book(self):
         self.menu_window.withdraw()  # Hide the menu window
@@ -220,6 +254,9 @@ class AddBookForm(AbstractForm):
         submit_button = tk.Button(self.add_book_window, text="Submit", command=self.handle_submit)
         submit_button.pack(pady=20)
 
+        # Bind the close event to the on_closing function
+        self.add_book_window.protocol("WM_DELETE_WINDOW", self.on_closing)
+
     def handle_submit(self):
         try:
             # Gets values from entries
@@ -235,6 +272,7 @@ class AddBookForm(AbstractForm):
                 message = SimpleTextLogger("book added fail")
                 error_logged = ErrorTextDecorator(message)
                 error_logged.log()
+                self.add_book_window.destroy()
                 return
 
             # Adds a book
@@ -254,6 +292,10 @@ class AddBookForm(AbstractForm):
 
         finally:
             self.menu_wind.deiconify()  # Show the menu window again
+
+    def on_closing(self):
+        self.menu_wind.deiconify()
+        self.add_book_window.destroy()
 
 
 class RemoveBookForm(AbstractForm):
@@ -278,6 +320,9 @@ class RemoveBookForm(AbstractForm):
         submit_button = tk.Button(self.remove_book_window, text="Submit", command=self.handle_submit)
         submit_button.pack(pady=20)
 
+        # Bind the close event to the on_closing function
+        self.remove_book_window.protocol("WM_DELETE_WINDOW", self.on_closing)
+
     def handle_submit(self):
         try:
             # Gets values from entries
@@ -289,6 +334,7 @@ class RemoveBookForm(AbstractForm):
                 message = SimpleTextLogger("book removed fail")
                 error_logged = ErrorTextDecorator(message)
                 error_logged.log()
+                self.remove_book_window.destroy()
                 return
 
             # Removes a book
@@ -313,6 +359,10 @@ class RemoveBookForm(AbstractForm):
         finally:
             self.menu_wind.deiconify()  # Show the menu window again
 
+    def on_closing(self):
+        self.menu_wind.deiconify()
+        self.remove_book_window.destroy()
+
 
 class LendBookForm(AbstractForm):
     def __init__(self, root, menu, user):
@@ -336,6 +386,9 @@ class LendBookForm(AbstractForm):
         submit_button = tk.Button(self.lend_book_window, text="Submit", command=self.handle_submit)
         submit_button.pack(pady=20)
 
+        # Bind the close event to the on_closing function
+        self.lend_book_window.protocol("WM_DELETE_WINDOW", self.on_closing)
+
     def handle_submit(self):
         try:
             # Gets values from entries
@@ -347,16 +400,23 @@ class LendBookForm(AbstractForm):
                 message = SimpleTextLogger("book borrowed fail")
                 error_logged = ErrorTextDecorator(message)
                 error_logged.log()
+                self.lend_book_window.destroy()
                 return
 
             # Adds a book
-            if self.user.lend_book(title):
+            result = self.user.lend_book(title)
+            if result==0:
+                book = shared.book_by_title(title)
+                self.lend_book_window.destroy()
+                wind = WaitListForm(self.root, self.menu_wind, self.user, book)
+
+            if result==1:
                 messagebox.showinfo("Success", "Book lent successfully!")
                 message = SimpleTextLogger("book borrowed successfully")
                 info_logged = InfoTextDecorator(message)
                 info_logged.log()
                 self.lend_book_window.destroy()
-            else:
+            if result==2:
                 message = SimpleTextLogger("book borrowed fail")
                 error_logged = ErrorTextDecorator(message)
                 error_logged.log()
@@ -369,7 +429,71 @@ class LendBookForm(AbstractForm):
 
         finally:
             self.menu_wind.deiconify()  # Show the menu window again
-            
+
+    def on_closing(self):
+        self.menu_wind.deiconify()
+        self.lend_book_window.destroy()
+
+class WaitListForm(AbstractForm):
+    def __init__(self, root, menu, user, book):
+        super().__init__(root)
+        self.menu_wind = menu
+        self.user = user
+        self.book = book
+
+    def create_specific_widgets(self):
+        # Creates a new window for add to waitlist
+        self.waitlist_form = tk.Toplevel(self.root)
+        self.waitlist_form.title("person Details")
+        self.waitlist_form.geometry("400x300")
+
+        # Creates input fields
+        self.name_label = tk.Label(self.waitlist_form, text="Name:")
+        self.name_label.pack()
+        self.name_entry = tk.Entry(self.waitlist_form)
+        self.name_entry.pack()
+
+        self.phone_label = tk.Label(self.waitlist_form, text="Phone:")
+        self.phone_label.pack()
+        self.phone_entry = tk.Entry(self.waitlist_form)
+        self.phone_entry.pack()
+
+        submit_button = tk.Button(self.waitlist_form, text="Submit", command=self.handle_submit)
+        submit_button.pack(pady=20)
+
+        # Bind the close event to the on_closing function
+        self.waitlist_form.protocol("WM_DELETE_WINDOW", self.on_closing)
+
+    def handle_submit(self):
+        try:
+            # Gets values from entries
+            name = self.name_entry.get()
+            phone = self.phone_entry.get()
+
+            # Ensures that all inputs are in use
+            if not (name and phone):
+                messagebox.showerror("Error", "All fields are required!")
+                self.waitlist_form.destroy()
+                return
+
+                # Adds person's details to wait list
+            if self.book.add_to_waitlist(name , phone):
+                messagebox.showinfo("Success", "Adds person's details to wait list")
+            else:
+                messagebox.showinfo("Failed", "Adds person's details to wait list failed")
+
+        except Exception as e:
+            messagebox.showerror("Error", f"An error occurred: {str(e)}")
+            self.waitlist_form.destroy()
+
+        finally:
+            self.menu_wind.decionify()  # Show the menu window again
+
+    def on_closing(self):
+        messagebox.showerror("Error", "Failed to add person's details to wait list")
+        self.menu_wind.deiconify()
+        self.waitlist_form.destroy()
+
 class ReturnBookForm(AbstractForm):
     def __init__(self, root, menu, user):
         super().__init__(root)
@@ -392,6 +516,9 @@ class ReturnBookForm(AbstractForm):
         submit_button = tk.Button(self.return_book_form, text="Submit", command=self.handle_submit)
         submit_button.pack(pady=20)
 
+        # Bind the close event to the on_closing function
+        self.return_book_form.protocol("WM_DELETE_WINDOW", self.on_closing)
+
     def handle_submit(self):
         try:
             # Gets values from entries
@@ -403,6 +530,7 @@ class ReturnBookForm(AbstractForm):
                 error_logged = ErrorTextDecorator(message)
                 error_logged.log()
                 messagebox.showerror("Error", "All fields are required!")
+                self.return_book_form.destroy()
                 return
 
             # Adds a book
@@ -424,7 +552,11 @@ class ReturnBookForm(AbstractForm):
             self.return_book_form.destroy()
 
         finally:
-            self.menu_wind.decionify()  # Show the menu window again
+            self.menu_wind.deiconify()  # Show the menu window again
+
+    def on_closing(self):
+        self.menu_wind.deiconify()
+        self.return_book_form.destroy()
 
 class SearchStrategy(ABC):
     @abstractmethod
@@ -522,6 +654,7 @@ class SearchBookForm(AbstractForm):
 
         if not query:
             messagebox.showerror("Invalid Input", "Search query cannot be empty.")
+            self.search_book_form.destroy()
             return
 
         try:
