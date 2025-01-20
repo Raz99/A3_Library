@@ -36,7 +36,6 @@ class User:
 
 
     def remove_book(self, title):
-        #book_to_remove = BookFactory.create_book(title, author, "No", 1, BookType(genre), int(year))
         for book in shared.books:
             if book.get_title() == title:
                 if book.get_is_loaned()== "Yes":
@@ -50,7 +49,6 @@ class User:
         return False
 
     def lend_book(self, title):
-        #book_to_loan = BookFactory.create_book(title, author, "No", 1, BookType(genre), int(year))
         for book in shared.books:
             if book.title == title:
 

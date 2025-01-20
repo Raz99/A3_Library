@@ -9,7 +9,7 @@ from system.files_management.BooksFileManagement import BOOKS_FILE_PATH
 from system.files_management.AvailableBooksFileManagment import AVAILABLE_BOOKS_FILE_PATH
 from system.files_management.LoanedBooksFileManagement import LOANED_BOOKS_FILE_PATH
 from system.files_management.PopularityFileManagment import POPULAR_BOOKS_FILE_PATH
-from system.files_management import Logger
+from system.files_management.Logger import SimpleTextLogger, InfoTextDecorator, ErrorTextDecorator
 
 TITLE = "Library Management System"
 ICON_PATH = r"system\gui\icon.png"
@@ -72,12 +72,15 @@ class LoginForm(AbstractForm):
         self.login_window.destroy()
         self.root.withdraw()  # Hide the main window
         if Management.login(username, password):
-            print(f"Login submitted: {username}")
-            Logger.log_success("logged in successfully")
+            message = SimpleTextLogger("logged in successfully")
+            info_logged = InfoTextDecorator(message)
+            info_logged.log()
             MenuForm(self.root, Management.get_user(username))
         else:
-            print("Login failed")
-            Logger.log_fail("logged in fail")
+            message = SimpleTextLogger("logged in fail")
+            error_logged = ErrorTextDecorator(message)
+            error_logged.log()
+            MenuForm(self.root, Management.get_user(username))
             self.root.deiconify()  # Show the opening window again if the login fails
 
 
@@ -105,12 +108,16 @@ class SignupForm(AbstractForm):
         username = self.username_entry.get()
         password = self.password_entry.get()
         if Management.add_user(username, password):
-            Logger.log_success("registered successfully")
+            message = SimpleTextLogger("registered successfully")
+            info_logged = InfoTextDecorator(message)
+            info_logged.log()
             self.signup_window.destroy()
             self.root.withdraw()
             MenuForm(self.root, Management.get_user(username))
         else:
-            Logger.log_fail("registered fail")
+            message = SimpleTextLogger("registered fail")
+            error_logged = ErrorTextDecorator(message)
+            error_logged.log()
 
 class MenuForm(AbstractForm):
     def __init__(self, root, user):
@@ -159,9 +166,17 @@ class MenuForm(AbstractForm):
         return_book_form = ReturnBookForm(self.root, self.menu_window, self.user)
 
     def open_logout(self):
-        Logger.log_success("log out successful")
-        self.menu_window.destroy() # Close the menu window
-        self.root.deiconify() # Show the opening window again
+        try:
+            message = SimpleTextLogger("log out successful")
+            info_logged = InfoTextDecorator(message)
+            info_logged.log()
+            self.menu_window.destroy() # Close the menu window
+            self.root.deiconify() # Show the opening window again
+        except Exception as e:
+            message = SimpleTextLogger("log out fail")
+            error_logged = ErrorTextDecorator(message)
+            error_logged.log()
+            messagebox.showerror("Error", f"An error occurred: {str(e)}")
 
 class AddBookForm(AbstractForm):
     def __init__(self, root, menu, user):
@@ -217,17 +232,25 @@ class AddBookForm(AbstractForm):
             # Ensures that all inputs are used
             if not (title and author and year and genre):
                 messagebox.showerror("Error", "All fields are required!")
+                message = SimpleTextLogger("book added fail")
+                error_logged = ErrorTextDecorator(message)
+                error_logged.log()
                 return
 
             # Adds a book
             self.user.add_book(title, author, copies, genre, year)
             messagebox.showinfo("Success", "Book added successfully!")
-            Logger.log_success("book added successfully")
+            message = SimpleTextLogger("book added successfully")
+            info_logged = InfoTextDecorator(message)
+            info_logged.log()
             self.add_book_window.destroy()
 
         except Exception as e:
             messagebox.showerror("Error", f"An error occurred: {str(e)}")
-            Logger.log_fail("book added fail")
+            message = SimpleTextLogger("book added fail")
+            error_logged = ErrorTextDecorator(message)
+            error_logged.log()
+            self.add_book_window.destroy()
 
         finally:
             self.menu_wind.deiconify()  # Show the menu window again
@@ -263,18 +286,29 @@ class RemoveBookForm(AbstractForm):
             # Ensures that all inputs are in use
             if not title:
                 messagebox.showerror("Error", "All fields are required!")
+                message = SimpleTextLogger("book removed fail")
+                error_logged = ErrorTextDecorator(message)
+                error_logged.log()
                 return
 
             # Removes a book
             if self.user.remove_book(title):
                 messagebox.showinfo("Success", "Book removed successfully!")
-                Logger.log_success("book removed successfully")
+                message = SimpleTextLogger("book removed successfully")
+                info_logged = ErrorTextDecorator(message)
+                info_logged.log()
                 self.remove_book_window.destroy()
             else:
-                Logger.log_fail("book removed fail")
+                message = SimpleTextLogger("book removed fail")
+                error_logged = ErrorTextDecorator(message)
+                error_logged.log()
+
         except Exception as e:
             messagebox.showerror("Error", f"An error occurred: {str(e)}")
-            Logger.log_fail("book removed fail")
+            message = SimpleTextLogger("book removed fail")
+            error_logged = ErrorTextDecorator(message)
+            error_logged.log()
+            self.remove_book_window.destroy()
 
         finally:
             self.menu_wind.deiconify()  # Show the menu window again
@@ -310,18 +344,28 @@ class LendBookForm(AbstractForm):
             # Ensures that all inputs are in use
             if not title:
                 messagebox.showerror("Error", "All fields are required!")
+                message = SimpleTextLogger("book borrowed fail")
+                error_logged = ErrorTextDecorator(message)
+                error_logged.log()
                 return
 
             # Adds a book
             if self.user.lend_book(title):
                 messagebox.showinfo("Success", "Book lent successfully!")
-                Logger.log_success("book borrowed successfully")
+                message = SimpleTextLogger("book borrowed successfully")
+                info_logged = InfoTextDecorator(message)
+                info_logged.log()
                 self.lend_book_window.destroy()
             else:
-                Logger.log_fail("book borrowed fail")
+                message = SimpleTextLogger("book borrowed fail")
+                error_logged = ErrorTextDecorator(message)
+                error_logged.log()
         except Exception as e:
             messagebox.showerror("Error", f"An error occurred: {str(e)}")
-            Logger.log_fail("book borrowed fail")
+            message = SimpleTextLogger("book borrowed fail")
+            error_logged = ErrorTextDecorator(message)
+            error_logged.log()
+            self.lend_book_window.destroy()
 
         finally:
             self.menu_wind.deiconify()  # Show the menu window again
@@ -355,19 +399,29 @@ class ReturnBookForm(AbstractForm):
 
             # Ensures that all inputs are in use
             if not title:
+                message = SimpleTextLogger("book returned fail")
+                error_logged = ErrorTextDecorator(message)
+                error_logged.log()
                 messagebox.showerror("Error", "All fields are required!")
                 return
 
             # Adds a book
             if self.user.return_book(title):
                 messagebox.showinfo("Success", "Book returned successfully!")
-                Logger.log_success("book returned successfully")
+                message = SimpleTextLogger("book returned successfully")
+                info_logged = InfoTextDecorator(message)
+                info_logged.log()
                 self.return_book_form.destroy()
             else:
-                Logger.log_fail("book returned fail")
+                message = SimpleTextLogger("book returned fail")
+                error_logged = ErrorTextDecorator(message)
+                error_logged.log()
         except Exception as e:
             messagebox.showerror("Error", f"An error occurred: {str(e)}")
-            Logger.log_fail("book returned fail")
+            message = SimpleTextLogger("book returned fail")
+            error_logged = ErrorTextDecorator(message)
+            error_logged.log()
+            self.return_book_form.destroy()
 
         finally:
             self.menu_wind.decionify()  # Show the menu window again
@@ -381,20 +435,28 @@ class SearchByTitle(SearchStrategy):
     def search(self, books, query):
         result = books[books['title'].str.contains(query, case=False, na=False)]
         if result.empty:
-            Logger.log_fail(f'Search book "{query}" by name completed fail')
+            message = SimpleTextLogger(f"Search book \"{query}\" by name completed fail")
+            error_logged = ErrorTextDecorator(message)
+            error_logged.log()
             messagebox.showerror("Attention", "No books found")
         else:
-            Logger.log_success(f'Search book "{query}" by by name completed successful.')
+            message = SimpleTextLogger(f"Search book \"{query}\" by name completed successful.")
+            info_logged = InfoTextDecorator(message)
+            info_logged.log()
         return result
 
 class SearchByAuthor(SearchStrategy):
     def search(self, books, query):
         result = books[books['author'].str.contains(query, case=False, na=False)]
         if result.empty:
-            Logger.log_fail(f'Search book "{query}" by author name fail')
+            message = SimpleTextLogger(f"Search book \"{query}\" by author name fail")
+            error_logged = ErrorTextDecorator(message)
+            error_logged.log()
             messagebox.showerror("Attention", "No books found")
         else:
-            Logger.log_success(f'Search book "{query}" by author name successful')
+            message = SimpleTextLogger(f"Search book \"{query}\" by author name successful")
+            info_logged = InfoTextDecorator(message)
+            info_logged.log()
         return result
 
 class SearchByCategory(SearchStrategy):
@@ -477,6 +539,7 @@ class SearchBookForm(AbstractForm):
 
         except Exception as e:
             messagebox.showerror("Search Error", f"An error occurred during the search: {str(e)}")
+            self.search_book_form.destroy()
 
     def display_results(self, results):
         # Clear the result display
@@ -500,40 +563,57 @@ class ViewAllBooks(ViewStrategy):
     def view(self):
         read_books = pd.read_csv(BOOKS_FILE_PATH)
         if read_books.empty:
-            Logger.log_fail("Displayed all books fail")
+            message = SimpleTextLogger("Displayed all books fail")
+            error_logged = ErrorTextDecorator(message)
+            error_logged.log()
             messagebox.showerror("Attention", "No books to display")
+
         else:
-            Logger.log_success("Displayed all books successful")
+            message = SimpleTextLogger("Displayed all books successful")
+            info_logged = InfoTextDecorator(message)
+            info_logged.log()
         return read_books
 
 class ViewAvailableBooks(ViewStrategy):
     def view(self):
         read_books = pd.read_csv(AVAILABLE_BOOKS_FILE_PATH)
         if read_books.empty:
-            Logger.log_fail("Displayed available books fail")
+            message = SimpleTextLogger("Displayed available books fail")
+            error_logged = ErrorTextDecorator(message)
+            error_logged.log()
             messagebox.showerror("Attention", "No books available to display")
         else:
-            Logger.log_success("Displayed available books successful")
+            message = SimpleTextLogger("Displayed available books successful")
+            info_logged = InfoTextDecorator(message)
+            info_logged.log()
         return read_books
 
 class ViewLoanedBooks(ViewStrategy):
     def view(self):
         read_books = pd.read_csv(LOANED_BOOKS_FILE_PATH)
         if read_books.empty:
-            Logger.log_fail("Displayed borrowed books fail")
+            message = SimpleTextLogger("Displayed borrowed books fail")
+            error_logged = ErrorTextDecorator(message)
+            error_logged.log()
             messagebox.showerror("Attention", "No books loaned to display")
         else:
-            Logger.log_success("Displayed borrowed books successful")
+            message = SimpleTextLogger("Displayed borrowed books successful")
+            info_logged = InfoTextDecorator(message)
+            info_logged.log()
         return read_books
 
 class ViewPopularBooks(ViewStrategy):
     def view(self):
         read_books = pd.read_csv(POPULAR_BOOKS_FILE_PATH)
         if read_books.empty:
-            Logger.log_fail("displayed fail")
+            message = SimpleTextLogger("displayed fail")
+            error_logged = ErrorTextDecorator(message)
+            error_logged.log()
             messagebox.showerror("Attention", "No books Popular to display")
         else:
-            Logger.log_success("displayed successful")
+            message = SimpleTextLogger("displayed successful")
+            info_logged = InfoTextDecorator(message)
+            info_logged.log()
         return read_books
 
 class ViewByCategory(ViewStrategy):
@@ -544,10 +624,14 @@ class ViewByCategory(ViewStrategy):
     def view(self):
         read_books = pd.read_csv(BOOKS_FILE_PATH)
         if read_books.empty:
-            Logger.log_fail("displayed fail")
+            message = SimpleTextLogger("displayed fail")
+            error_logged = ErrorTextDecorator(message)
+            error_logged.log()
             messagebox.showerror("Attention", "No books in this category to display")
         else:
-            Logger.log_success("displayed successful")
+            message = SimpleTextLogger("displayed successful")
+            info_logged = InfoTextDecorator(message)
+            info_logged.log()
         return read_books[read_books['genre'] == self.category]
 
 class BookViewer:
@@ -627,6 +711,7 @@ class ViewBookForm(AbstractForm):
 
         except Exception as e:
             messagebox.showerror("View Error", f"An error occurred during the view: {str(e)}")
+            self.view_book_form.destroy()
 
     def display_results(self, results):
         # Clear the result display

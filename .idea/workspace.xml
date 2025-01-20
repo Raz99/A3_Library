@@ -8,15 +8,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/A3_Library.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/A3_Library.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/available_books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/available_books.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/loaned_books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/loaned_books.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/logger.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logger.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/popularity_books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/popularity_books.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/User.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/files_management/Logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/Logger.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system/gui/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/gui/GUI.py" afterDir="false" />
     </list>
-    <list id="aa8b4c4f-f5ea-4c78-94a5-87c8c1dcd6ec" name="Changes by razco" comment="">
-      <change beforePath="$PROJECT_DIR$/system/files_management/Logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/Logger.py" afterDir="false" />
+    <list id="aa8b4c4f-f5ea-4c78-94a5-87c8c1dcd6ec" name="Changes by razco" comment="" />
+    <list id="7b80dd7d-7c1c-439a-811c-1baf53ff744a" name="Changes by shirb" comment="">
       <change beforePath="$PROJECT_DIR$/system/gui/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/gui/GUI.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,25 +38,51 @@
     &quot;assignee&quot;: &quot;Raz99&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Raz99/A3_Library.git",
-    "accountId": "49740b91-98e8-478c-89b3-57e5690743c0"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Raz99/A3_Library.git&quot;,
+    &quot;accountId&quot;: &quot;49740b91-98e8-478c-89b3-57e5690743c0&quot;
   }
-}]]></component>
+}</component>
   <component name="LineStatusTrackerManager">
     <file path="$PROJECT_DIR$/system/gui/GUI.py">
       <ranges>
-        <range start1="232" end1="233" start2="232" end2="233" changelist="aa8b4c4f-f5ea-4c78-94a5-87c8c1dcd6ec" />
-        <range start1="279" end1="280" start2="279" end2="280" changelist="aa8b4c4f-f5ea-4c78-94a5-87c8c1dcd6ec" />
-        <range start1="326" end1="327" start2="326" end2="327" changelist="aa8b4c4f-f5ea-4c78-94a5-87c8c1dcd6ec" />
-        <range start1="372" end1="373" start2="372" end2="373" changelist="aa8b4c4f-f5ea-4c78-94a5-87c8c1dcd6ec" />
-        <range start1="381" end1="383" start2="381" end2="388" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="386" end1="387" start2="391" end2="398" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="490" end1="490" start2="501" end2="506" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="495" end1="495" start2="511" end2="516" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="500" end1="500" start2="521" end2="526" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
-        <range start1="505" end1="505" start2="531" end2="536" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="11" end1="12" start2="11" end2="12" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="74" end1="76" start2="74" end2="77" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
+        <range start1="78" end1="80" start2="79" end2="83" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
+        <range start1="107" end1="108" start2="110" end2="113" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
+        <range start1="112" end1="113" start2="117" end2="120" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
+        <range start1="161" end1="162" start2="168" end2="171" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
+        <range start1="219" end1="219" start2="228" end2="231" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
+        <range start1="224" end1="225" start2="236" end2="239" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
+        <range start1="229" end1="230" start2="243" end2="246" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
+        <range start1="265" end1="265" start2="281" end2="284" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
+        <range start1="270" end1="271" start2="289" end2="292" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
+        <range start1="273" end1="274" start2="294" end2="298" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
+        <range start1="276" end1="277" start2="300" end2="303" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
+        <range start1="312" end1="312" start2="338" end2="341" changelist="7b80dd7d-7c1c-439a-811c-1baf53ff744a" />
+        <range start1="317" end1="318" start2="346" end2="349" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="320" end1="321" start2="351" end2="354" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="323" end1="324" start2="356" end2="359" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="357" end1="357" start2="392" end2="395" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="363" end1="364" start2="401" end2="404" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="366" end1="367" start2="406" end2="409" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="369" end1="370" start2="411" end2="414" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="383" end1="384" start2="427" end2="430" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="386" end1="387" start2="432" end2="435" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="393" end1="394" start2="441" end2="444" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="396" end1="397" start2="446" end2="449" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="502" end1="503" start2="554" end2="557" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="504" end1="504" start2="558" end2="559" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="505" end1="506" start2="560" end2="563" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="512" end1="513" start2="569" end2="572" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="515" end1="516" start2="574" end2="577" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="522" end1="523" start2="583" end2="586" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="525" end1="526" start2="588" end2="591" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="532" end1="533" start2="597" end2="600" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="535" end1="536" start2="602" end2="605" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="546" end1="547" start2="615" end2="618" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
+        <range start1="549" end1="550" start2="620" end2="623" changelist="bd64134e-7d23-4291-a889-a4d6ab46e6bb" />
       </ranges>
     </file>
   </component>
@@ -73,31 +97,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.AbstractForm.executor": "Run",
-    "Python.BooksFileManagement.executor": "Run",
-    "Python.GUI (1).executor": "Run",
-    "Python.GUI.executor": "Run",
-    "Python.LibraryGUI.executor": "Run",
-    "Python.Management (1).executor": "Run",
-    "Python.Management.executor": "Run",
-    "Python.UsersFileManagement.executor": "Run",
-    "Python.__init__.executor": "Run",
-    "Python.ex1.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.tabs",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.AbstractForm.executor&quot;: &quot;Run&quot;,
+    &quot;Python.BooksFileManagement.executor&quot;: &quot;Run&quot;,
+    &quot;Python.GUI (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.GUI.executor&quot;: &quot;Run&quot;,
+    &quot;Python.LibraryGUI.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Management (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Management.executor&quot;: &quot;Run&quot;,
+    &quot;Python.UsersFileManagement.executor&quot;: &quot;Run&quot;,
+    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ex1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\razco\Documents\GitHub\A3_Library\system\gui" />
@@ -231,12 +255,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../.. - Ariel University/תשפה/סמסטר א/תכנות מונחה עצמים/הרצאות/הרצאה 11" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$ - Ariel University/תשפה/סמסטר א/תכנות מונחה עצמים/הרצאות/הרצאה 11" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../.. - Ariel University/תשפה/סמסטר א/תכנות מונחה עצמים/הרצאות/הרצאה 11/ex1.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$ - Ariel University/תשפה/סמסטר א/תכנות מונחה עצמים/הרצאות/הרצאה 11/ex1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
