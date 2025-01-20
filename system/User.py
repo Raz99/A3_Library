@@ -1,10 +1,19 @@
+from abc import ABC, abstractmethod
 from books import *
 from books.BookFactory import BookFactory
 from system import shared
-from system.files_management import BooksFileManagement , Logger
+from system.files_management import BooksFileManagement
+from tkinter import messagebox
 
 
-class User:
+# Observer interface
+class Observer(ABC):
+    @abstractmethod
+    def update(self, message):
+        pass
+
+
+class User(Observer):
     def __init__(self, username, password):
         self.username = username
         self.password = password
@@ -53,8 +62,7 @@ class User:
             if book.title == title:
 
                 if not book.is_available():
-                    print("the book is not available to lend")
-                    return False
+                    return 0
 
                 else:
                     book_dict = book.get_loaned_dict()
@@ -70,10 +78,9 @@ class User:
                             BooksFileManagement.update()
                             print("The loan was successful")
 
-                            return True
+                            return 1
                     break
-
-        return False
+        return 2
 
     def return_book(self, title):
         for book in shared.books:
@@ -93,3 +100,6 @@ class User:
                     print("the book is not loaned")
                     return False
         return False
+
+    def update(self, message):
+        messagebox.showinfo("Notification", message)

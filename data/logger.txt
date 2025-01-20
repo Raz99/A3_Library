@@ -11,3 +11,11 @@ book added fail
 book added fail
 logged in successfully
 book added fail
+logged in successfully
+book added fail
+logged in successfully
+book added fail
+book removed fail
+log out successful
+logged in successfully
+book returned fail

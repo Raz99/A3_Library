@@ -13,6 +13,7 @@ class Book(ABC):
             self.popularity = copies
         else:
             self.popularity = 0
+        self.waitlist = []
 
     def set_is_loaned_dict(self, new_dict):
         self.is_loaned_dict = new_dict
@@ -89,3 +90,35 @@ class Book(ABC):
 
     def get_popularity(self):
         return self.popularity
+
+    def add_to_waitlist(self, name, number_phone):
+        try:
+            waiting = {"name" : name , "phone": int(number_phone)}
+            self.waitlist.append(waiting)
+            return True
+        except Exception as e:
+            return False
+
+    def remove_from_waitlist(self):
+        if self.waitlist:
+            self.waitlist.pop(0)
+
+    def get_waitlist(self):
+        return self.waitlist
+
+# class WaitlistIterator:
+#     def __init__(self, waitlist):
+#         self._waitlist = waitlist
+#         self._index = 0
+#
+#     def __iter__(self):
+#         return self
+#
+#     def __next__(self):
+#         if self._index < len(self._waitlist):
+#             entry = self._waitlist[self._index]
+#             self._index += 1
+#             #self._waitlist.pop(0)
+#             return entry
+#         else:
+#             raise StopIteration  # סוף הרשימה

@@ -4,14 +4,14 @@ from system.gui import GUI
 from system import shared
 
 def gui_test():
-    Management.setup()
+    # Management.setup()
     # Management.add_user("shir", "1234")
     window = tk.Tk()
     app = GUI.OpeningForm(window)
     window.mainloop()
 
 def main():
-    Management.setup()
+    # Management.setup()
     # Management.add_user("shir", "1234")
     # window = tk.Tk()
     # app = GUI.OpeningForm(window)
