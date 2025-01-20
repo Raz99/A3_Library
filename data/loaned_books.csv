@@ -15,5 +15,4 @@ The Hobbit,J.R.R. Tolkien,Yes,4,Fantasy,1937,"{0: 'Yes', 1: 'Yes', 2: 'Yes', 3: 
 The Lord of the Rings,J.R.R. Tolkien,Yes,2,Fantasy,1954,"{0: 'Yes', 1: 'Yes'}",2,[]
 A Game of Thrones,George R.R. Martin,Yes,5,Fantasy,1996,"{0: 'Yes', 1: 'Yes', 2: 'Yes', 3: 'Yes', 4: 'Yes'}",5,[]
 Mistborn: The Final Empire,Brandon Sanderson,Yes,4,Fantasy,2006,"{0: 'Yes', 1: 'Yes', 2: 'Yes', 3: 'Yes'}",4,[]
-The Odyssey,Homer,Yes,2,Epic Poetry,-800,"{0: 'Yes', 1: 'Yes'}",2,[]
-frfv,ed,Yes,5,Epic Poetry,122,"{0: 'Yes', 1: 'No', 2: 'No', 3: 'No', 4: 'No'}",1,[]
+The Odyssey,Homer,Yes,2,Epic Poetry,-800,"{0: 'Yes', 1: 'Yes'}",3,"[{'name': 'shir', 'phone': '054528'}]"

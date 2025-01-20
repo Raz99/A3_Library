@@ -1,10 +1,34 @@
 
 logged in successfully
-book removed fail
-book removed fail
-book removed successfully
-book borrowed fail
-book borrowed fail
-book borrowed successfully
-book returned fail
+Displayed all books successful
+Displayed available books successful
+Displayed available books successful
+Displayed available books successful
+Displayed borrowed books successful
+displayed successful
+displayed successful
+Search book "h" by name completed successful.
+Search book "r" by author name successful
 logged in successfully
+logged in successfully
+Search book "ndjcnejcnej" by name completed fail
+Search book "ndjcnejcnej" by author name fail
+book added fail
+Displayed all books successful
+logged in successfully
+Displayed all books successful
+Displayed all books successful
+logged in successfully
+Displayed all books successful
+logged in successfully
+Displayed all books successful
+Displayed available books successful
+logged in successfully
+logged in successfully
+log out successful
+logged in fail
+logged in successfully
+log out successful
+logged in successfully
+logged in successfully
+Search book "נקטגבינק'חבמקחבמקרח" by name completed fail

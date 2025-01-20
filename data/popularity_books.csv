@@ -7,5 +7,5 @@ Mistborn: The Final Empire,Brandon Sanderson,Yes,4,Fantasy,2006,"{0: 'Yes', 1: '
 Heart of Darkness,Joseph Conrad,Yes,3,Adventure,1899,"{0: 'Yes', 1: 'Yes', 2: 'Yes'}",3,[]
 Pride and Prejudice,Jane Austen,Yes,3,Romance,1813,"{0: 'Yes', 1: 'Yes', 2: 'Yes'}",3,[]
 Moby Dick,Herman Melville,No,1,Adventure,1851,{0: 'No'},3,[]
-The Odyssey,Homer,Yes,2,Epic Poetry,-800,"{0: 'Yes', 1: 'Yes'}",2,[]
-Slaughterhouse-Five,Kurt Vonnegut,Yes,2,Science Fiction,1969,"{0: 'Yes', 1: 'Yes'}",2,[]
+The Odyssey,Homer,Yes,2,Epic Poetry,-800,"{0: 'Yes', 1: 'Yes'}",3,"[{'name': 'shir', 'phone': '054528'}]"
+The Lord of the Rings,J.R.R. Tolkien,Yes,2,Fantasy,1954,"{0: 'Yes', 1: 'Yes'}",2,[]
