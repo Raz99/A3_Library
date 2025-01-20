@@ -1,11 +1,10 @@
 from abc import ABC, abstractmethod
+
+from system.files_management import (BooksFileManagement, UsersFileManagement, AvailableBooksFileManagment,
+                                     LoanedBooksFileManagement, PopularityFileManagment)
 from system import shared
 from system.User import User
 from werkzeug.security import generate_password_hash, check_password_hash
-from system.iterators import LibraryBookCollection
-from system.files_management import (BooksFileManagement, UsersFileManagement, AvailableBooksFileManagment,
-                                     LoanedBooksFileManagement, PopularityFileManagment)
-
 
 class Subject(ABC):
     @abstractmethod
@@ -23,11 +22,7 @@ class Subject(ABC):
 class Management(Subject):
     def __init__(self):
         """Initialize the library system."""
-        self._book_collection = LibraryBookCollection()  # Add this line
         BooksFileManagement.setup()
-        # After loading books from file, add them to the collection
-        for book in shared.books:
-            self._book_collection.add_book(book)
         AvailableBooksFileManagment.update()
         LoanedBooksFileManagement.update()
         UsersFileManagement.setup()
