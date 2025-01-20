@@ -59,7 +59,6 @@ class User(Observer):
     def lend_book(self, title):
         for book in shared.books:
             if book.title == title:
-
                 if not book.is_available():
                     return 0
 
@@ -76,7 +75,6 @@ class User(Observer):
                             book.set_popularity(book.get_popularity()+1)
                             BooksFileManagement.update()
                             print("The loan was successful")
-
                             return 1
                     break
         return 2
@@ -90,15 +88,20 @@ class User(Observer):
                         if value == 'Yes':
                             book_dict[key] = 'No'
                             book.set_is_loaned_dict(book_dict)
-                            if not book.is_loaned_by_dict():
+                            if not book.is_loaned_by_dict(): # If the book is not loaned
                                 book.set_is_loaned("No")
                             BooksFileManagement.update()
-                            print("the return is successful")
-                            return True
-                else:
-                    print("the book is not loaned")
-                    return False
-        return False
+
+                            waiting_list = book.get_waitlist()
+                            if waiting_list:
+                                if self.lend_book(book.get_title()) == 1:
+                                    book.set_popularity(book.get_popularity()-1) # Decrease popularity to avoid double counting
+                                    requester = book.remove_from_waitlist()
+                                    self.update(f"The book \"{book.get_title()}\" was returned and lent to the following person in the waiting list:\n{requester}")
+                                    BooksFileManagement.update()
+                            return True # The book was returned successfully
+                break
+        return False # The book was not found
 
     def update(self, message):
         messagebox.showinfo("Notification", message)

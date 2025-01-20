@@ -12,6 +12,7 @@ def setup():
     # Creates a list of books based on the given file
     df = pd.read_csv(BOOKS_FILE_PATH)
 
+    shared.books.clear()
     for _, row in df.iterrows():
         current = BookFactory.create_book(
             row["title"],
@@ -24,18 +25,18 @@ def setup():
         shared.books.append(current)
 
     # If the column is_loaned_dict is not in the CSV file, then add it
-    if not 'is_loaned_dict' or not 'popularity' or not 'wait_list' in df.columns:
+    if 'is_loaned_dict' not in df.columns:
         # Adds a new column and writes to file
         new_values = [book.get_loaned_dict() for book in shared.books]
         df['is_loaned_dict'] = new_values
         popularity = [book.get_popularity() for book in shared.books]
         df['popularity'] = popularity
-        df.to_csv(BOOKS_FILE_PATH, index=False)
         waitlist = [book.get_waitlist() for book in shared.books]
         df['wait_list'] = waitlist
         df.to_csv(BOOKS_FILE_PATH, index=False)
 
-    # If the column is_loaned_dict is in the CSV file, then update the books
+    # If the column is_loaned_dict, popularity and wait_list is in the CSV file,
+    # then update the books with the data from the file
     else:
         for i, row in df.iterrows():
             dict_data = ast.literal_eval(row["is_loaned_dict"]) # Convert string to dictionary
@@ -51,7 +52,7 @@ def update():
     books_data = [book.to_dict() for book in shared.books]
     df = pd.DataFrame(books_data, columns=shared.FIELD_NAMES)
     # Write to CSV file
-    df.to_csv(BOOKS_FILE_PATH, index=False)
+    df.to_csv(BOOKS_FILE_PATH, mode='w',index=False)
     update_files()
 
 

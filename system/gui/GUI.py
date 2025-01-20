@@ -96,8 +96,8 @@ class LoginForm(AbstractForm):
             message = SimpleTextLogger("logged in fail")
             error_logged = ErrorTextDecorator(message)
             error_logged.log()
-            MenuForm(self.root, self.library_management.get_user(username))
-            self.root.deiconify()  # Show the opening window again if the login fails
+            messagebox.showerror("Error", "Invalid username or password")
+            self.create_specific_widgets() # Re-create the login form
 
     def on_closing(self):
         self.root.deiconify()
@@ -134,17 +134,18 @@ class SignupForm(AbstractForm):
         """Handle signup form submission."""
         username = self.username_entry.get()
         password = self.password_entry.get()
+        self.signup_window.destroy()
+        self.root.withdraw()  # Hide the main window
         if self.library_management.add_user(username, password):
             message = SimpleTextLogger("registered successfully")
             info_logged = InfoTextDecorator(message)
             info_logged.log()
-            self.signup_window.destroy()
-            self.root.withdraw()
             MenuForm(self.root, self.library_management.get_user(username))
         else:
             message = SimpleTextLogger("registered fail")
             error_logged = ErrorTextDecorator(message)
             error_logged.log()
+            self.create_specific_widgets() # Re-create the signup form
 
     def on_closing(self):
         self.root.deiconify()
@@ -205,7 +206,7 @@ class MenuForm(AbstractForm):
             info_logged = InfoTextDecorator(message)
             info_logged.log()
             self.menu_window.destroy() # Close the menu window
-            self.root.deiconify() # Show the opening window again
+            self.root.destroy() # Close the main window
         except Exception as e:
             message = SimpleTextLogger("log out fail")
             error_logged = ErrorTextDecorator(message)
@@ -272,7 +273,7 @@ class AddBookForm(AbstractForm):
                 message = SimpleTextLogger("book added fail")
                 error_logged = ErrorTextDecorator(message)
                 error_logged.log()
-                self.add_book_window.destroy()
+                self.on_closing()
                 return
 
             # Adds a book
@@ -281,17 +282,15 @@ class AddBookForm(AbstractForm):
             message = SimpleTextLogger("book added successfully")
             info_logged = InfoTextDecorator(message)
             info_logged.log()
-            self.add_book_window.destroy()
 
         except Exception as e:
             messagebox.showerror("Error", f"An error occurred: {str(e)}")
             message = SimpleTextLogger("book added fail")
             error_logged = ErrorTextDecorator(message)
             error_logged.log()
-            self.add_book_window.destroy()
 
         finally:
-            self.menu_wind.deiconify()  # Show the menu window again
+            self.on_closing()
 
     def on_closing(self):
         self.menu_wind.deiconify()
@@ -334,7 +333,7 @@ class RemoveBookForm(AbstractForm):
                 message = SimpleTextLogger("book removed fail")
                 error_logged = ErrorTextDecorator(message)
                 error_logged.log()
-                self.remove_book_window.destroy()
+                self.on_closing()
                 return
 
             # Removes a book
@@ -343,7 +342,6 @@ class RemoveBookForm(AbstractForm):
                 message = SimpleTextLogger("book removed successfully")
                 info_logged = ErrorTextDecorator(message)
                 info_logged.log()
-                self.remove_book_window.destroy()
             else:
                 message = SimpleTextLogger("book removed fail")
                 error_logged = ErrorTextDecorator(message)
@@ -354,10 +352,9 @@ class RemoveBookForm(AbstractForm):
             message = SimpleTextLogger("book removed fail")
             error_logged = ErrorTextDecorator(message)
             error_logged.log()
-            self.remove_book_window.destroy()
 
         finally:
-            self.menu_wind.deiconify()  # Show the menu window again
+            self.on_closing()
 
     def on_closing(self):
         self.menu_wind.deiconify()
@@ -400,48 +397,53 @@ class LendBookForm(AbstractForm):
                 message = SimpleTextLogger("book borrowed fail")
                 error_logged = ErrorTextDecorator(message)
                 error_logged.log()
-                self.lend_book_window.destroy()
+                self.on_closing()
                 return
 
-            # Adds a book
+            # Lends a book
             result = self.user.lend_book(title)
-            if result==0:
-                book = shared.book_by_title(title)
-                self.lend_book_window.destroy()
-                wind = WaitListForm(self.root, self.menu_wind, self.user, book)
-                messagebox.showinfo("Attention", "There is no available copy of that book, please add the requester to the waiting list.")
-                self.menu_wind.withdraw()
 
-            if result==1:
+            # 0 - No available copies
+            if result == 0:
+                self.lend_book_window.destroy()
+                wind = WaitListForm(self.root, self.menu_wind, self.user, title)
+                messagebox.showinfo("Attention",
+                                    "There is no available copy of that book, please add the requester to the waiting list.")
+                return
+
+            # 1 - Success
+            elif result == 1:
                 messagebox.showinfo("Success", "Book lent successfully!")
                 message = SimpleTextLogger("book borrowed successfully")
                 info_logged = InfoTextDecorator(message)
                 info_logged.log()
-                self.lend_book_window.destroy()
-            if result==2:
+
+            # 2 - Book not found
+            elif result == 2:
                 message = SimpleTextLogger("book borrowed fail")
                 error_logged = ErrorTextDecorator(message)
                 error_logged.log()
+                messagebox.showerror("Error", "Book not found")
+
+            self.on_closing()
+
         except Exception as e:
             messagebox.showerror("Error", f"An error occurred: {str(e)}")
             message = SimpleTextLogger("book borrowed fail")
             error_logged = ErrorTextDecorator(message)
             error_logged.log()
-            self.lend_book_window.destroy()
-
-        finally:
-            self.menu_wind.deiconify()  # Show the menu window again
+            self.on_closing()
 
     def on_closing(self):
         self.menu_wind.deiconify()
         self.lend_book_window.destroy()
 
 class WaitListForm(AbstractForm):
-    def __init__(self, root, menu, user, book):
+    def __init__(self, root, menu, user, title):
         super().__init__(root)
         self.menu_wind = menu
         self.user = user
-        self.book = book
+        self.title = title
 
     def create_specific_widgets(self):
         # Creates a new window for add to waitlist
@@ -475,26 +477,27 @@ class WaitListForm(AbstractForm):
             # Ensures that all inputs are in use
             if not (name and phone):
                 messagebox.showerror("Error", "All fields are required!")
-                self.waitlist_form.destroy()
+                self.on_closing()
                 return
 
-                # Adds person's details to wait list
-            if self.book.add_to_waitlist(name , phone):
-                messagebox.showinfo("Success", "Adds person's details to wait list")
-            else:
-                messagebox.showinfo("Failed", "Adds person's details to wait list failed")
+            # Adds person's details to wait list
+            for book in shared.books:
+                if book.get_title() == self.title:
+                    if book.add_to_waitlist(name, phone):
+                        messagebox.showinfo("Success", "Person's details has been added to wait list!")
+                    else:
+                        messagebox.showinfo("Failed", "Adding person's details to wait list has been failed")
+                    break
 
         except Exception as e:
             messagebox.showerror("Error", f"An error occurred: {str(e)}")
-            self.waitlist_form.destroy()
 
         finally:
-            self.menu_wind.decionify()  # Show the menu window again
+            self.on_closing()
 
     def on_closing(self):
-        messagebox.showerror("Error", "Failed to add person's details to wait list")
-        self.menu_wind.deiconify()
         self.waitlist_form.destroy()
+        self.menu_wind.deiconify()
 
 class ReturnBookForm(AbstractForm):
     def __init__(self, root, menu, user):
@@ -532,29 +535,29 @@ class ReturnBookForm(AbstractForm):
                 error_logged = ErrorTextDecorator(message)
                 error_logged.log()
                 messagebox.showerror("Error", "All fields are required!")
-                self.return_book_form.destroy()
+                self.on_closing()
                 return
 
-            # Adds a book
+            # Returns a book
             if self.user.return_book(title):
                 messagebox.showinfo("Success", "Book returned successfully!")
                 message = SimpleTextLogger("book returned successfully")
                 info_logged = InfoTextDecorator(message)
                 info_logged.log()
-                self.return_book_form.destroy()
             else:
+                messagebox.showerror("Error", "Failed to return the book.")
                 message = SimpleTextLogger("book returned fail")
                 error_logged = ErrorTextDecorator(message)
                 error_logged.log()
+
         except Exception as e:
             messagebox.showerror("Error", f"An error occurred: {str(e)}")
             message = SimpleTextLogger("book returned fail")
             error_logged = ErrorTextDecorator(message)
             error_logged.log()
-            self.return_book_form.destroy()
 
         finally:
-            self.menu_wind.deiconify()  # Show the menu window again
+            self.on_closing()
 
     def on_closing(self):
         self.menu_wind.deiconify()

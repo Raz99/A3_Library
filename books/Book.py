@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from system.files_management import BooksFileManagement
 
 # Abstract Base Class
 class Book(ABC):
@@ -92,19 +93,20 @@ class Book(ABC):
     def get_popularity(self):
         return self.popularity
 
-    def add_to_waitlist(self, name, number_phone):
-        try:
-            waiting = {"name" : name , "phone": int(number_phone)}
+    def add_to_waitlist(self, name, phone_number):
+        if phone_number.isnumeric():
+            waiting = {"name": name , "phone": phone_number}
             self.waitlist.append(waiting)
             self.popularity += 1
+            BooksFileManagement.update()
             return True
 
-        except ValueError:
+        else:
             return False
 
     def remove_from_waitlist(self):
         if self.waitlist:
-            self.waitlist.pop(0)
+            return self.waitlist.pop(0)
 
     def get_waitlist(self):
         return self.waitlist
