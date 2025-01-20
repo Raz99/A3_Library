@@ -482,7 +482,9 @@ class WaitListForm(AbstractForm):
                 return
 
             # Adds person's details to wait list
-            for book in shared.books:
+            iterator = self.library_management.get_all_books_iterator()
+            while iterator.has_next():
+                book = iterator.next()
                 if book.get_title() == self.title:
                     if book.add_to_waitlist(name, phone):
                         messagebox.showinfo("Success", "Person's details has been added to wait list!")

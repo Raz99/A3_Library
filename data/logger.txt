@@ -32,3 +32,8 @@ log out successful
 logged in successfully
 logged in successfully
 Search book "נקטגבינק'חבמקחבמקרח" by name completed fail
+logged in successfully
+Search book "" by name completed successful.
+Search book "" by author name successful
+logged in successfully
+book returned successfully

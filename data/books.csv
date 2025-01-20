@@ -17,7 +17,7 @@ Madame Bovary,Gustave Flaubert,No,3,Realism,1857,"{0: 'No', 1: 'No', 2: 'No'}",0
 The Iliad,Homer,Yes,1,Epic Poetry,-750,{0: 'Yes'},1,[]
 The Sound and the Fury,William Faulkner,No,2,Modernism,1929,"{0: 'No', 1: 'No'}",0,[]
 Invisible Man,Ralph Ellison,Yes,1,Fiction,1952,{0: 'Yes'},1,[]
-Beloved,Toni Morrison,Yes,3,Historical Fiction,1987,"{0: 'Yes', 1: 'Yes', 2: 'Yes'}",4,[]
+Beloved,Toni Morrison,Yes,3,Historical Fiction,1987,"{0: 'Yes', 1: 'Yes', 2: 'Yes'}",5,[]
 Catch-22,Joseph Heller,No,4,Satire,1961,"{0: 'No', 1: 'No', 2: 'No', 3: 'No'}",0,[]
 Slaughterhouse-Five,Kurt Vonnegut,Yes,2,Science Fiction,1969,"{0: 'Yes', 1: 'Yes'}",2,[]
 Brave New World,Aldous Huxley,No,5,Dystopian,1932,"{0: 'No', 1: 'No', 2: 'No', 3: 'No', 4: 'No'}",0,[]

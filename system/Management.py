@@ -40,14 +40,6 @@ class Management(Subject):
         """Get an iterator for all books in the system."""
         return self._book_collection.create_iterator()
 
-    def get_books_by_genre_iterator(self, genre):
-        """Get an iterator for books of a specific genre."""
-        return self._book_collection.get_books_by_genre(genre)
-
-    def get_available_books_iterator(self):
-        """Get an iterator for all available books."""
-        return self._book_collection.get_available_books()
-
     def add_book(self, book):
         """Add a book to the system."""
         self._book_collection.add_book(book)
