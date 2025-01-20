@@ -1,10 +1,14 @@
 from abc import ABC, abstractmethod
-
-from system.files_management import (BooksFileManagement, UsersFileManagement, AvailableBooksFileManagment,
-                                     LoanedBooksFileManagement, PopularityFileManagment)
+from system.files_management import BooksFileManagement
+from system.files_management import UsersFileManagement
+from system.files_management import AvailableBooksFileManagment
+from system.files_management import LoanedBooksFileManagement
+from system.files_management import PopularityFileManagment
 from system import shared
 from system.User import User
 from werkzeug.security import generate_password_hash, check_password_hash
+from system.iterators import LibraryBookCollection
+
 
 class Subject(ABC):
     @abstractmethod
@@ -22,11 +26,40 @@ class Subject(ABC):
 class Management(Subject):
     def __init__(self):
         """Initialize the library system."""
+        self._book_collection = LibraryBookCollection()  # Add this line
         BooksFileManagement.setup()
+        # After loading books from file, add them to the collection
+        for book in shared.books:
+            self._book_collection.add_book(book)
         AvailableBooksFileManagment.update()
         LoanedBooksFileManagement.update()
         UsersFileManagement.setup()
         PopularityFileManagment.update()
+
+    def get_all_books_iterator(self):
+        """Get an iterator for all books in the system."""
+        return self._book_collection.create_iterator()
+
+    def get_books_by_genre_iterator(self, genre):
+        """Get an iterator for books of a specific genre."""
+        return self._book_collection.get_books_by_genre(genre)
+
+    def get_available_books_iterator(self):
+        """Get an iterator for all available books."""
+        return self._book_collection.get_available_books()
+
+    def add_book(self, book):
+        """Add a book to the system."""
+        self._book_collection.add_book(book)
+        shared.books.append(book)  # Keep the existing shared.books in sync
+        BooksFileManagement.update()
+
+    def remove_book(self, book):
+        """Remove a book from the system."""
+        self._book_collection.remove_book(book)
+        if book in shared.books:
+            shared.books.remove(book)
+        BooksFileManagement.update()
 
     def add_user(self, username, password):
         """Add a new user to the system."""

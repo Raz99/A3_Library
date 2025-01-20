@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-from books import Book
 
 # Iterator interface
 class Iterator(ABC):

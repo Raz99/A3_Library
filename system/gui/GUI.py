@@ -658,10 +658,10 @@ class SearchBookForm(AbstractForm):
         search_type = self.search_type.get()
         query = self.query_entry.get()
 
-        if not query:
-            messagebox.showerror("Invalid Input", "Search query cannot be empty.")
-            self.search_book_form.destroy()
-            return
+        # if not query:
+        #     messagebox.showerror("Invalid Input", "Search query cannot be empty.")
+        #     self.on_closing()
+        #     return
 
         try:
             if search_type == "Title":
@@ -678,7 +678,7 @@ class SearchBookForm(AbstractForm):
 
         except Exception as e:
             messagebox.showerror("Search Error", f"An error occurred during the search: {str(e)}")
-            self.search_book_form.destroy()
+            self.on_closing()
 
     def display_results(self, results):
         # Clear the result display
@@ -796,7 +796,7 @@ class ViewBookForm(AbstractForm):
 
         # Search type selection
         self.view_type = tk.StringVar()
-        self.view_type.set("All Books")
+        # self.view_type.set("All Books")
 
         self.main_menu = tk.Menu(self.view_book_form)
         self.view_book_form.config(menu=self.main_menu)
@@ -819,9 +819,9 @@ class ViewBookForm(AbstractForm):
             self.result_display.heading(header, text=header)
         self.result_display.pack()
 
-        self.book_viewer = BookViewer(ViewAllBooks()) # Default view
+        # self.book_viewer = BookViewer(ViewAllBooks()) # Default view
 
-        self.perform_view()
+        # self.perform_view()
 
         self.view_book_form.protocol("WM_DELETE_WINDOW", self.on_closing)
 
