@@ -40,11 +40,11 @@ class Management(Subject):
         """Get an iterator for all books in the system."""
         return self._book_collection.create_iterator()
 
-    def add_book(self, book):
-        """Add a book to the system."""
-        self._book_collection.add_book(book)
-        shared.books.append(book)  # Keep the existing shared.books in sync
-        BooksFileManagement.update()
+    # def add_book(self, book):
+    #     """Add a book to the system."""
+    #     self._book_collection.add_book(book)
+    #     shared.books.append(book)
+    #     BooksFileManagement.update()
 
     def remove_book(self, book):
         """Remove a book from the system."""

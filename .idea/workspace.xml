@@ -5,29 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd64134e-7d23-4291-a889-a4d6ab46e6bb" name="Changes" comment="Commit">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/A3_Library.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/A3_Library.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_logger.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/available_books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/available_books.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/logger.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/logger.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/popularity_books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/popularity_books.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system/Management.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/Management.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/gui/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/gui/GUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_management.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_management.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_user.py" afterDir="false" />
     </list>
     <list id="aa8b4c4f-f5ea-4c78-94a5-87c8c1dcd6ec" name="Changes by razco" comment="" />
-    <list id="7b80dd7d-7c1c-439a-811c-1baf53ff744a" name="Changes by shirb" comment="Changes by shirb">
-      <change beforePath="$PROJECT_DIR$/system/files_management/AvailableBooksFileManagment.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/AvailableBooksFileManagment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/BooksFileManagement.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/files_management/LoanedBooksFileManagement.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/LoanedBooksFileManagement.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/files_management/Logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/Logger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/files_management/PopularityFileManagment.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/PopularityFileManagment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/files_management/UsersFileManagement.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/files_management/UsersFileManagement.py" afterDir="false" />
-    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,10 +63,14 @@
     "Python tests.Python tests for test_management.TestManagement.test_add_user.executor": "Run",
     "Python tests.Python tests for test_management.TestManagement.test_add_user_success.executor": "Run",
     "Python tests.Python tests for test_management.TestManagement.test_login.executor": "Run",
+    "Python tests.Python tests for test_user.TestUser.test_add_book.executor": "Run",
     "Python tests.Python tests for tests.MyTestCase.executor": "Run",
     "Python tests.Python tests for tests.MyTestCase.test_login.executor": "Run",
+    "Python tests.Python tests for tests.TestManagement.executor": "Run",
     "Python tests.Python tests in test_logger.py.executor": "Run",
     "Python tests.Python tests in test_management.py.executor": "Run",
+    "Python tests.Python tests in test_user.py (1).executor": "Run",
+    "Python tests.Python tests in test_user.py.executor": "Run",
     "Python tests.Python tests in tests.py.executor": "Run",
     "Python.AbstractForm.executor": "Run",
     "Python.Book.executor": "Run",
@@ -107,14 +100,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\razco\Documents\GitHub\A3_Library\tests" />
       <recent name="C:\Users\razco\Documents\GitHub\A3_Library" />
       <recent name="C:\Users\razco\Documents\GitHub\A3_Library\system\gui" />
       <recent name="C:\Users\razco\Documents\GitHub\A3_Library\system\files_management" />
       <recent name="C:\Users\razco\Documents\GitHub\A3_Library\system" />
-      <recent name="C:\Users\razco\Documents\GitHub\A3_Library\data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests in tests.py">
+  <component name="RunManager" selected="Python tests.Python tests in test_management.py">
     <configuration name="GUI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="A3_Library" />
       <option name="ENV_FILES" value="" />
@@ -137,43 +130,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="A3_Library" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_management.TestManagement" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="A3_Library" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_management.TestManagement&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Python tests for test_management.TestManagement.test_add_user" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="A3_Library" />
       <option name="ENV_FILES" value="" />
@@ -189,37 +145,37 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.MyTestCase" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_user" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="A3_Library" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.MyTestCase&quot;" />
+      <option name="_new_target" value="&quot;test_user&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.MyTestCase.test_login" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.test_management.TestManagement" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="A3_Library" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.MyTestCase.test_login&quot;" />
+      <option name="_new_target" value="&quot;tests.test_management.TestManagement&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in tests.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.tests.MyTestCase" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="A3_Library" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -230,17 +186,77 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests.py&quot;" />
+      <option name="_new_target" value="&quot;tests.tests.MyTestCase&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_logger.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="A3_Library" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_logger.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_management.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="A3_Library" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_management.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_user.py (1)" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="A3_Library" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_user.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_user.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="A3_Library" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_user.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests in tests.py" />
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python tests.Python tests for tests.MyTestCase" />
-        <item itemvalue="Python tests.Python tests for test_management.TestManagement" />
-        <item itemvalue="Python tests.Python tests for tests.MyTestCase.test_login" />
+        <item itemvalue="Python tests.Python tests in test_management.py" />
+        <item itemvalue="Python tests.Python tests in test_logger.py" />
+        <item itemvalue="Python tests.Python tests in test_user.py (1)" />
+        <item itemvalue="Python tests.Python tests in test_user.py" />
+        <item itemvalue="Python tests.Python tests for test_user.TestUser.test_add_book" />
       </list>
     </recent_temporary>
   </component>
@@ -352,7 +368,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1737381240665</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL‎-00012" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1737462991693</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL‎-00012" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1737462991693</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
