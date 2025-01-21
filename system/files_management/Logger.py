@@ -35,13 +35,18 @@ class TextDecorator(TextLogger, ABC):
 # Concrete decorators
 class InfoTextDecorator(TextDecorator):
     def log(self):
-        text = self._text_logger.log()  # Get the original text
-        logger.info(text)  # Add info logging behavior
-        return text  # Maintain the interface contract
-
+        try:
+            text = self._text_logger.log()  # Get the original text
+            logger.info(text)  # Add info logging behavior
+            return text  # Maintain the interface contract
+        except Exception as e:
+            raise RuntimeError("Failed to log info text.") from e
 
 class ErrorTextDecorator(TextDecorator):
     def log(self):
-        text = self._text_logger.log()  # Get the original text
-        logger.error(text)  # Add error logging behavior
-        return text  # Maintain the interface contract
+        try:
+            text = self._text_logger.log()  # Get the original text
+            logger.error(text)  # Add error logging behavior
+            return text  # Maintain the interface contract
+        except Exception as e:
+            raise RuntimeError("Failed to log error text.") from e

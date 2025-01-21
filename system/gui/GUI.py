@@ -11,7 +11,7 @@ from system.files_management.LoanedBooksFileManagement import LOANED_BOOKS_FILE_
 from system.files_management.PopularityFileManagment import POPULAR_BOOKS_FILE_PATH
 from system.files_management.Logger import SimpleTextLogger, InfoTextDecorator, ErrorTextDecorator
 
-TITLE = "Library Management System"
+TITLE = "Library System"
 ICON_PATH = r"system\gui\icon.png"
 
 class AbstractForm:
@@ -648,6 +648,7 @@ class SearchBookForm(AbstractForm):
         self.result_display = ttk.Treeview(self.search_book_form, columns=shared.FIELD_NAMES, show='headings')
         for header in shared.FIELD_NAMES:
             self.result_display.heading(header, text=header)
+            self.result_display.column(header, width=150, minwidth=50, stretch=False) # Width handling
         self.result_display.pack()
 
         # BookSearcher default instance
@@ -819,6 +820,7 @@ class ViewBookForm(AbstractForm):
         self.result_display = ttk.Treeview(self.view_book_form, columns=shared.FIELD_NAMES, show='headings')
         for header in shared.FIELD_NAMES:
             self.result_display.heading(header, text=header)
+            self.result_display.column(header, width=150, minwidth=50, stretch=False)  # Width handling
         self.result_display.pack()
 
         # self.book_viewer = BookViewer(ViewAllBooks()) # Default view

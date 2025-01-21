@@ -120,3 +120,4 @@ class Management(Subject):
         """Notify all observers with a message."""
         for observer in shared.users:
             observer.update(message)
+

@@ -37,3 +37,27 @@ Search book "" by name completed successful.
 Search book "" by author name successful
 logged in successfully
 book returned successfully
+logged in successfully
+log out successful
+logged in successfully
+Search book "" by name completed successful.
+Search book "" by name completed successful.
+Search book "Hello" by name completed fail
+Search book "The" by name completed successful.
+Search book "The" by name completed successful.
+Search book "The" by name completed successful.
+log out successful
+logged in successfully
+Search book "The" by name completed successful.
+logged in successfully
+Search book "The" by name completed successful.
+log out successful
+logged in successfully
+log out successful
+logged in successfully
+log out successful
+logged in successfully
+log out successful
+logged in successfully
+book added successfully
+log out successful
