@@ -3,7 +3,7 @@ from system import shared
 from system.User import User
 
 # Path to the CSV file containing user data
-USER_FILE_PATH = r"data\users.csv"
+USER_FILE_PATH = r"data/users.csv"
 
 # Field names for the user data
 FIELD_NAMES = ["username", "password"]

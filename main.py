@@ -1,5 +1,6 @@
-from system.Management import Management
 import tkinter as tk
+
+from system.Management import Management
 from system.gui import GUI
 
 def main():

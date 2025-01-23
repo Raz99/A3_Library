@@ -2,7 +2,7 @@ import pandas as pd
 from system.files_management import BooksFileManagement
 
 # Path to save the filtered list of loaned books
-LOANED_BOOKS_FILE_PATH = r"data\loaned_books.csv"
+LOANED_BOOKS_FILE_PATH = r"data/loaned_books.csv"
 
 def update():
     """

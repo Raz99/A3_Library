@@ -2,7 +2,7 @@ import pandas as pd
 from system.files_management import BooksFileManagement
 
 # Path to save the list of popular books
-POPULAR_BOOKS_FILE_PATH = r"data\popularity_books.csv"
+POPULAR_BOOKS_FILE_PATH = r"data/popularity_books.csv"
 
 def update():
     """

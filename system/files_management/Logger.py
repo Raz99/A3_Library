@@ -2,7 +2,7 @@ import logging
 from abc import ABC, abstractmethod
 
 # Set up logging
-logging.basicConfig(filename=r'data\logger.txt', encoding='utf-8', level=logging.INFO, format='%(message)s', filemode='a')
+logging.basicConfig(filename=r'data/logger.txt', encoding='utf-8', level=logging.INFO, format='%(message)s', filemode='a')
 logger = logging.getLogger(__name__)
 
 # Component interface

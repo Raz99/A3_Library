@@ -6,7 +6,7 @@ from system import shared
 from system.files_management import AvailableBooksFileManagment, LoanedBooksFileManagement, PopularityFileManagment
 
 # Path to the CSV file containing book data
-BOOKS_FILE_PATH = r"data\books.csv"
+BOOKS_FILE_PATH = r"data/books.csv"
 
 def setup():
     """

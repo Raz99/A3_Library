@@ -1,7 +1,7 @@
 import pandas as pd
 from system.files_management import BooksFileManagement
 
-AVAILABLE_BOOKS_FILE_PATH = r"data\available_books.csv"
+AVAILABLE_BOOKS_FILE_PATH = r"data/available_books.csv"
 
 def update():
     """

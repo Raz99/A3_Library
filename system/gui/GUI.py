@@ -12,7 +12,7 @@ from system.files_management.PopularityFileManagment import POPULAR_BOOKS_FILE_P
 from system.files_management.Logger import SimpleTextLogger, InfoTextDecorator, ErrorTextDecorator
 
 TITLE = "Library System"
-ICON_PATH = r"system\gui\icon.png"
+ICON_PATH = r"system/gui/icon.png"
 
 class AbstractForm:
     def __init__(self, root):
@@ -876,7 +876,7 @@ class ViewPopularBooks(ViewStrategy):
             error_logged.log()
             messagebox.showerror("Attention", "No books Popular to display")
         else:
-            message = SimpleTextLogger("displayed successful")
+            message = SimpleTextLogger("displayed successfully")
             info_logged = InfoTextDecorator(message)
             info_logged.log()
         return read_books
