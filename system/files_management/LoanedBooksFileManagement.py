@@ -1,15 +1,15 @@
 import pandas as pd
 from system.files_management import BooksFileManagement
 
-LOANED_BOOKS_FILE_PATH = r"data\loaned_books.csv"
-
-import pandas as pd
-from system.files_management import BooksFileManagement
-
 # Path to save the filtered list of loaned books
 LOANED_BOOKS_FILE_PATH = r"data\loaned_books.csv"
 
 def update():
+    """
+    Updates the loaned books CSV file with the current list of loaned books.
+
+    Reads the main books CSV file, filters for loaned books, and writes the filtered list to a new CSV file.
+    """
     try:
         # Read the CSV file containing all books
         df = pd.read_csv(BooksFileManagement.BOOKS_FILE_PATH)

@@ -34,6 +34,7 @@ class AbstractForm:
 
 class OpeningForm(AbstractForm):
     def create_specific_widgets(self):
+        """Create specific widgets for the opening form."""
         login_button = tk.Button(self.root, text="Login", command=self.open_login)
         login_button.pack()
         register_button = tk.Button(self.root, text="Register", command=self.open_signup)
@@ -43,19 +44,22 @@ class OpeningForm(AbstractForm):
         self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
 
     def open_login(self):
-        self.root.withdraw() # Hide the main window
+        """Open the login form and hide the main window."""
+        self.root.withdraw()  # Hide the main window
         login_form = LoginForm(self.root)
 
     def open_signup(self):
-        self.root.withdraw() # Hide the main window
+        """Open the signup form and hide the main window."""
+        self.root.withdraw()  # Hide the main window
         signup_form = SignupForm(self.root)
 
     def on_closing(self):
+        """Handle the window closing event."""
         self.root.destroy()
 
 class LoginForm(AbstractForm):
     def create_specific_widgets(self):
-        """Implement specific widgets for the login form."""
+        """Create specific widgets for the login form."""
         self.login_window = tk.Toplevel(self.root)
         self.login_window.title("Log in")
 
@@ -95,9 +99,10 @@ class LoginForm(AbstractForm):
             error_logged = ErrorTextDecorator(message)
             error_logged.log()
             messagebox.showerror("Error", "Invalid username or password")
-            self.create_specific_widgets() # Re-create the login form
+            self.create_specific_widgets()  # Re-create the login form
 
     def on_closing(self):
+        """Handle the window closing event."""
         self.root.deiconify()
         self.login_window.destroy()
 
@@ -141,22 +146,25 @@ class SignupForm(AbstractForm):
             info_logged.log()
             MenuForm(self.root, self.library_management.get_user(username))
         else:
-            messagebox.showerror( "Error", "This username already exists")
+            messagebox.showerror("Error", "This username already exists")
             message = SimpleTextLogger("registered fail")
             error_logged = ErrorTextDecorator(message)
             error_logged.log()
-            self.create_specific_widgets() # Re-create the signup form
+            self.create_specific_widgets()  # Re-create the signup form
 
     def on_closing(self):
+        """Handle the window closing event."""
         self.root.deiconify()
         self.signup_window.destroy()
 
 class MenuForm(AbstractForm):
     def __init__(self, root, user):
+        """Initialize the menu form with the root window and user."""
         super().__init__(root)
         self.user = user
 
     def create_specific_widgets(self):
+        """Create specific widgets for the menu form."""
         self.menu_window = tk.Toplevel(self.root)
         add_book_button = tk.Button(self.menu_window, text="Add Book", command=self.open_add_book)
         add_book_button.pack()
@@ -173,40 +181,47 @@ class MenuForm(AbstractForm):
         logout_button = tk.Button(self.menu_window, text="Logout", command=self.open_logout)
         logout_button.pack()
 
-        # Bind the close event to the on_closing function
+        # Bind the close event to the open_logout function
         self.menu_window.protocol("WM_DELETE_WINDOW", self.open_logout)
 
     def open_add_book(self):
+        """Open the add book form and hide the menu window."""
         self.menu_window.withdraw()  # Hide the menu window
         add_book_form = AddBookForm(self.root, self.menu_window, self.user)
 
     def open_remove_book(self):
+        """Open the remove book form and hide the menu window."""
         self.menu_window.withdraw()  # Hide the menu window
         remove_book_form = RemoveBookForm(self.root, self.menu_window, self.user)
 
     def open_search_book(self):
+        """Open the search book form and hide the menu window."""
         self.menu_window.withdraw()  # Hide the menu window
         search_book_form = SearchBookForm(self.root, self.menu_window, self.user)
 
     def open_view_books(self):
+        """Open the view books form and hide the menu window."""
         self.menu_window.withdraw()  # Hide the menu window
         view_book_form = ViewBookForm(self.root, self.menu_window, self.user)
 
     def open_lend_book(self):
+        """Open the lend book form and hide the menu window."""
         self.menu_window.withdraw()  # Hide the menu window
         lend_book_form = LendBookForm(self.root, self.menu_window, self.user)
 
     def open_return_book(self):
+        """Open the return book form and hide the menu window."""
         self.menu_window.withdraw()  # Hide the menu window
         return_book_form = ReturnBookForm(self.root, self.menu_window, self.user)
 
     def open_logout(self):
+        """Log out the user and close the windows."""
         try:
             message = SimpleTextLogger("log out successful")
             info_logged = InfoTextDecorator(message)
             info_logged.log()
-            self.menu_window.destroy() # Close the menu window
-            self.root.destroy() # Close the main window
+            self.menu_window.destroy()  # Close the menu window
+            self.root.destroy()  # Close the main window
         except Exception as e:
             message = SimpleTextLogger("log out fail")
             error_logged = ErrorTextDecorator(message)
@@ -215,11 +230,13 @@ class MenuForm(AbstractForm):
 
 class AddBookForm(AbstractForm):
     def __init__(self, root, menu, user):
+        """Initialize the add book form with the root window, menu, and user."""
         super().__init__(root)
         self.menu_wind = menu
         self.user = user
 
     def create_specific_widgets(self):
+        """Create specific widgets for the add book form."""
         # Creates a new window for adding books
         self.add_book_window = tk.Toplevel(self.root)
         self.add_book_window.title("Add Book")
@@ -259,6 +276,7 @@ class AddBookForm(AbstractForm):
         self.add_book_window.protocol("WM_DELETE_WINDOW", self.on_closing)
 
     def handle_submit(self):
+        """Handle the submission of the add book form."""
         try:
             # Gets values from entries
             title = self.title_entry.get()
@@ -293,17 +311,20 @@ class AddBookForm(AbstractForm):
             self.on_closing()
 
     def on_closing(self):
+        """Handle the window closing event."""
         self.menu_wind.deiconify()
         self.add_book_window.destroy()
 
 
 class RemoveBookForm(AbstractForm):
     def __init__(self, root, menu, user):
+        """Initialize the remove book form with the root window, menu, and user."""
         super().__init__(root)
         self.menu_wind = menu
         self.user = user
 
     def create_specific_widgets(self):
+        """Create specific widgets for the remove book form."""
         # Creates a new window for removing books
         self.remove_book_window = tk.Toplevel(self.root)
         self.remove_book_window.title("Book's Details")
@@ -323,6 +344,7 @@ class RemoveBookForm(AbstractForm):
         self.remove_book_window.protocol("WM_DELETE_WINDOW", self.on_closing)
 
     def handle_submit(self):
+        """Handle the submission of the remove book form."""
         try:
             # Gets values from entries
             title = self.title_entry.get()
@@ -358,18 +380,21 @@ class RemoveBookForm(AbstractForm):
             self.on_closing()
 
     def on_closing(self):
+        """Handle the window closing event."""
         self.menu_wind.deiconify()
         self.remove_book_window.destroy()
 
 
 class LendBookForm(AbstractForm):
     def __init__(self, root, menu, user):
+        """Initialize the lend book form with the root window, menu, and user."""
         super().__init__(root)
         self.menu_wind = menu
         self.user = user
 
     def create_specific_widgets(self):
-        # Creates a new window for removing books
+        """Create specific widgets for the lend book form."""
+        # Creates a new window for lending books
         self.lend_book_window = tk.Toplevel(self.root)
         self.lend_book_window.title("Book's Details")
         self.lend_book_window.geometry("400x300")
@@ -388,6 +413,7 @@ class LendBookForm(AbstractForm):
         self.lend_book_window.protocol("WM_DELETE_WINDOW", self.on_closing)
 
     def handle_submit(self):
+        """Handle the submission of the lend book form."""
         try:
             # Gets values from entries
             title = self.title_entry.get()
@@ -406,6 +432,9 @@ class LendBookForm(AbstractForm):
 
             # 0 - No available copies
             if result == 0:
+                message = SimpleTextLogger("book borrowed fail")
+                error_logged = ErrorTextDecorator(message)
+                error_logged.log()
                 self.lend_book_window.destroy()
                 wind = WaitListForm(self.root, self.menu_wind, self.user, title)
                 messagebox.showinfo("Attention",
@@ -436,18 +465,21 @@ class LendBookForm(AbstractForm):
             self.on_closing()
 
     def on_closing(self):
+        """Handle the window closing event."""
         self.menu_wind.deiconify()
         self.lend_book_window.destroy()
 
 class WaitListForm(AbstractForm):
     def __init__(self, root, menu, user, title):
+        """Initialize the waitlist form with the root window, menu, user, and book title."""
         super().__init__(root)
         self.menu_wind = menu
         self.user = user
         self.title = title
 
     def create_specific_widgets(self):
-        # Creates a new window for add to waitlist
+        """Create specific widgets for the waitlist form."""
+        # Creates a new window for adding to the waitlist
         self.waitlist_form = tk.Toplevel(self.root)
         self.waitlist_form.title("Person's Details")
         self.waitlist_form.geometry("400x300")
@@ -470,6 +502,7 @@ class WaitListForm(AbstractForm):
         self.waitlist_form.protocol("WM_DELETE_WINDOW", self.on_closing)
 
     def handle_submit(self):
+        """Handle the submission of the waitlist form."""
         try:
             # Gets values from entries
             name = self.name_entry.get()
@@ -499,17 +532,20 @@ class WaitListForm(AbstractForm):
             self.on_closing()
 
     def on_closing(self):
+        """Handle the window closing event."""
         self.waitlist_form.destroy()
         self.menu_wind.deiconify()
 
 class ReturnBookForm(AbstractForm):
     def __init__(self, root, menu, user):
+        """Initialize the return book form with the root window, menu, and user."""
         super().__init__(root)
         self.menu_wind = menu
         self.user = user
 
     def create_specific_widgets(self):
-        # Creates a new window for removing books
+        """Create specific widgets for the return book form."""
+        # Creates a new window for returning books
         self.return_book_form = tk.Toplevel(self.root)
         self.return_book_form.title("Book's Details")
         self.return_book_form.geometry("400x300")
@@ -528,6 +564,7 @@ class ReturnBookForm(AbstractForm):
         self.return_book_form.protocol("WM_DELETE_WINDOW", self.on_closing)
 
     def handle_submit(self):
+        """Handle the submission of the return book form."""
         try:
             # Gets values from entries
             title = self.title_entry.get()
@@ -563,16 +600,26 @@ class ReturnBookForm(AbstractForm):
             self.on_closing()
 
     def on_closing(self):
+        """Handle the window closing event."""
         self.menu_wind.deiconify()
         self.return_book_form.destroy()
 
 class SearchStrategy(ABC):
-    @abstractmethod
     def search(self, books, query):
+        """Abstract method to search books based on a query."""
         pass
 
 class SearchByTitle(SearchStrategy):
     def search(self, books, query):
+        """Search books by title.
+
+        Args:
+            books (DataFrame): The DataFrame containing book data.
+            query (str): The search query.
+
+        Returns:
+            DataFrame: The search results.
+        """
         result = books[books['title'].str.contains(query, case=False, na=False)]
         if result.empty:
             message = SimpleTextLogger(f"Search book \"{query}\" by name completed fail")
@@ -587,6 +634,15 @@ class SearchByTitle(SearchStrategy):
 
 class SearchByAuthor(SearchStrategy):
     def search(self, books, query):
+        """Search books by author.
+
+        Args:
+            books (DataFrame): The DataFrame containing book data.
+            query (str): The search query.
+
+        Returns:
+            DataFrame: The search results.
+        """
         result = books[books['author'].str.contains(query, case=False, na=False)]
         if result.empty:
             message = SimpleTextLogger(f"Search book \"{query}\" by author name fail")
@@ -601,30 +657,75 @@ class SearchByAuthor(SearchStrategy):
 
 class SearchByCategory(SearchStrategy):
     def search(self, books, query):
+        """Search books by category.
+
+        Args:
+            books (DataFrame): The DataFrame containing book data.
+            query (str): The search query.
+
+        Returns:
+            DataFrame: The search results.
+        """
         return books[books['genre'].str.contains(query, case=False, na=False)]
 
 class SearchByYear(SearchStrategy):
     def search(self, books, query):
+        """Search books by year.
+
+        Args:
+            books (DataFrame): The DataFrame containing book data.
+            query (str): The search query.
+
+        Returns:
+            DataFrame: The search results.
+        """
         return books[books['year'].str.contains(query, case=False, na=False)]
 
 class BookSearcher:
     def __init__(self, strategy):
+        """Initialize the book searcher with a search strategy.
+
+        Args:
+            strategy (SearchStrategy): The search strategy to use.
+        """
         self.strategy = strategy
 
     def set_strategy(self, strategy):
+        """Set a new search strategy.
+
+        Args:
+            strategy (SearchStrategy): The new search strategy to use.
+        """
         self.strategy = strategy
 
     def search(self, books, query):
+        """Search books using the current strategy.
+
+        Args:
+            books (DataFrame): The DataFrame containing book data.
+            query (str): The search query.
+
+        Returns:
+            DataFrame: The search results.
+        """
         return self.strategy.search(books, query)
 
 class SearchBookForm(AbstractForm):
     def __init__(self, root, menu, user):
+        """Initialize the search book form with the root window, menu, and user.
+
+        Args:
+            root (Tk): The root window.
+            menu (Tk): The menu window.
+            user (User): The user object.
+        """
         super().__init__(root)
         self.menu_wind = menu
         self.user = user
         self.books = pd.read_csv(BOOKS_FILE_PATH)
 
     def create_specific_widgets(self):
+        """Create specific widgets for the search book form."""
         self.search_book_form = tk.Toplevel(self.root)
         self.search_book_form.title("Search Book")
 
@@ -658,13 +759,9 @@ class SearchBookForm(AbstractForm):
         self.search_book_form.protocol("WM_DELETE_WINDOW", self.on_closing)
 
     def perform_search(self):
+        """Perform the search based on the selected search type and query."""
         search_type = self.search_type.get()
         query = self.query_entry.get()
-
-        # if not query:
-        #     messagebox.showerror("Invalid Input", "Search query cannot be empty.")
-        #     self.on_closing()
-        #     return
 
         try:
             if search_type == "Title":
@@ -684,6 +781,11 @@ class SearchBookForm(AbstractForm):
             self.on_closing()
 
     def display_results(self, results):
+        """Display the search results in the result display widget.
+
+        Args:
+            results (DataFrame): The search results.
+        """
         # Clear the result display
         for row in self.result_display.get_children():
             self.result_display.delete(row)
@@ -693,23 +795,29 @@ class SearchBookForm(AbstractForm):
             self.result_display.insert("", "end", values=book.to_list())
 
     def on_closing(self):
+        """Handle the window closing event."""
         self.menu_wind.deiconify()
         self.search_book_form.destroy()
 
 class ViewStrategy(ABC):
     @abstractmethod
     def view(self):
+        """Abstract method to view books."""
         pass
 
 class ViewAllBooks(ViewStrategy):
     def view(self):
+        """View all books.
+
+        Returns:
+            DataFrame: The DataFrame containing all books.
+        """
         read_books = pd.read_csv(BOOKS_FILE_PATH)
         if read_books.empty:
             message = SimpleTextLogger("Displayed all books fail")
             error_logged = ErrorTextDecorator(message)
             error_logged.log()
             messagebox.showerror("Attention", "No books to display")
-
         else:
             message = SimpleTextLogger("Displayed all books successful")
             info_logged = InfoTextDecorator(message)
@@ -718,6 +826,11 @@ class ViewAllBooks(ViewStrategy):
 
 class ViewAvailableBooks(ViewStrategy):
     def view(self):
+        """View available books.
+
+        Returns:
+            DataFrame: The DataFrame containing available books.
+        """
         read_books = pd.read_csv(AVAILABLE_BOOKS_FILE_PATH)
         if read_books.empty:
             message = SimpleTextLogger("Displayed available books fail")
@@ -732,6 +845,11 @@ class ViewAvailableBooks(ViewStrategy):
 
 class ViewLoanedBooks(ViewStrategy):
     def view(self):
+        """View loaned books.
+
+        Returns:
+            DataFrame: The DataFrame containing loaned books.
+        """
         read_books = pd.read_csv(LOANED_BOOKS_FILE_PATH)
         if read_books.empty:
             message = SimpleTextLogger("Displayed borrowed books fail")
@@ -746,6 +864,11 @@ class ViewLoanedBooks(ViewStrategy):
 
 class ViewPopularBooks(ViewStrategy):
     def view(self):
+        """View popular books.
+
+        Returns:
+            DataFrame: The DataFrame containing popular books.
+        """
         read_books = pd.read_csv(POPULAR_BOOKS_FILE_PATH)
         if read_books.empty:
             message = SimpleTextLogger("displayed fail")
@@ -760,46 +883,78 @@ class ViewPopularBooks(ViewStrategy):
 
 class ViewByCategory(ViewStrategy):
     def __init__(self, category):
+        """Initialize the view by category strategy.
+
+        Args:
+            category (str): The category to filter books by.
+        """
         super().__init__()
         self.category = category
 
     def view(self):
+        """View books by category.
+
+        Returns:
+            DataFrame: The DataFrame containing books of the specified category.
+        """
         read_books = pd.read_csv(BOOKS_FILE_PATH)
         if read_books.empty:
-            message = SimpleTextLogger("displayed fail")
+            message = SimpleTextLogger("Displayed book by category fail")
             error_logged = ErrorTextDecorator(message)
             error_logged.log()
             messagebox.showerror("Attention", "No books in this category to display")
         else:
-            message = SimpleTextLogger("displayed successful")
+            message = SimpleTextLogger("Displayed book by category successfully")
             info_logged = InfoTextDecorator(message)
             info_logged.log()
         return read_books[read_books['genre'] == self.category]
 
 class BookViewer:
     def __init__(self, strategy):
+        """Initialize the book viewer with a view strategy.
+
+        Args:
+            strategy (ViewStrategy): The view strategy to use.
+        """
         self.strategy = strategy
 
     def set_strategy(self, strategy):
+        """Set a new view strategy.
+
+        Args:
+            strategy (ViewStrategy): The new view strategy to use.
+        """
         self.strategy = strategy
 
     def view(self):
+        """View books using the current strategy.
+
+        Returns:
+            DataFrame: The view results.
+        """
         return self.strategy.view()
 
 class ViewBookForm(AbstractForm):
     def __init__(self, root, menu, user):
+        """Initialize the view book form with the root window, menu, and user.
+
+        Args:
+            root (Tk): The root window.
+            menu (Tk): The menu window.
+            user (User): The user object.
+        """
         super().__init__(root)
         self.menu_wind = menu
         self.user = user
         self.books = pd.read_csv(BOOKS_FILE_PATH)
 
     def create_specific_widgets(self):
+        """Create specific widgets for the view book form."""
         self.view_book_form = tk.Toplevel(self.root)
         self.view_book_form.title("View Books")
 
         # Search type selection
         self.view_type = tk.StringVar()
-        # self.view_type.set("All Books")
 
         self.main_menu = tk.Menu(self.view_book_form)
         self.view_book_form.config(menu=self.main_menu)
@@ -823,17 +978,19 @@ class ViewBookForm(AbstractForm):
             self.result_display.column(header, width=150, minwidth=50, stretch=False)  # Width handling
         self.result_display.pack()
 
-        # self.book_viewer = BookViewer(ViewAllBooks()) # Default view
-
-        # self.perform_view()
-
         self.view_book_form.protocol("WM_DELETE_WINDOW", self.on_closing)
 
     def set_view_type(self, view_type):
+        """Set the view type and perform the view.
+
+        Args:
+            view_type (str): The type of view to set.
+        """
         self.view_type.set(view_type)
         self.perform_view()
 
     def perform_view(self):
+        """Perform the view based on the selected view type."""
         view_type = self.view_type.get()
         self.book_viewer = BookViewer(ViewAllBooks())  # Default view
 
@@ -857,6 +1014,11 @@ class ViewBookForm(AbstractForm):
             self.view_book_form.destroy()
 
     def display_results(self, results):
+        """Display the view results in the result display widget.
+
+        Args:
+            results (DataFrame): The view results.
+        """
         # Clear the result display
         for row in self.result_display.get_children():
             self.result_display.delete(row)
@@ -866,5 +1028,6 @@ class ViewBookForm(AbstractForm):
             self.result_display.insert("", "end", values=book.to_list())
 
     def on_closing(self):
+        """Handle the window closing event."""
         self.menu_wind.deiconify()
         self.view_book_form.destroy()

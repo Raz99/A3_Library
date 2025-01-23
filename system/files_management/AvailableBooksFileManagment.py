@@ -4,6 +4,12 @@ from system.files_management import BooksFileManagement
 AVAILABLE_BOOKS_FILE_PATH = r"data\available_books.csv"
 
 def update():
+    """
+    Updates the available books file by filtering out the loaned books from the main books file.
+
+    Reads the CSV file containing the list of books, filters for available books (where 'is_loaned_dict' contains "No"),
+    and saves the filtered list of available books to a new file.
+    """
     try:
         # Read the CSV file containing the list of books
         df = pd.read_csv(BooksFileManagement.BOOKS_FILE_PATH)

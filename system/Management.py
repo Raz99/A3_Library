@@ -9,18 +9,20 @@ from system.User import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from system.iterators import LibraryBookCollection
 
-
 class Subject(ABC):
     @abstractmethod
     def register_observer(self, observer):
+        """Register an observer."""
         pass
 
     @abstractmethod
     def unregister_observer(self, observer):
+        """Unregister an observer."""
         pass
 
     @abstractmethod
     def notify_observers(self, message):
+        """Notify all observers with a message."""
         pass
 
 class Management(Subject):
@@ -37,24 +39,34 @@ class Management(Subject):
         PopularityFileManagment.update()
 
     def get_all_books_iterator(self):
-        """Get an iterator for all books in the system."""
+        """Get an iterator for all books in the system.
+
+        Returns:
+            BookIterator: The iterator for all books.
+        """
         return self._book_collection.create_iterator()
 
-    # def add_book(self, book):
-    #     """Add a book to the system."""
-    #     self._book_collection.add_book(book)
-    #     shared.books.append(book)
-    #     BooksFileManagement.update()
-
     def remove_book(self, book):
-        """Remove a book from the system."""
+        """Remove a book from the system.
+
+        Args:
+            book (object): The book to remove.
+        """
         self._book_collection.remove_book(book)
         if book in shared.books:
             shared.books.remove(book)
         BooksFileManagement.update()
 
     def add_user(self, username, password):
-        """Add a new user to the system."""
+        """Add a new user to the system.
+
+        Args:
+            username (str): The username of the new user.
+            password (str): The password of the new user.
+
+        Returns:
+            bool: True if the user was added successfully, False otherwise.
+        """
         if not username or not password:
             print("Username and password cannot be empty")
             return False
@@ -70,7 +82,6 @@ class Management(Subject):
             hashed_password = generate_password_hash(password)
             new_user = User(username, hashed_password)
             self.register_observer(new_user)
-            # shared.users.append(new_user)
             UsersFileManagement.add_user(new_user)
             print("User successfully registered")
             return True
@@ -79,27 +90,30 @@ class Management(Subject):
             print(f"Failed to add user: {str(e)}")
             return False
 
-    # def remove_user(self, username):
-    #     """Remove a user from the system."""
-    #     for user in shared.users:
-    #         if username == user.get_username():
-    #             self.unregister_observer(user)
-    #             # shared.users.remove(user)
-    #             UsersFileManagement.update()
-    #             print("User removed successfully")
-    #             return True
-    #     print("Username not found")
-    #     return False
-
     def login(self, username, password):
-        """Authenticate a user."""
+        """Authenticate a user.
+
+        Args:
+            username (str): The username of the user.
+            password (str): The password of the user.
+
+        Returns:
+            bool: True if the user was authenticated successfully, False otherwise.
+        """
         for user in shared.users:
             if user.get_username() == username and check_password_hash(user.get_password(), password):
                 return True
         return False
 
     def get_user(self, username):
-        """Get a user by username."""
+        """Get a user by username.
+
+        Args:
+            username (str): The username of the user.
+
+        Returns:
+            User: The user object if found, False otherwise.
+        """
         for user in shared.users:
             if user.get_username() == username:
                 return user
@@ -107,17 +121,28 @@ class Management(Subject):
         return False
 
     def register_observer(self, observer):
-        """Add an observer to the list."""
+        """Add an observer to the list.
+
+        Args:
+            observer (User): The observer to add.
+        """
         if observer not in shared.users:
             shared.users.append(observer)
 
     def unregister_observer(self, observer):
-        """Remove an observer from the list."""
+        """Remove an observer from the list.
+
+        Args:
+            observer (User): The observer to remove.
+        """
         if observer in shared.users:
             shared.users.remove(observer)
 
     def notify_observers(self, message):
-        """Notify all observers with a message."""
+        """Notify all observers with a message.
+
+        Args:
+            message (str): The message to send to observers.
+        """
         for observer in shared.users:
             observer.update(message)
-

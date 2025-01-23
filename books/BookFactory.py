@@ -1,8 +1,26 @@
 from books import *
 
 class BookFactory:
+    """
+    Factory class for creating book instances of various types.
+    """
+
     @staticmethod
     def create_book(title, author, is_loaned, copies, book_type, year):
+        """
+        Creates a book instance based on the specified type.
+
+        Args:
+            title (str): The title of the book.
+            author (str): The author of the book.
+            is_loaned (str): Indicates if the book is loaned ("Yes" or "No").
+            copies (int): Number of copies of the book.
+            book_type (BookType): The type of the book.
+            year (int): The year the book was published.
+
+        Returns:
+            Book: An instance of a subclass of Book based on the book_type.
+        """
         if book_type == BookType.ADVENTURE:
             return Adventure(title, author, is_loaned, copies, year)
         elif book_type == BookType.CLASSIC:

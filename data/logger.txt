@@ -82,3 +82,7 @@ Test error message
 Test info message
 Test error message
 Test info message
+logged in successfully
+Displayed all books successful
+Displayed borrowed books successful
+log out successful
